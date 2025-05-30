@@ -1,0 +1,20 @@
+# ninja log v6
+470	4948	7703524102622713	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	7ee1e5e0c2f40358
+1774	5611	7703521258038929	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	4a2328aeb3437fab
+59	160	7703524098522876	C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	c342c4c600634d79
+172	464	7703524099637946	C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/mocs_compilation.cpp	1d83ab8adf14e1f2
+172	464	7703524099637946	sample_form_autogen/timestamp	1d83ab8adf14e1f2
+172	464	7703524099637946	sample_form_autogen/mocs_compilation.cpp	1d83ab8adf14e1f2
+172	464	7703524099637946	C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/timestamp	1d83ab8adf14e1f2
+465	4347	7703524102576488	CMakeFiles/sample_form.dir/main.cpp.obj	e691aa9861832ae5
+4802	5187	7703507034064153	sample_form.exe	e6a4e1ff60d77cf6
+126	1558	7703524322921884	build.ninja	adf3cc34a75702bf
+64	142	7703524331443309	C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	c342c4c600634d79
+154	1288	7703524342529947	sample_form_autogen/timestamp	1d83ab8adf14e1f2
+154	1288	7703524342529947	sample_form_autogen/mocs_compilation.cpp	1d83ab8adf14e1f2
+154	1288	7703524342529947	C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/timestamp	1d83ab8adf14e1f2
+154	1288	7703524342529947	C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/mocs_compilation.cpp	1d83ab8adf14e1f2
+1289	4992	7703524343691933	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	402a4a0b699bdf95
+1293	5095	7703524343741951	CMakeFiles/sample_form.dir/main.cpp.obj	a36122ecf3632e34
+1299	5630	7703524343798412	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	42c1b254379650fb
+5630	5963	7703524387102961	sample_form.exe	e6a4e1ff60d77cf6

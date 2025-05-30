@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6ae1435b15f3db17e590.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "sample_form",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "sample_form::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sample_form-Debug-f72d6777b4b4139128fe.json",
+					"name" : "sample_form",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sample_form_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sample_form_autogen-Debug-e63ac9c93655df8dbdc6.json",
+					"name" : "sample_form_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sample_form_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sample_form_autogen_timestamp_deps-Debug-b1a26a1959b51e4c34d3.json",
+					"name" : "sample_form_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
