@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <pylon/PylonIncludes.h>
+
+using namespace Pylon;
+using namespace GenApi;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

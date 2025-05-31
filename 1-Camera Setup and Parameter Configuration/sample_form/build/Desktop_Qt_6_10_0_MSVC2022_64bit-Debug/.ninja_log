@@ -1,0 +1,37 @@
+# ninja log v6
+58	133	7703952251711515	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	8c966d888d98953b
+195	820	7703951920371742	sample_form_autogen/timestamp	6d0f2a16896b335a
+195	820	7703951920371742	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+195	820	7703951920371742	sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+831	4011	7703951921426302	CMakeFiles/sample_form.dir/main.cpp.obj	cc94feaf7cf98d9a
+195	820	7703951920371742	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	6d0f2a16896b335a
+837	3421	7703951921486980	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	682c4a08d37ac750
+826	3192	7703951921372891	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	de80e4a8a99f41db
+4011	4620	7703951953213908	sample_form.exe	824ad48c243a29ee
+134	1126	7703952259748415	build.ninja	5d2fe8376e357d64
+42	141	7703952262368434	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	8c966d888d98953b
+177	415	7703952263711046	sample_form_autogen/timestamp	6d0f2a16896b335a
+177	415	7703952263711046	sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+177	415	7703952263711046	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	6d0f2a16896b335a
+177	415	7703952263711046	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+423	3179	7703952266170058	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	682c4a08d37ac750
+417	3913	7703952266112510	CMakeFiles/sample_form.dir/main.cpp.obj	cc94feaf7cf98d9a
+3913	4449	7703952301087694	sample_form.exe	824ad48c243a29ee
+116	297	7703953827258484	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	8c966d888d98953b
+349	1456	7703953839000973	sample_form_autogen/timestamp	6d0f2a16896b335a
+349	1456	7703953839000973	sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+349	1456	7703953839000973	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	6d0f2a16896b335a
+349	1456	7703953839000973	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+1460	8670	7703953840656387	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	de80e4a8a99f41db
+1472	8771	7703953840768321	CMakeFiles/sample_form.dir/main.cpp.obj	cc94feaf7cf98d9a
+1480	9132	7703953840848599	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	682c4a08d37ac750
+9133	9718	7703953917360922	sample_form.exe	824ad48c243a29ee
+72	194	7703957100684416	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	8c966d888d98953b
+233	1083	7703957109726522	sample_form_autogen/timestamp	6d0f2a16896b335a
+233	1083	7703957109726522	sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+233	1083	7703957109726522	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	6d0f2a16896b335a
+233	1083	7703957109726522	C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	6d0f2a16896b335a
+1085	5896	7703957110795168	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	de80e4a8a99f41db
+1090	6106	7703957110855865	CMakeFiles/sample_form.dir/main.cpp.obj	cc94feaf7cf98d9a
+1095	6272	7703957110905948	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	682c4a08d37ac750
+6273	7017	7703957162687052	sample_form.exe	824ad48c243a29ee
