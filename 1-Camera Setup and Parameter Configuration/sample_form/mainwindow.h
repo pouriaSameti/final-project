@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
+#include <QTimer>
 #include <pylon/PylonIncludes.h>
 
 using namespace Pylon;
@@ -15,7 +17,7 @@ QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+    Q_OBJECT  
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -23,21 +25,24 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QGraphicsScene *scene;
+    CInstantCamera* camera;
+    QTimer *timer;
+
+private slots:
+    void updateCameraView();
+    void applyCameraParameters();
 
 private:
     int width_value = 1024;
-
-private:
-    int length_value = 1024;
-
-private:
+    int length_value = 1;
     int ExpTime_value = 10000;
-
-private:
     int gain_raw_value = 192;
-
-private:
     int gain_db_value = 0;
+
+    void initializeCamera();
+    void startGrabbing();
+    void stopGrabbing();
 };
 
 #endif // MAINWINDOW_H
