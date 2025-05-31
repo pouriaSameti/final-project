@@ -9,6 +9,11 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(PYLON_ROOT "C:/Program Files/Basler/pylon 8/Development")
+
+include_directories("${PYLON_ROOT}/include")
+link_directories("${PYLON_ROOT}/lib/x64")
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
@@ -49,7 +54,11 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(sample_form PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(sample_form PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+                        PylonBase_v10
+                        PylonUtility_v10
+                        GCBase_MD_VC141_v3_1_Basler_pylon_v3
+                        GenApi_MD_VC141_v3_1_Basler_pylon_v3)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

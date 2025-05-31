@@ -2,22 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "CMAKE_ADDR2LINE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/addr2line.exe"
-		},
-		{
 			"name" : "CMAKE_AR",
 			"properties" : 
 			[
@@ -31,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/ar.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug"
+			"value" : "c:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -155,39 +139,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/g++.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER_AR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/gcc-ar.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER_RANLIB",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/cl.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -203,7 +155,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-DQT_QML_DEBUG"
+			"value" : "-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_DEBUG",
@@ -219,7 +171,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-g"
+			"value" : "/Zi /Ob0 /Od /RTC1"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_INIT",
@@ -247,7 +199,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-Os -DNDEBUG"
+			"value" : "/O1 /Ob1 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_RELEASE",
@@ -263,7 +215,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O3 -DNDEBUG"
+			"value" : "/O2 /Ob2 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_RELWITHDEBINFO",
@@ -279,7 +231,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O2 -g -DNDEBUG"
+			"value" : "/Zi /O2 /Ob1 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_OUTPUT_EXTENSION",
@@ -307,7 +259,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32"
+			"value" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER",
@@ -319,7 +271,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/gcc.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/cl.exe"
 		},
 		{
 			"name" : "CMAKE_C_OUTPUT_EXTENSION",
@@ -332,22 +284,6 @@
 			],
 			"type" : "STRING",
 			"value" : ""
-		},
-		{
-			"name" : "CMAKE_DLLTOOL",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EDIT_COMMAND",
@@ -387,7 +323,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
@@ -403,7 +339,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL",
@@ -419,7 +355,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_RELEASE",
@@ -435,7 +371,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO",
@@ -451,7 +387,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -479,7 +415,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -530,18 +466,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_GNUtoMS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Convert GNU import libraries to MS format (requires Visual Studio)"
-				}
-			],
-			"type" : "BOOL",
-			"value" : "OFF"
-		},
-		{
 			"name" : "CMAKE_HAVE_LIBC_PTHREAD",
 			"properties" : 
 			[
@@ -551,7 +475,31 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_HAVE_PTHREADS_CREATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Have library pthreads"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_HAVE_PTHREAD_CREATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Have library pthread"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_HOME_DIRECTORY",
@@ -563,7 +511,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form"
+			"value" : "C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -847,7 +795,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/ld.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -859,11 +807,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Program used to build from build.ninja files."
+					"value" : "make program"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/Ninja/ninja.exe"
+			"value" : "C:/PROGRA~1/MIB055~1/2022/Preview/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -879,7 +827,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
@@ -895,7 +843,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL",
@@ -911,7 +859,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELEASE",
@@ -927,7 +875,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO",
@@ -943,10 +891,10 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
-			"name" : "CMAKE_NM",
+			"name" : "CMAKE_MT",
 			"properties" : 
 			[
 				{
@@ -959,7 +907,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/nm.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -972,38 +920,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
-		},
-		{
-			"name" : "CMAKE_OBJCOPY",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/objcopy.exe"
-		},
-		{
-			"name" : "CMAKE_OBJDUMP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1027,7 +943,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64"
+			"value" : "C:/Qt/6.10.0/msvc2022_64"
 		},
 		{
 			"name" : "CMAKE_PROJECT_DESCRIPTION",
@@ -1063,7 +979,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake"
+			"value" : "C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/.qtc/package-manager/auto-setup.cmake"
 		},
 		{
 			"name" : "CMAKE_PROJECT_NAME",
@@ -1142,16 +1058,12 @@
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a program."
+					"value" : "noop for ranlib"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/ranlib.exe"
+			"type" : "INTERNAL",
+			"value" : ":"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -1167,7 +1079,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/windres.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1195,7 +1107,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "-DWIN32"
 		},
 		{
 			"name" : "CMAKE_RC_FLAGS_DEBUG",
@@ -1211,7 +1123,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "-D_DEBUG"
 		},
 		{
 			"name" : "CMAKE_RC_FLAGS_MINSIZEREL",
@@ -1262,22 +1174,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_READELF",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/readelf.exe"
-		},
-		{
 			"name" : "CMAKE_ROOT",
 			"properties" : 
 			[
@@ -1303,7 +1199,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
@@ -1319,7 +1215,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL",
@@ -1335,7 +1231,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELEASE",
@@ -1351,7 +1247,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO",
@@ -1367,7 +1263,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_SKIP_INSTALL_RPATH",
@@ -1415,7 +1311,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
@@ -1480,38 +1376,6 @@
 			],
 			"type" : "STRING",
 			"value" : ""
-		},
-		{
-			"name" : "CMAKE_STRIP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1310_64/bin/strip.exe"
-		},
-		{
-			"name" : "CMAKE_TAPI",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "CMAKE_TAPI-NOTFOUND"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1623,7 +1487,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6"
 		},
 		{
 			"name" : "QT_FEATURE_abstractbutton",
@@ -2154,6 +2018,18 @@
 			"value" : "ON"
 		},
 		{
+			"name" : "QT_FEATURE_copy_file_range",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: copy_file_range (from target Qt6::Core)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "OFF"
+		},
+		{
 			"name" : "QT_FEATURE_cpp_winrt",
 			"properties" : 
 			[
@@ -2163,7 +2039,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_cross_compile",
@@ -2248,6 +2124,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "OFF"
+		},
+		{
+			"name" : "QT_FEATURE_cxx20_format",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: cxx20_format (from target Qt6::Core)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_cxx23_stacktrace",
@@ -2367,7 +2255,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_debug_and_release",
@@ -2379,7 +2267,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_desktopservices",
@@ -2511,7 +2399,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_dladdr",
@@ -3546,6 +3434,18 @@
 			"value" : "ON"
 		},
 		{
+			"name" : "QT_FEATURE_jemalloc",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: jemalloc (from target Qt6::Core)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "OFF"
+		},
+		{
 			"name" : "QT_FEATURE_journald",
 			"properties" : 
 			[
@@ -3711,7 +3611,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_libudev",
@@ -3984,6 +3884,18 @@
 				{
 					"name" : "HELPSTRING",
 					"value" : "Qt feature: movie (from target Qt6::Gui)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ON"
+		},
+		{
+			"name" : "QT_FEATURE_msvc_obj_debug_info",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: msvc_obj_debug_info (from target Qt6::Core)"
 				}
 			],
 			"type" : "INTERNAL",
@@ -4359,7 +4271,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_posix_shm",
@@ -4372,18 +4284,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "OFF"
-		},
-		{
-			"name" : "QT_FEATURE_precompile_header",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Qt feature: precompile_header (from target Qt6::Core)"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_printsupport",
@@ -4623,7 +4523,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_reduce_relocations",
@@ -4767,7 +4667,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_sessionmanager",
@@ -5043,7 +4943,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_stack_protector",
@@ -5055,7 +4955,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_stackedwidget",
@@ -6090,6 +5990,18 @@
 			"value" : "ON"
 		},
 		{
+			"name" : "QT_FEATURE_winsdkicu",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: winsdkicu (from target Qt6::Core)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ON"
+		},
+		{
 			"name" : "QT_FEATURE_wizard",
 			"properties" : 
 			[
@@ -6315,19 +6227,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/bin/qmake.exe"
-		},
-		{
-			"name" : "Qt6CorePrivate_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt6CorePrivate."
-				}
-			],
-			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6CorePrivate"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/bin/qmake.exe"
 		},
 		{
 			"name" : "Qt6CoreTools_DIR",
@@ -6339,7 +6239,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6CoreTools"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6CoreTools"
 		},
 		{
 			"name" : "Qt6Core_DIR",
@@ -6351,7 +6251,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Core"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6Core"
 		},
 		{
 			"name" : "Qt6EntryPointPrivate_DIR",
@@ -6363,19 +6263,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6EntryPointPrivate"
-		},
-		{
-			"name" : "Qt6GuiPrivate_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt6GuiPrivate."
-				}
-			],
-			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6GuiPrivate"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6EntryPointPrivate"
 		},
 		{
 			"name" : "Qt6GuiTools_DIR",
@@ -6387,7 +6275,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6GuiTools"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6GuiTools"
 		},
 		{
 			"name" : "Qt6Gui_DIR",
@@ -6399,7 +6287,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Gui"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6Gui"
 		},
 		{
 			"name" : "Qt6LinguistTools_DIR",
@@ -6411,19 +6299,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6LinguistTools"
-		},
-		{
-			"name" : "Qt6WidgetsPrivate_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt6WidgetsPrivate."
-				}
-			],
-			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6WidgetsPrivate"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6LinguistTools"
 		},
 		{
 			"name" : "Qt6WidgetsTools_DIR",
@@ -6435,7 +6311,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6WidgetsTools"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6WidgetsTools"
 		},
 		{
 			"name" : "Qt6Widgets_DIR",
@@ -6447,7 +6323,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6Widgets"
 		},
 		{
 			"name" : "Qt6ZlibPrivate_DIR",
@@ -6459,7 +6335,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6ZlibPrivate"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6ZlibPrivate"
 		},
 		{
 			"name" : "Qt6_DIR",
@@ -6471,7 +6347,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6"
 		},
 		{
 			"name" : "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE",
@@ -6547,19 +6423,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/bin/windeployqt.exe"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/bin/windeployqt.exe"
 		},
 		{
 			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
@@ -6583,7 +6447,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6LinguistTools"
+			"value" : "C:/Qt/6.10.0/msvc2022_64/lib/cmake/Qt6LinguistTools"
 		},
 		{
 			"name" : "sample_form_BINARY_DIR",
@@ -6595,7 +6459,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug"
+			"value" : "C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug"
 		},
 		{
 			"name" : "sample_form_IS_TOP_LEVEL",
@@ -6619,7 +6483,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lenovo/OneDrive/Desktop/CPP forms/4-sample form/sample_form"
+			"value" : "C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form"
 		}
 	],
 	"kind" : "cache",
