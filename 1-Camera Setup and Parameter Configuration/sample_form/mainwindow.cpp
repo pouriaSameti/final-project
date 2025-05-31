@@ -1,11 +1,27 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "ui_mainwindow.h"
+#include <pylon/PylonIncludes.h>
+#include <QTimer>
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
+#include <QImage>
+#include <QPixmap>
+#include <QDebug>
+
+using namespace Pylon;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , scene(new QGraphicsScene(this))
+    , camera(nullptr)
+    , timer(new QTimer(this))
 {
     ui->setupUi(this);
+
+    ui->graphicsView_camera->setScene(scene);
+    ui->graphicsView_camera->setMinimumSize(640, 480);
+    ui->graphicsView_camera->setMaximumSize(1920, 1080);
 
     // set the default of width
     ui->horizontalSlider_width->setMinimum(1024);
@@ -17,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->spinBox_width->setValue(width_value);
 
     ui->width_label->setText(QString::number(width_value));
-
 
     // set the default of height
     ui->horizontalSlider_Length->setMinimum(1024);
@@ -98,7 +113,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // change value of Exposure time with spinBox
     connect(ui->spinBox_ExpTime, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
-        length_value = value;
+        ExpTime_value = value;
         ui->ExpTime_label->setText(QString::number(value));
     });
 
@@ -125,9 +140,119 @@ MainWindow::MainWindow(QWidget *parent)
         gain_db_value = value;
         ui->Gain_db_label->setText(QString::number(value));
     });
+
+
+    // Initialize camera
+    initializeCamera();
+
+    // Setup timer for camera updates
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateCameraView);
+    timer->start(30); // ~30 fps
 }
+
+
 
 MainWindow::~MainWindow()
 {
+    stopGrabbing();
+    if (camera) {
+        camera->Close();
+        delete camera;
+    }
     delete ui;
+}
+
+void MainWindow::initializeCamera()
+{
+    try {
+        // Create camera instance
+        camera = new CInstantCamera(CTlFactory::GetInstance().CreateFirstDevice());
+        camera->Open();
+
+        // Set basic parameters
+        INodeMap& nodemap = camera->GetNodeMap();
+        CEnumerationPtr(nodemap.GetNode("PixelFormat"))->FromString("Mono8");
+
+        // Apply initial parameters
+        applyCameraParameters();
+
+        // Start grabbing
+        startGrabbing();
+
+        qDebug() << "Camera initialized successfully";
+    } catch (const GenericException &e) {
+        qDebug() << "Camera initialization failed:" << e.GetDescription();
+    }
+}
+
+void MainWindow::startGrabbing()
+{
+    if (camera && !camera->IsGrabbing()) {
+        camera->StartGrabbing(GrabStrategy_LatestImageOnly);
+    }
+}
+
+void MainWindow::stopGrabbing()
+{
+    if (camera && camera->IsGrabbing()) {
+        camera->StopGrabbing();
+    }
+}
+
+void MainWindow::updateCameraView()
+{
+    if (!camera || !camera->IsGrabbing()) return;
+
+    if (ptrGrabResult->GetPixelType() == PixelType_Mono8) {
+        QImage img((uchar*)ptrGrabResult->GetBuffer(),
+                   ptrGrabResult->GetWidth(),
+                   ptrGrabResult->GetHeight(),
+                   QImage::Format_Grayscale8);
+
+        scene->clear();
+        scene->addPixmap(QPixmap::fromImage(img))->setTransformationMode(Qt::SmoothTransformation);
+        ui->graphicsView_camera->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+    } else {
+        qDebug() << "Unsupported pixel format for display";
+    }
+}
+
+void MainWindow::applyCameraParameters() {
+    if (!camera || !camera->IsOpen()) return;
+
+    try {
+        INodeMap& nodemap = camera->GetNodeMap();
+
+        // Width - try common variants
+        if (IsAvailable(nodemap.GetNode("Width"))) {
+            CIntegerPtr(nodemap.GetNode("Width"))->SetValue(width_value);
+        }
+
+        if (IsAvailable(nodemap.GetNode("Height"))) {
+            CIntegerPtr(nodemap.GetNode("Height"))->SetValue(length_value);
+        }
+
+        else if (IsAvailable(nodemap.GetNode("SensorWidth"))) {
+            CIntegerPtr(nodemap.GetNode("SensorWidth"))->SetValue(width_value);
+        }
+
+        // Exposure Time
+        if (IsAvailable(nodemap.GetNode("ExposureTime"))) {
+            CFloatPtr(nodemap.GetNode("ExposureTime"))->SetValue(ExpTime_value);
+        }
+        else if (IsAvailable(nodemap.GetNode("ExposureTimeAbs"))) {
+            CIntegerPtr(nodemap.GetNode("ExposureTimeAbs"))->SetValue(ExpTime_value);
+        }
+
+        // Gain (try different variants)
+        if (IsAvailable(nodemap.GetNode("GainRaw"))) {
+            CIntegerPtr(nodemap.GetNode("GainRaw"))->SetValue(gain_raw_value);
+        }
+        else if (IsAvailable(nodemap.GetNode("Gain"))) {
+            CFloatPtr(nodemap.GetNode("Gain"))->SetValue(gain_db_value);
+        }
+
+    } catch (const GenericException &e) {
+        qDebug() << "Parameter error:" << e.GetDescription();
+    }
 }
