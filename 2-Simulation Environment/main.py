@@ -6,9 +6,10 @@ if __name__ == "__main__":
         height=980,
         fps=32,
         background_color=(216, 216, 216),
-        object_width=1000,
-        object_height=1000,
+        object_width=512,
+        object_height=512,
         object_step=8,
-        shape_mode=False
+        shape_mode=False,
+        number_of_objects=6
     )
     sim.run()
