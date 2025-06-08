@@ -3,16 +3,17 @@ import sys
 
 
 class LineScanSimulator:
-    def __init__(self, width=800, height=200, fps=60):
+    def __init__(self, width=800, height=200, fps=60, object_width=50, object_height=100, object_step=5,
+                 background_color=(0, 0, 0)):
         pygame.init()
         self.width = width
         self.height = height
         self.fps = fps
-        self.bg_color = (0, 0, 0)
+        self.bg_color = background_color
         self.obj_color = (255, 0, 0)
-        self.obj_width = 50
-        self.obj_height = 100
-        self.obj_speed = 5
+        self.obj_width = object_width
+        self.obj_height = object_height
+        self.obj_step = object_step
 
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption("Line Scan Camera Simulation")
@@ -29,7 +30,7 @@ class LineScanSimulator:
                 self.running = False
 
     def update_object_position(self):
-        self.obj_x += self.obj_speed
+        self.obj_x += self.obj_step
         if self.obj_x > self.width:
             self.obj_x = -self.obj_width
 
