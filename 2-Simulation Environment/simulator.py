@@ -1,6 +1,5 @@
 import os
 import sys
-import random
 import pygame
 import numpy as np
 
@@ -9,7 +8,7 @@ SHOW_ANOMALY_OBJECT_PROBABILITY = 0.2
 
 class LineScanSimulator:
     def __init__(self, width=800, height=200, fps=60, number_of_objects=8, shape_mode=False,
-                 object_width=50, object_height=100, object_step=5,
+                 object_width=50, object_height=100, object_step=5, object_delimiter=8,
                  background_color=(0, 0, 0)):
 
         pygame.init()
@@ -21,6 +20,7 @@ class LineScanSimulator:
         self.obj_width = object_width
         self.obj_height = object_height
         self.obj_step = object_step
+        self.object_delimiter = object_delimiter
         self.shape_mode = shape_mode
         self.__number_of_objects = number_of_objects
 
@@ -44,7 +44,7 @@ class LineScanSimulator:
         for _ in range(self.__number_of_objects):
             obj = self.create_new_object(x)
             self.objects.append(obj)
-            x += self.obj_width
+            x += self.obj_width + self.object_delimiter
 
     def create_new_object(self, x_pos=None):
         if self.shape_mode:
