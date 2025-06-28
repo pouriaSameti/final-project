@@ -7,7 +7,7 @@ SHOW_ANOMALY_OBJECT_PROBABILITY = 0.2
 
 
 class LineScanSimulator:
-    def __init__(self, width=800, height=200, fps=60, number_of_objects=8, shape_mode=False,
+    def __init__(self, width=800, height=200, fps=2, number_of_objects=8, shape_mode=False,
                  object_width=50, object_height=100, object_step=5, object_delimiter=8,
                  background_color=(0, 0, 0)):
 
