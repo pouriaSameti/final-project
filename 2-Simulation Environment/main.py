@@ -4,7 +4,7 @@ if __name__ == "__main__":
     sim = LineScanSimulator(
         width=1900,
         height=980,
-        fps=2,
+        fps=4,
         background_color=(224, 224, 224),
         object_width=580,
         object_height=580,
