@@ -1,5 +1,6 @@
 from onvif_manager import ONVIFCameraManager
 from classic_segmentation import FrameSegmentation
+from cv_tasks import ObjectDetection
 import cv2
 import numpy as np
 import time
@@ -70,11 +71,20 @@ if __name__ == '__main__':
                 # cv2.imshow(WINDOW_NAME, rotated)
 
                 # Segmentation with HSV Space
-                img = cv2.cvtColor(accumulated_image, cv2.COLOR_GRAY2BGR)
-                rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
-                hsv_mask = FrameSegmentation.color_mask_from_hsv(rotated, ['green','lime_green', 'black', 'red', 'brown'
-                                                                           , 'white'])
-                cv2.imshow(WINDOW_NAME, hsv_mask)
+                # img = cv2.cvtColor(accumulated_image, cv2.COLOR_GRAY2BGR)
+                # rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+                # hsv_mask = FrameSegmentation.color_mask_from_hsv(rotated, ['green','lime_green', 'black', 'red', 'brown'
+                #                                                            , 'white'])
+                # cv2.imshow(WINDOW_NAME, hsv_mask)
+
+                # Object Detection using YOLO8n
+                rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+                    rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
+                    object_detected = ObjectDetection.apply_yolo(rotated_color)
+                    cv2.imshow(WINDOW_NAME, object_detected)
+                else:
+                    print(f"Skipping frame - invalid rotated shape: {rotated.shape if rotated is not None else 'None'}")
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
