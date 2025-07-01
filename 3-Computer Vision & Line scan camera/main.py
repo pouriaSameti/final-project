@@ -59,15 +59,22 @@ if __name__ == '__main__':
                 # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 # cv2.imshow(WINDOW_NAME, rotated)
 
-                # Local Segmentation with Utso
+                # Local Segmentation with Otsu
                 # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 # segmented_image = FrameSegmentation.apply_local_segmentation(frame=rotated, segments=8)
                 # cv2.imshow(WINDOW_NAME, segmented_image)
 
                 # Segmentation with Region Growing
-                rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                segmented_mask = FrameSegmentation.apply_region_growing(rotated, threshold=128)
-                cv2.imshow(WINDOW_NAME, rotated)
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # segmented_mask = FrameSegmentation.apply_region_growing(rotated, threshold=128)
+                # cv2.imshow(WINDOW_NAME, rotated)
+
+                # Segmentation with HSV Space
+                img = cv2.cvtColor(accumulated_image, cv2.COLOR_GRAY2BGR)
+                rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+                hsv_mask = FrameSegmentation.color_mask_from_hsv(rotated, ['green','lime_green', 'black', 'red', 'brown'
+                                                                           , 'white'])
+                cv2.imshow(WINDOW_NAME, hsv_mask)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
