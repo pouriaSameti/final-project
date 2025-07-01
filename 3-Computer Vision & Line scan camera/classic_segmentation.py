@@ -51,4 +51,42 @@ class FrameSegmentation:
 
         return full_mask
 
+    @staticmethod
+    def color_mask_from_hsv(frame, color_names):
+
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+        hsv_color_ranges = {
+            'red': [(0, 70, 50), (10, 255, 255), (170, 70, 50), (180, 255, 255)],
+            'orange': [(11, 100, 100), (25, 255, 255)],
+            'yellow': [(26, 100, 100), (34, 255, 255)],
+            'lime_green': [(35, 70, 70), (50, 255, 255)],
+            'green': [(51, 50, 50), (85, 255, 255)],
+            'cyan': [(86, 50, 50), (100, 255, 255)],
+            'light_blue': [(101, 70, 70), (115, 255, 255)],
+            'blue': [(116, 50, 50), (130, 255, 255)],
+            'purple': [(131, 50, 50), (150, 255, 255)],
+            'magenta': [(151, 70, 70), (169, 255, 255)],
+            'pink': [(160, 50, 150), (180, 255, 255)],
+            'brown': [(0, 50, 50), (20, 150, 150)],
+            'gray': [(0, 0, 50), (180, 50, 200)],
+            'black': [(0, 0, 0), (180, 255, 30)],
+            'white': [(0, 0, 200), (180, 30, 255)]
+        }
+
+        mask_total = np.zeros(hsv.shape[:2], dtype=np.uint8)
+
+        for color in color_names:
+            if color == 'red':
+                lower1, upper1, lower2, upper2 = hsv_color_ranges['red']
+                mask1 = cv2.inRange(hsv, np.array(lower1), np.array(upper1))
+                mask2 = cv2.inRange(hsv, np.array(lower2), np.array(upper2))
+                mask = cv2.bitwise_or(mask1, mask2)
+            else:
+                lower, upper = hsv_color_ranges[color]
+                mask = cv2.inRange(hsv, np.array(lower), np.array(upper))
+
+            mask_total = cv2.bitwise_or(mask_total, mask)
+
+        return cv2.bitwise_not(mask_total)
 
