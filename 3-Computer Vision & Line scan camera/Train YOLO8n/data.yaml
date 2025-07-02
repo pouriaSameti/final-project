@@ -8,6 +8,6 @@ names: ['-oil-']
 roboflow:
   workspace: imagesegmentpouria
   project: object-detection-oils
-  version: 2
+  version: 3
   license: CC BY 4.0
-  url: https://universe.roboflow.com/imagesegmentpouria/object-detection-oils/dataset/2
+  url: https://universe.roboflow.com/imagesegmentpouria/object-detection-oils/dataset/3
