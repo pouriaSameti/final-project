@@ -6,8 +6,8 @@ from ultralytics import YOLO
 
 class ObjectDetection:
     @staticmethod
-    def apply_yolo(frame):
-        model = YOLO('object detection models/yolov8n.pt')
+    def apply_yolo8n(frame):
+        model = YOLO('object detection models/yolov8n-custom.pt')
         results = model(frame)
         annotated_frame = results[0].plot()
 
