@@ -17,6 +17,7 @@ LINE_INDEX = 270
 MAX_LINES = 540
 SAMPLING_INTERVAL_SECONDS = 0.125  # one sample every 0.25 seconds (4 samples per second)
 WINDOW_NAME = "Line Scan Simulation"
+OBJECT_Counter = 0
 
 
 if __name__ == '__main__':
@@ -77,11 +78,12 @@ if __name__ == '__main__':
                 #                                                            , 'white'])
                 # cv2.imshow(WINDOW_NAME, hsv_mask)
 
-                # Object Detection using YOLO8n
+                # Object Detection using YOLO8n costume
                 rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
                     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                    object_detected = ObjectDetection.apply_yolo8n(rotated_color)
+                    object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color, save_enable=True,
+                                                                          counter=OBJECT_Counter)
                     cv2.imshow(WINDOW_NAME, object_detected)
                 else:
                     print(f"Skipping frame - invalid rotated shape: {rotated.shape if rotated is not None else 'None'}")
