@@ -1,9 +1,13 @@
-from onvif_manager import ONVIFCameraManager
-from classic_segmentation import FrameSegmentation
-from cv_tasks import ObjectDetection
 import cv2
 import numpy as np
 import time
+import torch
+from torchvision import transforms
+from ultralytics import YOLO
+from PIL import Image
+from onvif_manager import ONVIFCameraManager
+from classic_segmentation import FrameSegmentation
+from cv_tasks import ObjectDetection, AnomalyDetection, EmbeddingNet
 
 # ONVIF Camera Connection Settings
 HOST = '192.168.1.1'
@@ -15,17 +19,37 @@ WSDL_DIR = 'C:\\python-onvif-zeep\\wsdl'
 # Line Scan Parameters
 LINE_INDEX = 270
 MAX_LINES = 540
-SAMPLING_INTERVAL_SECONDS = 0.125  # one sample every 0.25 seconds (4 samples per second)
+SAMPLING_INTERVAL_SECONDS = 0.5  # one sample every 0.25 seconds (4 samples per second)
 WINDOW_NAME = "Line Scan Simulation"
 OBJECT_Counter = 0
 
 
 if __name__ == '__main__':
+
+    # Camera Initialization
     camera_manager = ONVIFCameraManager(HOST, PORT, USERNAME, PASSWORD, WSDL_DIR)
     camera_manager.connect()
     rtsp_url = camera_manager.get_rtsp_url()
     print("RTSP Stream URL:", rtsp_url)
 
+    # Imports for Anomaly Detection
+    transform = transforms.Compose([
+        transforms.Resize((640, 640)),
+        transforms.ToTensor(),
+    ])
+    anchor_img = Image.open("Train Triplet Network/triplet_data/anchor/main anchor.jpg").convert("RGB")
+    anchor_tensor = transform(anchor_img).unsqueeze(0)
+
+    embedding_net = EmbeddingNet()
+    embedding_model_path = "Train Triplet Network/embedding_net.pth"
+    device = 'cpu'
+    embedding_net.load_state_dict(torch.load(embedding_model_path, map_location=device))
+    embedding_net.to(device).eval()
+
+    detection_model_path = "object detection models/yolov8n-custom.pt"
+    yolo8n_costume = YOLO(detection_model_path)
+
+    # Camera real-time image capturing
     cap = cv2.VideoCapture(rtsp_url)
 
     if cap.isOpened():
@@ -79,12 +103,28 @@ if __name__ == '__main__':
                 # cv2.imshow(WINDOW_NAME, hsv_mask)
 
                 # Object Detection using YOLO8n costume
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
+                #     object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
+                #                                                           save_enable=True,
+                #                                                           counter=OBJECT_Counter)
+                #     cv2.imshow(WINDOW_NAME, object_detected)
+                # else:
+                #     print(f"Skipping frame - invalid rotated shape:
+                #     {rotated.shape if rotated is not None else 'None'}")
+
+                # Anomaly Detection with Triplet Network
                 rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+
                     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                    object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color, save_enable=True,
-                                                                          counter=OBJECT_Counter)
-                    cv2.imshow(WINDOW_NAME, object_detected)
+                    object_with_anomaly_check = AnomalyDetection.apply_triplet_network(frame=rotated_color,
+                                                                                       anchor_tensor=anchor_tensor,
+                                                                                       embedding_network=embedding_net,
+                                                                                       detection_model=yolo8n_costume,
+                                                                                       threshold=1)
+                    cv2.imshow(WINDOW_NAME, object_with_anomaly_check)
                 else:
                     print(f"Skipping frame - invalid rotated shape: {rotated.shape if rotated is not None else 'None'}")
 
