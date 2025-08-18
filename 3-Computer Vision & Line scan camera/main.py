@@ -103,30 +103,30 @@ if __name__ == '__main__':
                 # cv2.imshow(WINDOW_NAME, hsv_mask)
 
                 # Object Detection using YOLO8n costume
-                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
-                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                #     object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
-                #                                                           save_enable=True,
-                #                                                           counter=OBJECT_Counter)
-                #     cv2.imshow(WINDOW_NAME, object_detected)
-                # else:
-                #     print(f"Skipping frame - invalid rotated shape:
-                #     {rotated.shape if rotated is not None else 'None'}")
-
-                # Anomaly Detection with Triplet Network
                 rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
-
                     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                    object_with_anomaly_check = AnomalyDetection.apply_triplet_network(frame=rotated_color,
-                                                                                       anchor_tensor=anchor_tensor,
-                                                                                       embedding_network=embedding_net,
-                                                                                       detection_model=yolo8n_costume,
-                                                                                       threshold=1)
-                    cv2.imshow(WINDOW_NAME, object_with_anomaly_check)
+                    object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
+                                                                          save_enable=True,
+                                                                          counter=OBJECT_Counter)
+                    cv2.imshow(WINDOW_NAME, object_detected)
                 else:
-                    print(f"Skipping frame - invalid rotated shape: {rotated.shape if rotated is not None else 'None'}")
+                    print(f"Skipping frame - invalid rotated shape:")
+                    # {rotated.shape if rotated is not None else 'None'}")
+
+                # Anomaly Detection with Triplet Network
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+                #
+                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
+                #     object_with_anomaly_check = AnomalyDetection.apply_triplet_network(frame=rotated_color,
+                #                                                                        anchor_tensor=anchor_tensor,
+                #                                                                        embedding_network=embedding_net,
+                #                                                                        detection_model=yolo8n_costume,
+                #                                                                        threshold=1)
+                #     cv2.imshow(WINDOW_NAME, object_with_anomaly_check)
+                # else:
+                #     print(f"Skipping frame - invalid rotated shape: {rotated.shape if rotated is not None else 'None'}")
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
