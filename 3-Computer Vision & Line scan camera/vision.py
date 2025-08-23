@@ -1,11 +1,11 @@
 import os
 import cv2
 import torch
-import torch.nn as nn
 import torchvision
-from torchvision import transforms
-import torch.nn.functional as F
 from PIL import Image
+import torch.nn as nn
+import torch.nn.functional as F
+from torchvision import transforms
 from ultralytics import YOLO
 
 
