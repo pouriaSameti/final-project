@@ -5,7 +5,7 @@ import cv2
 class FrameSegmentation:
 
     @staticmethod
-    def apply_local_segmentation(frame, segments=8):
+    def apply_otsu(frame, segments=8):
         segmented = np.zeros_like(frame)
         h = frame.shape[0]
         seg_height = h // segments
