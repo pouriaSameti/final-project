@@ -6,8 +6,8 @@ from torchvision import transforms
 from ultralytics import YOLO
 from PIL import Image
 from onvif_manager import ONVIFCameraManager
-from classic_segmentation import FrameSegmentation
-from cv_tasks import ObjectDetection, AnomalyDetection, EmbeddingNet
+from segmentation import FrameSegmentation
+from vision import ObjectDetection, AnomalyDetection, EmbeddingNet
 
 # ONVIF Camera Connection Settings
 HOST = '192.168.1.1'
@@ -19,7 +19,7 @@ WSDL_DIR = 'C:\\python-onvif-zeep\\wsdl'
 # Line Scan Parameters
 LINE_INDEX = 270
 MAX_LINES = 540
-SAMPLING_INTERVAL_SECONDS = 0.5  # one sample every 0.25 seconds (4 samples per second)
+SAMPLING_INTERVAL_SECONDS = 0.5
 WINDOW_NAME = "Line Scan Simulation"
 OBJECT_Counter = 0
 
