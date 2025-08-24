@@ -20,18 +20,32 @@ class FrameSegmentation:
         return segmented
 
     @staticmethod
-    def apply_adaptive_threshold(frame, kernel_size: int, bias: int, mode: str):
+    def apply_adaptive_threshold(frame, segments: int, kernel_size: int, bias: int, mode: str):
         # mode -> mean, gaussian
 
+        segmented = np.zeros_like(frame)
+        h = frame.shape[0]
+        seg_height = h // segments
+
         if mode == 'mean':
-            segment_mean = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, kernel_size,
+            for i in range(segments):
+                start = i * seg_height
+                end = (i + 1) * seg_height if i < segments - 1 else h
+                segment = frame[start:end, :]
+                thresh = cv2.adaptiveThreshold(segment, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, kernel_size,
                                                  bias)
-            return segment_mean
+                segmented[start:end, :] = thresh
+            return segmented
 
         if mode == 'gaussian':
-            segment_gaussian = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,
-                                                     kernel_size, bias)
-            return segment_gaussian
+            for i in range(segments):
+                start = i * seg_height
+                end = (i + 1) * seg_height if i < segments - 1 else h
+                segment = frame[start:end, :]
+                thresh = cv2.adaptiveThreshold(segment, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,
+                                                kernel_size, bias)
+                segmented[start:end, :] = thresh
+            return segmented
 
         print('Error -> Mode is not valid')
         return frame
