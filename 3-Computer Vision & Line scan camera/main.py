@@ -37,14 +37,14 @@ if __name__ == '__main__':
         transforms.Resize((640, 640)),
         transforms.ToTensor(),
     ])
-    anchor_img = Image.open("Train Triplet Network/triplet_data/anchor/main anchor.jpg").convert("RGB")
-    anchor_tensor = transform(anchor_img).unsqueeze(0)
-
-    embedding_net = EmbeddingNet()
-    embedding_model_path = "Train Triplet Network/embedding_net.pth"
-    device = 'cpu'
-    embedding_net.load_state_dict(torch.load(embedding_model_path, map_location=device))
-    embedding_net.to(device).eval()
+    # anchor_img = Image.open("Train Triplet Network/triplet_data/anchor/main anchor.jpg").convert("RGB")
+    # anchor_tensor = transform(anchor_img).unsqueeze(0)
+    #
+    # embedding_net = EmbeddingNet()
+    # embedding_model_path = "Train Triplet Network/embedding_net.pth"
+    # device = 'cpu'
+    # embedding_net.load_state_dict(torch.load(embedding_model_path, map_location=device))
+    # embedding_net.to(device).eval()
 
     detection_model_path = "object detection models/yolov8n-custom.pt"
     yolo8n_costume = YOLO(detection_model_path)
@@ -98,20 +98,30 @@ if __name__ == '__main__':
                 # Segmentation with HSV Space
                 # img = cv2.cvtColor(accumulated_image, cv2.COLOR_GRAY2BGR)
                 # rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
-                # hsv_mask = FrameSegmentation.color_mask_from_hsv(rotated, ['green','lime_green', 'black', 'red', 'brown'
-                #                                                            , 'white'])
+                # hsv_mask = FrameSegmentation.color_mask_from_hsv(rotated,['green','lime_green','black','red','white'])
                 # cv2.imshow(WINDOW_NAME, hsv_mask)
 
-                # Object Detection using YOLO8n costume
+                # # Segmentation with Adaptive threshold with mean
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # segmented_mask = FrameSegmentation.apply_adaptive_threshold(rotated, kernel_size=3, bias=2, mode='mean')
+                # cv2.imshow(WINDOW_NAME, segmented_mask)
+
+                # Segmentation with Adaptive threshold with gaussian
                 rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
-                    rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                    object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
-                                                                          save_enable=True,
-                                                                          counter=OBJECT_Counter)
-                    cv2.imshow(WINDOW_NAME, object_detected)
-                else:
-                    print(f"Skipping frame - invalid rotated shape:")
+                segmented_mask = FrameSegmentation.apply_adaptive_threshold(rotated, kernel_size=3, bias=2,
+                                                                            mode='gaussian')
+                cv2.imshow(WINDOW_NAME, segmented_mask)
+
+                # Object Detection using YOLO8n costume
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
+                #     object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
+                #                                                           save_enable=True,
+                #                                                           counter=OBJECT_Counter)
+                #     cv2.imshow(WINDOW_NAME, object_detected)
+                # else:
+                #     print(f"Skipping frame - invalid rotated shape:")
                     # {rotated.shape if rotated is not None else 'None'}")
 
                 # Anomaly Detection with Triplet Network

@@ -20,6 +20,23 @@ class FrameSegmentation:
         return segmented
 
     @staticmethod
+    def apply_adaptive_threshold(frame, kernel_size: int, bias: int, mode: str):
+        # mode -> mean, gaussian
+
+        if mode == 'mean':
+            segment_mean = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, kernel_size,
+                                                 bias)
+            return segment_mean
+
+        if mode == 'gaussian':
+            segment_gaussian = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,
+                                                     kernel_size, bias)
+            return segment_gaussian
+
+        print('Error -> Mode is not valid')
+        return frame
+
+    @staticmethod
     def apply_region_growing(frame, threshold=20):
         h, w = frame.shape
         sub_height = h // 8
