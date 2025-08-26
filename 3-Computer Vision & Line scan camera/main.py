@@ -95,12 +95,6 @@ if __name__ == '__main__':
                 # segmented_mask = FrameSegmentation.apply_region_growing(rotated, threshold=128)
                 # cv2.imshow(WINDOW_NAME, rotated)
 
-                # Segmentation with HSV Space
-                # img = cv2.cvtColor(accumulated_image, cv2.COLOR_GRAY2BGR)
-                # rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
-                # hsv_mask = FrameSegmentation.color_mask_from_hsv(rotated,['green','lime_green','black','red','white'])
-                # cv2.imshow(WINDOW_NAME, hsv_mask)
-
                 # Segmentation with Adaptive threshold with mean
                 # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 # segmented_mask = FrameSegmentation.apply_adaptive_threshold(rotated, segments=8, kernel_size=11, bias=2,
