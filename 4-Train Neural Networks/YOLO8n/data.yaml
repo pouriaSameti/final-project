@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['air_filter', 'brake_pad', 'coolant', 'motor_oil', 'oil_filter', 'winwinshield_washer']
+
+roboflow:
+  workspace: imagesegmentpouria
+  project: car-consumables-ipihw
+  version: 8
+  license: MIT
+  url: https://universe.roboflow.com/imagesegmentpouria/car-consumables-ipihw/dataset/8
