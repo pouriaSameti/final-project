@@ -83,4 +83,21 @@ class FrameSegmentation:
         return full_mask
 
 
+class ContourDetection:
 
+    @staticmethod
+    def apply_contour(frame):
+        ret, thresh = cv2.threshold(frame, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+        output = frame.copy()
+        output = cv2.cvtColor(output, cv2.COLOR_GRAY2BGR)
+
+        for i, cnt in enumerate(contours):
+            if hierarchy[0][i][3] == -1:
+                color = (0, 255, 0)
+            else:
+                color = (0, 0, 255)
+
+            cv2.drawContours(output, contours, i, color, 2)
+        return output

@@ -6,7 +6,7 @@ from torchvision import transforms
 from ultralytics import YOLO
 from PIL import Image
 from onvif_manager import ONVIFCameraManager
-from segmentation import FrameSegmentation
+from segmentation import FrameSegmentation, ContourDetection
 from vision import ObjectDetection, AnomalyDetection, EmbeddingNet
 
 # ONVIF Camera Connection Settings
@@ -102,10 +102,15 @@ if __name__ == '__main__':
                 # cv2.imshow(WINDOW_NAME, segmented_mask)
 
                 # Segmentation with Adaptive threshold with gaussian
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # segmented_mask = FrameSegmentation.apply_adaptive_threshold(rotated, segments=8, kernel_size=11, bias=2,
+                #                                                             mode='gaussian')
+                # cv2.imshow(WINDOW_NAME, segmented_mask)
+
+                # Contour Detection
                 rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                segmented_mask = FrameSegmentation.apply_adaptive_threshold(rotated, segments=8, kernel_size=11, bias=2,
-                                                                            mode='gaussian')
-                cv2.imshow(WINDOW_NAME, segmented_mask)
+                contour = ContourDetection.apply_contour(rotated)
+                cv2.imshow(WINDOW_NAME, contour)
 
                 # Object Detection using YOLO8n costume
                 # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
