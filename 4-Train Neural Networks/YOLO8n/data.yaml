@@ -8,6 +8,6 @@ names: ['air_filter', 'brake_pad', 'coolant', 'motor_oil', 'oil_filter', 'winwin
 roboflow:
   workspace: imagesegmentpouria
   project: car-consumables-ipihw
-  version: 8
+  version: 10
   license: MIT
-  url: https://universe.roboflow.com/imagesegmentpouria/car-consumables-ipihw/dataset/8
+  url: https://universe.roboflow.com/imagesegmentpouria/car-consumables-ipihw/dataset/10
