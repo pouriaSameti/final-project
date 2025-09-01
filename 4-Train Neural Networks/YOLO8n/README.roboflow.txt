@@ -1,8 +1,8 @@
 
-car consumables - v10 2025-08-27 6:47pm
+car consumables - v11 2025-09-01 3:26am
 ==============================
 
-This dataset was exported via roboflow.com on August 27, 2025 at 3:19 PM GMT
+This dataset was exported via roboflow.com on August 31, 2025 at 11:57 PM GMT
 
 Roboflow is an end-to-end computer vision platform that helps you
 * collaborate with your team on computer vision projects
@@ -17,7 +17,7 @@ visit https://github.com/roboflow/notebooks
 
 To find over 100k other datasets and pre-trained models, visit https://universe.roboflow.com
 
-The dataset includes 1037 images.
+The dataset includes 1085 images.
 Motor_oil are annotated in YOLOv8 format.
 
 The following pre-processing was applied to each image:
