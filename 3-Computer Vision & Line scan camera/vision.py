@@ -19,9 +19,10 @@ class ObjectDetection:
         return annotated_frame
 
     @staticmethod
-    def apply_yolo8_costume(frame, counter: int, save_enable:bool):
-        model = YOLO('object detection models/yolov8n-custom.pt')
+    def apply_yolo8_costume(frame, counter: int, save_enable: bool):
+        model = YOLO('object detection models/best.pt')
         results = model(frame)[0]
+        print(results)
         annotated_frame = results.plot()
 
         frame_count = counter

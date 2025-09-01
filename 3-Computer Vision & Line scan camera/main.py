@@ -37,6 +37,7 @@ if __name__ == '__main__':
         transforms.Resize((640, 640)),
         transforms.ToTensor(),
     ])
+
     # anchor_img = Image.open("Train Triplet Network/triplet_data/anchor/main anchor.jpg").convert("RGB")
     # anchor_tensor = transform(anchor_img).unsqueeze(0)
     #
@@ -46,8 +47,8 @@ if __name__ == '__main__':
     # embedding_net.load_state_dict(torch.load(embedding_model_path, map_location=device))
     # embedding_net.to(device).eval()
 
-    detection_model_path = "object detection models/yolov8n-custom.pt"
-    yolo8n_costume = YOLO(detection_model_path)
+    # detection_model_path = "object detection models/yolov8n-custom.pt"
+    # yolo8n_costume = YOLO(detection_model_path)
 
     # Camera real-time image capturing
     cap = cv2.VideoCapture(rtsp_url)
@@ -108,21 +109,20 @@ if __name__ == '__main__':
                 # cv2.imshow(WINDOW_NAME, segmented_mask)
 
                 # Contour Detection
-                rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                contour = ContourDetection.apply_contour(rotated)
-                cv2.imshow(WINDOW_NAME, contour)
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # contour = ContourDetection.apply_contour(rotated)
+                # cv2.imshow(WINDOW_NAME, contour)
 
                 # Object Detection using YOLO8n costume
-                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
-                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                #     object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
-                #                                                           save_enable=True,
-                #                                                           counter=OBJECT_Counter)
-                #     cv2.imshow(WINDOW_NAME, object_detected)
-                # else:
-                #     print(f"Skipping frame - invalid rotated shape:")
-                    # {rotated.shape if rotated is not None else 'None'}")
+                rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+                    rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
+                    object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
+                                                                                          save_enable=True,
+                                                                                          counter=OBJECT_Counter)
+                    cv2.imshow(WINDOW_NAME, object_detected)
+                else:
+                    print(f"Skipping frame - invalid rotated shape")
 
                 # Anomaly Detection with Triplet Network
                 # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
