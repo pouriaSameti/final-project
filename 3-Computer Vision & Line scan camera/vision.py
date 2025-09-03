@@ -45,6 +45,64 @@ class ObjectDetection:
         return annotated_frame, frame_count
 
 
+class ObjectProcessor:
+    saved_ids = set()
+
+    @staticmethod
+    def apply_object_counting(frame, counter: int, save_enable: bool):
+        model = YOLO('object detection models/best.pt')
+
+        results = model.track(frame, tracker="bytetrack.yaml", persist=True)[0]
+        frame_count = counter
+
+        annotated_frame = frame.copy()
+
+        if save_enable:
+            output_dir = "Saved Objects"
+            os.makedirs(output_dir, exist_ok=True)
+
+        for i, box in enumerate(results.boxes):
+            conf = float(box.conf[0]) if box.conf is not None else 0.0
+            if conf < 0.5:  # skip detections below 50% probability
+                continue
+
+            x1, y1, x2, y2 = map(int, box.xyxy[0])
+            cls_id = int(box.cls[0])
+
+            label = results.names[cls_id]
+            if results.names[cls_id] == 'motor_oil':
+                label = 'o'
+
+            obj_id = int(box.id[0]) if box.id is not None else None
+
+            color = (0, 0, 200)
+            cv2.rectangle(annotated_frame, (x1, y1), (x2, y2), color, 2)
+
+            if obj_id is not None:
+                text = f"{label}{obj_id}"
+            else:
+                text = label
+
+            font_size = 0.8
+            cv2.putText(
+                annotated_frame, text, (x1, y1 - 10),
+                cv2.FONT_HERSHEY_SIMPLEX, font_size, color, 2
+            )
+
+            if save_enable and obj_id is not None and obj_id not in ObjectProcessor.saved_ids:
+                ObjectProcessor.saved_ids.add(obj_id)
+
+                cropped_obj = frame[y1:y2, x1:x2]
+                filename = f"{label}_ID{obj_id}.jpg"
+                save_path = os.path.join(output_dir, filename)
+                cv2.imwrite(save_path, cropped_obj)
+
+                print(f"Saved object ID {obj_id} as {filename}")
+
+        frame_count += 1
+        return annotated_frame, frame_count
+
+
 class AnomalyDetection:
 
     @staticmethod
