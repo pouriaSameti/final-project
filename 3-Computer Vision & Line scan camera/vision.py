@@ -19,30 +19,20 @@ class ObjectDetection:
         return annotated_frame
 
     @staticmethod
-    def apply_yolo8_costume(frame, counter: int, save_enable: bool):
+    def apply_yolo8_costume(frame):
         model = YOLO('object detection models/best.pt')
         results = model(frame)[0]
-        print(results)
+
+        keep = []
+        for i, box in enumerate(results.boxes):
+            conf = float(box.conf[0])
+            if conf > 0.5:
+                keep.append(i)
+
+        results.boxes = results.boxes[keep]
         annotated_frame = results.plot()
 
-        frame_count = counter
-        if save_enable:
-            output_dir = "Saved Objects"
-
-            for i, box in enumerate(results.boxes):
-                x1, y1, x2, y2 = map(int, box.xyxy[0])
-                cls_id = int(box.cls[0])
-                label = results.names[cls_id]
-
-                cropped_obj = frame[y1:y2, x1:x2]
-
-                filename = f"{label}_f{frame_count}_{i}.jpg"
-                save_path = os.path.join(output_dir, filename)
-                cv2.imwrite(save_path, cropped_obj)
-
-            frame_count += 1
-
-        return annotated_frame, frame_count
+        return annotated_frame
 
 
 class ObjectProcessor:

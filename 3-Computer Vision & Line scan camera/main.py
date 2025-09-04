@@ -114,26 +114,24 @@ if __name__ == '__main__':
                 # cv2.imshow(WINDOW_NAME, contour)
 
                 # Object Detection using YOLO8n costume
-                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
-                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
-                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                #     object_detected, OBJECT_Counter = ObjectDetection.apply_yolo8_costume(rotated_color,
-                #                                                                           save_enable=True,
-                #                                                                           counter=OBJECT_Counter)
-                #     cv2.imshow(WINDOW_NAME, object_detected)
-                # else:
-                #     print(f"Skipping frame - invalid rotated shape")
-
-                # count objects
                 rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
                 if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
                     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
-                    object_detected, OBJECT_Counter = ObjectProcessor.apply_object_counting(frame=rotated_color,
-                                                                                            counter=OBJECT_Counter,
-                                                                                            save_enable=True)
+                    object_detected = ObjectDetection.apply_yolo8_costume(rotated_color)
                     cv2.imshow(WINDOW_NAME, object_detected)
                 else:
                     print(f"Skipping frame - invalid rotated shape")
+
+                # count objects
+                # rotated = cv2.rotate(accumulated_image, cv2.ROTATE_90_CLOCKWISE)
+                # if rotated.ndim == 2 and rotated.shape[0] > 50 and rotated.shape[1] > 50:
+                #     rotated_color = cv2.cvtColor(rotated, cv2.COLOR_GRAY2BGR)
+                #     object_detected, OBJECT_Counter = ObjectProcessor.apply_object_counting(frame=rotated_color,
+                #                                                                             counter=OBJECT_Counter,
+                #                                                                             save_enable=True)
+                #     cv2.imshow(WINDOW_NAME, object_detected)
+                # else:
+                #     print(f"Skipping frame - invalid rotated shape")
 
 
                 # Anomaly Detection with Triplet Network
