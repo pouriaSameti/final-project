@@ -4,12 +4,9 @@
 #include <QTranslator>
 #include <pylon/PylonIncludes.h>
 
-using namespace Pylon;
-
 int main(int argc, char *argv[])
 {
     PylonInitialize();
-
     QApplication a(argc, argv);
 
     // Setup translation (keep your existing code)
@@ -27,8 +24,6 @@ int main(int argc, char *argv[])
     w.show();
 
     int result = a.exec();
-
-
     PylonTerminate();
 
     return result;

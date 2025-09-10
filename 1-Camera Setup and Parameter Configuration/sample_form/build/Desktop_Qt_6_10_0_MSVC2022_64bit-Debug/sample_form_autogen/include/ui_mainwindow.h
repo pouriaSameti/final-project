@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -30,7 +29,7 @@ public:
     QWidget *centralwidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout_2;
-    QGraphicsView *graphicsView_camera;
+    QLabel *camera_label;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_3;
     QWidget *widget;
@@ -75,10 +74,10 @@ public:
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        graphicsView_camera = new QGraphicsView(verticalLayoutWidget);
-        graphicsView_camera->setObjectName("graphicsView_camera");
+        camera_label = new QLabel(verticalLayoutWidget);
+        camera_label->setObjectName("camera_label");
 
-        verticalLayout_2->addWidget(graphicsView_camera);
+        verticalLayout_2->addWidget(camera_label);
 
         verticalLayoutWidget_2 = new QWidget(centralwidget);
         verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
@@ -199,6 +198,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        camera_label->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Width (pixcel)", nullptr));
         width_label->setText(QCoreApplication::translate("MainWindow", "Wv", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Hight (pixcel)", nullptr));

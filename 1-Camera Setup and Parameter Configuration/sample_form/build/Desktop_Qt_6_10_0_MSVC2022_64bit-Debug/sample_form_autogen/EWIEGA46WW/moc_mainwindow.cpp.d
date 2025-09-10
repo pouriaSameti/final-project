@@ -55,6 +55,12 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera\ Setup\ and\ Parameter\ 
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/AcquireContinuousConfiguration.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/AcquireSingleFrameConfiguration.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/ArrayParameter.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BaslerUniversalCameraEventHandler.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BaslerUniversalConfigurationEventHandler.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BaslerUniversalGrabResultData.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BaslerUniversalGrabResultPtr.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BaslerUniversalImageEventHandler.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BaslerUniversalInstantCamera.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BooleanParameter.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/BufferFactory.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/Callback.h \
@@ -130,10 +136,22 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera\ Setup\ and\ Parameter\ 
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/VideoWriter.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/WaitObject.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/WaitObjects.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_BaslerUniversalCameraParams.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_BaslerUniversalChunkDataParams.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_BaslerUniversalEventParams.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_BaslerUniversalInterfaceParams.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_BaslerUniversalStreamParams.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_BaslerUniversalTLParams.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_ImageFormatConverterParams.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_InstantCameraParams.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/_VideoWriterParams.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/gige/PylonGigE.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/gige/PylonGigEDevice.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificCameraEventHandlerTie.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificConfigurationEventHandlerTie.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificGrabResultPtr.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificImageEventHandlerTie.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificInstantCamera.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/stdinclude.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/QTimer \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/q17memory.h \
@@ -189,6 +207,7 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera\ Setup\ and\ Parameter\ 
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qhash.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiodevice.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiterable.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiterator.h \
@@ -262,6 +281,7 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera\ Setup\ and\ Parameter\ 
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qtversionchecks.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qtypes.h \
+  C:/Qt/6.10.0/msvc2022_64/include/QtCore/qurl.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qvariant.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtCore/qvarlengtharray.h \
@@ -282,22 +302,24 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera\ Setup\ and\ Parameter\ 
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpalette.h \
-  C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpen.h \
+  C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpicture.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixmap.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpolygon.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qregion.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgb.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgba64.h \
+  C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextdocument.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtransform.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
-  C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QGraphicsScene \
+  C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLabel \
   C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QMainWindow \
-  C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qgraphicsscene.h \
+  C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qframe.h \
+  C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtabwidget.h \

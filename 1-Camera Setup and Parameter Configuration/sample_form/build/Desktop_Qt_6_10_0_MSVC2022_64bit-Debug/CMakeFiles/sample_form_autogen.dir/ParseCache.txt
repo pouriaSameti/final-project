@@ -57,6 +57,12 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Conf
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/AcquireContinuousConfiguration.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/AcquireSingleFrameConfiguration.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/ArrayParameter.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BaslerUniversalCameraEventHandler.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BaslerUniversalConfigurationEventHandler.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BaslerUniversalGrabResultData.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BaslerUniversalGrabResultPtr.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BaslerUniversalImageEventHandler.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BaslerUniversalInstantCamera.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BooleanParameter.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/BufferFactory.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/Callback.h
@@ -132,10 +138,22 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Conf
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/VideoWriter.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/WaitObject.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/WaitObjects.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_BaslerUniversalCameraParams.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_BaslerUniversalChunkDataParams.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_BaslerUniversalEventParams.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_BaslerUniversalInterfaceParams.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_BaslerUniversalStreamParams.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_BaslerUniversalTLParams.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_ImageFormatConverterParams.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_InstantCameraParams.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/_VideoWriterParams.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/gige/PylonGigE.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/gige/PylonGigEDevice.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/private/DeviceSpecificCameraEventHandlerTie.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/private/DeviceSpecificConfigurationEventHandlerTie.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/private/DeviceSpecificGrabResultPtr.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/private/DeviceSpecificImageEventHandlerTie.h
+ mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/private/DeviceSpecificInstantCamera.h
  mdp:C:/Program Files/Basler/pylon 8/Development/include/pylon/stdinclude.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/QTimer
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q17memory.h
@@ -191,6 +209,7 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Conf
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qglobalstatic.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qhash.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qhashfunctions.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiodevice.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiodevicebase.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiterable.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qiterator.h
@@ -264,6 +283,7 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Conf
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qtversionchecks.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qtypes.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qurl.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qutf8stringview.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qvariant.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/qvarlengtharray.h
@@ -284,22 +304,24 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Conf
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpalette.h
- mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpen.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixmap.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpolygon.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextdocument.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtransform.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs_win.h
- mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QGraphicsScene
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLabel
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QMainWindow
- mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qgraphicsscene.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qframe.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtabwidget.h
@@ -308,6 +330,6 @@ C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Conf
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qwidget.h
  mdp:C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.h
+C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp
 C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.cpp
  uic:ui_mainwindow.h
-C:/Users/lenovo/OneDrive/Desktop/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp
