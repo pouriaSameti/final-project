@@ -25,6 +25,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
     ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
     ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
+    ui->width_label->setText(QString::number(widthValue));
+    ui->height_label->setText(QString::number(heightValue));
+    ui->offsetX_label->setText(QString::number(offsetXValue));
+    ui->offsetY_label->setText(QString::number(offsetYValuse));
 
 
     // change value of gain_raw with slider
@@ -152,6 +156,62 @@ MainWindow::MainWindow(QWidget *parent)
         ui->horizontalSlider_acq_frame_rate->setValue(sliderVal);
     });
 
+
+    // change value of width with slider
+    connect(ui->horizontalSlider_width, &QSlider::valueChanged, this, [=](int value){
+        widthValue = value;
+        ui->width_label->setText(QString::number(widthValue));
+        ui->spinBox_width->setValue(widthValue);
+    });
+
+    // change value of width with spinBox
+    connect(ui->spinBox_width, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        widthValue = value;
+        ui->width_label->setText(QString::number(widthValue));
+        ui->horizontalSlider_width->setValue(widthValue);
+    });
+
+    // change value of height with slider
+    connect(ui->horizontalSlider_height, &QSlider::valueChanged, this, [=](int value){
+        heightValue = value;
+        ui->height_label->setText(QString::number(heightValue));
+        ui->spinBox_height->setValue(heightValue);
+    });
+
+    // change value of height with spinBox
+    connect(ui->spinBox_height, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        heightValue = value;
+        ui->height_label->setText(QString::number(heightValue));
+        ui->horizontalSlider_height->setValue(heightValue);
+    });
+
+    // change value of offsetX with slider
+    connect(ui->horizontalSlider_offsetX, &QSlider::valueChanged, this, [=](int value){
+        offsetXValue = value;
+        ui->offsetX_label->setText(QString::number(offsetXValue));
+        ui->spinBox_offsetX->setValue(offsetXValue);
+    });
+
+    // change value of offsetX with spinBox
+    connect(ui->spinBox_offsetX, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        offsetXValue = value;
+        ui->offsetX_label->setText(QString::number(offsetXValue));
+        ui->horizontalSlider_offsetX->setValue(offsetXValue);
+    });
+
+    // change value of offsetY with slider
+    connect(ui->horizontalSlider_offsetY, &QSlider::valueChanged, this, [=](int value){
+        offsetYValuse = value;
+        ui->offsetY_label->setText(QString::number(offsetYValuse));
+        ui->spinBox_offsetY->setValue(offsetYValuse);
+    });
+
+    // change value of offsetY with spinBox
+    connect(ui->spinBox_offsetY, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        offsetYValuse = value;
+        ui->offsetY_label->setText(QString::number(offsetYValuse));
+        ui->horizontalSlider_offsetY->setValue(offsetYValuse);
+    });
 
     PylonInitialize();
 }

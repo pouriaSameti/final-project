@@ -37,6 +37,10 @@ private:
     int exposureTimeRawValue = 10000;
     int exposureTimeMicroSecondValue = 10000;
     double acquisitionFrameRateValue = 100.0;
+    int widthValue = 1024;
+    int heightValue = 1024;
+    int offsetXValue = 0;
+    int offsetYValuse = 0;
 };
 
 #endif // MAINWINDOW_H

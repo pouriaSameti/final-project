@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1922</width>
-    <height>646</height>
+    <width>1866</width>
+    <height>641</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,836 +19,1036 @@
      <rect>
       <x>9</x>
       <y>10</y>
-      <width>1891</width>
+      <width>1841</width>
       <height>331</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="Camera">
-     <item>
-      <widget class="QLabel" name="CameraFrame">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="Camera"/>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
+   <widget class="QWidget" name="verticalWidget_2" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>350</y>
-      <width>661</width>
+      <width>621</width>
       <height>241</height>
      </rect>
     </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
     <layout class="QVBoxLayout" name="AnalogControl">
      <item>
-      <widget class="QWidget" name="AnalogParameters" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>659</width>
-         <height>0</height>
-        </size>
+      <widget class="QLabel" name="Text_AnalogControl">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
-       <widget class="QLabel" name="label">
+       <property name="text">
+        <string> Analog Control</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="DigitalShift">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_10">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>121</width>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Digital Shift</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_digital_shift">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>4</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_digital_shift">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>4</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="digital_shift_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>0</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="GainRaw">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Gain (Raw)</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_gain_raw">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>192</number>
+        </property>
+        <property name="maximum">
+         <number>1023</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="gain_raw_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>-1</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_gain_raw">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>11</pointsize>
-          <bold>true</bold>
+          <kerning>true</kerning>
          </font>
         </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>192</number>
+        </property>
+        <property name="maximum">
+         <number>1023</number>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="GainDb">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
         <property name="text">
-         <string>Analog Control</string>
+         <string>Gain (Db)</string>
         </property>
        </widget>
-       <widget class="QFrame" name="GainRaw">
+       <widget class="QSlider" name="horizontalSlider_gain_db">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>40</y>
-          <width>601</width>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>48000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="gain_db_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>-1</y>
+          <width>51</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string>0</string>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label_2">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Gain (Raw)</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_gain_raw">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>192</number>
-         </property>
-         <property name="maximum">
-          <number>1023</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="gain_raw_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>-1</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_gain_raw">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <kerning>true</kerning>
-          </font>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>192</number>
-         </property>
-         <property name="maximum">
-          <number>1023</number>
-         </property>
-        </widget>
        </widget>
-       <widget class="QFrame" name="GainDb">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_gain_db">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>80</y>
-          <width>601</width>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="frame">
+         <bool>false</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+        <property name="decimals">
+         <number>3</number>
         </property>
-        <widget class="QLabel" name="label_5">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Gain (Db)</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_gain_db">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>48000</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="gain_db_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>-1</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_gain_db">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>48.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.001000000000000</double>
-         </property>
-         <property name="value">
-          <double>0.000000000000000</double>
-         </property>
-        </widget>
+        <property name="maximum">
+         <double>48.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.001000000000000</double>
+        </property>
+        <property name="value">
+         <double>0.000000000000000</double>
+        </property>
        </widget>
-       <widget class="QFrame" name="BlackLevel">
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="Gamma">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_8">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>120</y>
-          <width>601</width>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string>Gamma</string>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label_7">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Black Level (DN)</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_black_level">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>1023</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="black_level_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>-1</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_black_level">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>1023</number>
-         </property>
-        </widget>
        </widget>
-       <widget class="QFrame" name="Gamma">
+       <widget class="QSlider" name="horizontalSlider_gamma">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>160</y>
-          <width>601</width>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>800</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="gamma_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>0</y>
+          <width>51</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string>0</string>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label_8">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Gamma</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_gamma">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>800</number>
-         </property>
-         <property name="value">
-          <number>1</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="gamma_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>0</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_gamma">
-         <property name="geometry">
-          <rect>
-           <x>431</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>4.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.001000000000000</double>
-         </property>
-        </widget>
        </widget>
-       <widget class="QFrame" name="DigitalShift">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_gamma">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>200</y>
-          <width>601</width>
+          <x>431</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="frame">
+         <bool>false</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+        <property name="decimals">
+         <number>3</number>
         </property>
-        <widget class="QLabel" name="label_10">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Digital Shift</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_digital_shift">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_digital_shift">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-        </widget>
-        <widget class="QLabel" name="digital_shift_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>0</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
+        <property name="maximum">
+         <double>4.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.001000000000000</double>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="BlackLevel">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Black Level (DN)</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_black_level">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>1023</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="black_level_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>-1</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_black_level">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>1023</number>
+        </property>
        </widget>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
+   <widget class="QWidget" name="verticalWidget_3" native="true">
     <property name="geometry">
      <rect>
       <x>1240</x>
       <y>350</y>
-      <width>661</width>
+      <width>611</width>
       <height>241</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="ImageFormatControl">
      <item>
-      <widget class="QWidget" name="ImageFormatControl_2" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>659</width>
-         <height>0</height>
-        </size>
+      <widget class="QLabel" name="Text_img_format_control">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
-       <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string> Image Format Control</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="OffsetX">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_14">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>171</width>
+          <width>91</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <bold>true</bold>
-         </font>
         </property>
         <property name="text">
-         <string>Image Format Control</string>
+         <string>OffsetX</string>
         </property>
        </widget>
-       <widget class="QFrame" name="Width">
+       <widget class="QSlider" name="horizontalSlider_offsetX">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>40</y>
-          <width>531</width>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3072</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_offsetX">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="frame">
+         <bool>false</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+        <property name="minimum">
+         <number>0</number>
         </property>
-        <widget class="QLabel" name="label_11">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Width</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_width_3">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4096</number>
-         </property>
-         <property name="value">
-          <number>1024</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_width_3">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4096</number>
-         </property>
-         <property name="value">
-          <number>1024</number>
-         </property>
-        </widget>
+        <property name="maximum">
+         <number>3072</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
        </widget>
-       <widget class="QFrame" name="Height">
+       <widget class="QLabel" name="offsetX_label">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>80</y>
-          <width>531</width>
+          <x>540</x>
+          <y>0</y>
+          <width>51</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string>0</string>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label_12">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Height</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_width_10">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4096</number>
-         </property>
-         <property name="value">
-          <number>1024</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_width_10">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4096</number>
-         </property>
-         <property name="value">
-          <number>1024</number>
-         </property>
-        </widget>
        </widget>
-       <widget class="QFrame" name="OffsetX">
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="Height">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_12">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>120</y>
-          <width>531</width>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string>Height</string>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label_14">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>OffsetX</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_width_12">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>3072</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_width_12">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>3072</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-        </widget>
        </widget>
-       <widget class="QFrame" name="OffsetY">
+       <widget class="QSlider" name="horizontalSlider_height">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>160</y>
-          <width>531</width>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>4096</number>
+        </property>
+        <property name="value">
+         <number>1024</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_height">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="frame">
+         <bool>false</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+        <property name="minimum">
+         <number>1</number>
         </property>
-        <widget class="QLabel" name="label_15">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>OffsetY</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_width_13">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>10</y>
-           <width>311</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>3072</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_width_13">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>3072</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-        </widget>
+        <property name="maximum">
+         <number>4096</number>
+        </property>
+        <property name="value">
+         <number>1024</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="height_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>0</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="Width">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Width</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_width">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>4096</number>
+        </property>
+        <property name="value">
+         <number>1024</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_width">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>4096</number>
+        </property>
+        <property name="value">
+         <number>1024</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="width_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>0</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="OffsetY">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>OffsetY</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_offsetY">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>311</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3072</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_offsetY">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3072</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="offsetY_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>0</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="optionalBox2_2">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
        </widget>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_4">
+   <widget class="QWidget" name="verticalWidget_4" native="true">
     <property name="geometry">
      <rect>
       <x>640</x>
       <y>350</y>
-      <width>661</width>
+      <width>591</width>
       <height>241</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="AcquisitionControl">
      <item>
-      <widget class="QWidget" name="AcquisitionControl_2" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>659</width>
-         <height>0</height>
-        </size>
+      <widget class="QLabel" name="Text_AcquisitionControl">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
-       <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string> Acquisition Control</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="ExposureTimeMicroSecond">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_28">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Exposure Time (us) </string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_exposure_time_us">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>10</y>
+          <width>261</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>10000000</number>
+        </property>
+        <property name="value">
+         <number>1000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="exposure_time_us_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>-1</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_exposure_time_us">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>10000000</number>
+        </property>
+        <property name="value">
+         <number>10000</number>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="ExposureTimeAbs">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_27">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Exposure Time (Raw)</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSlider_exposure_time_raw">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>10</y>
+          <width>261</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>100</number>
+        </property>
+        <property name="maximum">
+         <number>3000000</number>
+        </property>
+        <property name="value">
+         <number>10000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="exposure_time_raw_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>-1</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_exposure_time_raw">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3000000</number>
+        </property>
+        <property name="value">
+         <number>10000</number>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="ExposureTimeMicroSecond_2">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_29">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -859,279 +1059,118 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>11</pointsize>
-          <bold>true</bold>
+          <pointsize>8</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Acquisition Control</string>
+         <string>Acquisition Frame Rate (Hz)</string>
         </property>
        </widget>
-       <widget class="QFrame" name="ExposureTimeAbs">
+       <widget class="QSlider" name="horizontalSlider_acq_frame_rate">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>40</y>
-          <width>591</width>
+          <x>160</x>
+          <y>10</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>500000</number>
+        </property>
+        <property name="value">
+         <number>10000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="acq_frame_rate_label">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>-1</y>
+          <width>51</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string>0</string>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label_27">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>111</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Exposure Time (Raw)</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_exposure_time_raw">
-         <property name="geometry">
-          <rect>
-           <x>160</x>
-           <y>10</y>
-           <width>261</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>100</number>
-         </property>
-         <property name="maximum">
-          <number>3000000</number>
-         </property>
-         <property name="value">
-          <number>10000</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="exposure_time_raw_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>-1</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_exposure_time_raw">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>3000000</number>
-         </property>
-         <property name="value">
-          <number>10000</number>
-         </property>
-        </widget>
        </widget>
-       <widget class="QFrame" name="ExposureTimeMicroSecond">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_acq_frame_rate">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>80</y>
-          <width>591</width>
+          <x>430</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="frame">
+         <bool>false</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+        <property name="minimum">
+         <double>0.010000000000000</double>
         </property>
-        <widget class="QLabel" name="label_28">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>111</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Exposure Time (us) </string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_exposure_time_us">
-         <property name="geometry">
-          <rect>
-           <x>160</x>
-           <y>10</y>
-           <width>261</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>10000000</number>
-         </property>
-         <property name="value">
-          <number>1000</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="exposure_time_us_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>-1</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QSpinBox" name="spinBox_exposure_time_us">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>10000000</number>
-         </property>
-         <property name="value">
-          <number>10000</number>
-         </property>
-        </widget>
+        <property name="maximum">
+         <double>5000.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.010000000000000</double>
+        </property>
+        <property name="value">
+         <double>100.000000000000000</double>
+        </property>
        </widget>
-       <widget class="QFrame" name="ExposureTimeMicroSecond_2">
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="optionalBox1">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>120</y>
-          <width>591</width>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+        <property name="text">
+         <string/>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="optionalBox2">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
         </property>
-        <widget class="QLabel" name="label_29">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>141</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Acquisition Frame Rate (Hz)</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="horizontalSlider_acq_frame_rate">
-         <property name="geometry">
-          <rect>
-           <x>160</x>
-           <y>10</y>
-           <width>241</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>500000</number>
-         </property>
-         <property name="value">
-          <number>10000</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="acq_frame_rate_label">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>-1</y>
-           <width>51</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_acq_frame_rate">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>0</y>
-           <width>91</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="minimum">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>5000.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="value">
-          <double>100.000000000000000</double>
-         </property>
-        </widget>
+        <property name="text">
+         <string/>
+        </property>
        </widget>
       </widget>
      </item>
@@ -1143,7 +1182,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1922</width>
+     <width>1866</width>
      <height>22</height>
     </rect>
    </property>
