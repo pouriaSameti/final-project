@@ -285,12 +285,16 @@ void MainWindow::updateCameraDisplay()
     }
     else
     {
-        QPixmap pixmap(widthValue, heightValue);
+        int scale = 6;
+        int scaledWidth = widthValue/scale;
+        int scaledHeight = heightValue/scale;
+
+        QPixmap pixmap(scaledWidth, scaledHeight);
         pixmap.fill(Qt::black);
 
         QPainter painter(&pixmap);
         painter.setPen(Qt::white);
-        painter.drawRect(0, 0, widthValue - 1, heightValue - 1);
+        painter.drawRect(0, 0, scaledWidth - 1, scaledHeight - 1);
 
         ui->camera_label->setPixmap(pixmap);
     }

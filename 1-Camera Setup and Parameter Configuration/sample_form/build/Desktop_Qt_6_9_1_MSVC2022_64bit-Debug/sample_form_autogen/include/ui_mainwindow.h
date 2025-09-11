@@ -113,7 +113,6 @@ public:
     QLabel *label_3;
     QLabel *camera_name_label;
     QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *horizontalSpacer_2;
     QLabel *label;
     QLabel *connection_status_label;
     QMenuBar *menubar;
@@ -123,12 +122,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1908, 907);
+        MainWindow->resize(1387, 907);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(10, 60, 1881, 551));
+        verticalLayoutWidget->setGeometry(QRect(640, 70, 731, 681));
         Camera = new QVBoxLayout(verticalLayoutWidget);
         Camera->setObjectName("Camera");
         Camera->setContentsMargins(0, 0, 0, 0);
@@ -139,7 +138,7 @@ public:
 
         verticalWidget_2 = new QWidget(centralwidget);
         verticalWidget_2->setObjectName("verticalWidget_2");
-        verticalWidget_2->setGeometry(QRect(10, 620, 621, 241));
+        verticalWidget_2->setGeometry(QRect(10, 10, 621, 241));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -295,7 +294,7 @@ public:
 
         verticalWidget_3 = new QWidget(centralwidget);
         verticalWidget_3->setObjectName("verticalWidget_3");
-        verticalWidget_3->setGeometry(QRect(1270, 620, 611, 241));
+        verticalWidget_3->setGeometry(QRect(10, 510, 621, 241));
         ImageFormatControl = new QVBoxLayout(verticalWidget_3);
         ImageFormatControl->setObjectName("ImageFormatControl");
         Text_img_format_control = new QLabel(verticalWidget_3);
@@ -424,7 +423,7 @@ public:
 
         verticalWidget_4 = new QWidget(centralwidget);
         verticalWidget_4->setObjectName("verticalWidget_4");
-        verticalWidget_4->setGeometry(QRect(640, 620, 621, 241));
+        verticalWidget_4->setGeometry(QRect(10, 260, 621, 241));
         AcquisitionControl = new QVBoxLayout(verticalWidget_4);
         AcquisitionControl->setObjectName("AcquisitionControl");
         Text_AcquisitionControl = new QLabel(verticalWidget_4);
@@ -540,7 +539,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(10, 0, 731, 51));
+        horizontalLayoutWidget->setGeometry(QRect(640, 10, 731, 51));
         CameraInfo = new QHBoxLayout(horizontalLayoutWidget);
         CameraInfo->setObjectName("CameraInfo");
         CameraInfo->setContentsMargins(0, 0, 0, 0);
@@ -566,10 +565,6 @@ public:
 
         CameraInfo->addItem(horizontalSpacer_3);
 
-        horizontalSpacer_2 = new QSpacerItem(0, 0, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        CameraInfo->addItem(horizontalSpacer_2);
-
         label = new QLabel(horizontalLayoutWidget);
         label->setObjectName("label");
         label->setFont(font3);
@@ -585,7 +580,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1908, 22));
+        menubar->setGeometry(QRect(0, 0, 1387, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -630,7 +625,7 @@ public:
         acq_frame_rate_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_13->setText(QString());
         label_16->setText(QString());
-        label_3->setText(QCoreApplication::translate("MainWindow", "Camera Name:", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", " Camera Name:", nullptr));
         camera_name_label->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         connection_status_label->setText(QString());
