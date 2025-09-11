@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1908</width>
-    <height>710</height>
+    <height>907</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,16 +20,24 @@
       <x>10</x>
       <y>60</y>
       <width>1881</width>
-      <height>331</height>
+      <height>551</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="Camera"/>
+    <layout class="QVBoxLayout" name="Camera">
+     <item>
+      <widget class="QLabel" name="camera_label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="verticalWidget_2" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>400</y>
+      <y>620</y>
       <width>621</width>
       <height>241</height>
      </rect>
@@ -492,8 +500,8 @@
    <widget class="QWidget" name="verticalWidget_3" native="true">
     <property name="geometry">
      <rect>
-      <x>1280</x>
-      <y>400</y>
+      <x>1270</x>
+      <y>620</y>
       <width>611</width>
       <height>241</height>
      </rect>
@@ -861,7 +869,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>400</y>
+      <y>620</y>
       <width>621</width>
       <height>241</height>
      </rect>

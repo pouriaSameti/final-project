@@ -32,6 +32,7 @@ public:
     QWidget *centralwidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *Camera;
+    QLabel *camera_label;
     QWidget *verticalWidget_2;
     QVBoxLayout *AnalogControl;
     QLabel *Text_AnalogControl;
@@ -122,18 +123,23 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1908, 710);
+        MainWindow->resize(1908, 907);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(10, 60, 1881, 331));
+        verticalLayoutWidget->setGeometry(QRect(10, 60, 1881, 551));
         Camera = new QVBoxLayout(verticalLayoutWidget);
         Camera->setObjectName("Camera");
         Camera->setContentsMargins(0, 0, 0, 0);
+        camera_label = new QLabel(verticalLayoutWidget);
+        camera_label->setObjectName("camera_label");
+
+        Camera->addWidget(camera_label);
+
         verticalWidget_2 = new QWidget(centralwidget);
         verticalWidget_2->setObjectName("verticalWidget_2");
-        verticalWidget_2->setGeometry(QRect(10, 400, 621, 241));
+        verticalWidget_2->setGeometry(QRect(10, 620, 621, 241));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -289,7 +295,7 @@ public:
 
         verticalWidget_3 = new QWidget(centralwidget);
         verticalWidget_3->setObjectName("verticalWidget_3");
-        verticalWidget_3->setGeometry(QRect(1280, 400, 611, 241));
+        verticalWidget_3->setGeometry(QRect(1270, 620, 611, 241));
         ImageFormatControl = new QVBoxLayout(verticalWidget_3);
         ImageFormatControl->setObjectName("ImageFormatControl");
         Text_img_format_control = new QLabel(verticalWidget_3);
@@ -418,7 +424,7 @@ public:
 
         verticalWidget_4 = new QWidget(centralwidget);
         verticalWidget_4->setObjectName("verticalWidget_4");
-        verticalWidget_4->setGeometry(QRect(640, 400, 621, 241));
+        verticalWidget_4->setGeometry(QRect(640, 620, 621, 241));
         AcquisitionControl = new QVBoxLayout(verticalWidget_4);
         AcquisitionControl->setObjectName("AcquisitionControl");
         Text_AcquisitionControl = new QLabel(verticalWidget_4);
@@ -593,6 +599,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        camera_label->setText(QString());
         Text_AnalogControl->setText(QCoreApplication::translate("MainWindow", " Analog Control", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Digital Shift", nullptr));
         digital_shift_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));

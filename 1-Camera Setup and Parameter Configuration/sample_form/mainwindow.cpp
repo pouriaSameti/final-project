@@ -3,6 +3,7 @@
 #include <QLabel>
 #include <QTimer>
 #include <QMessageBox>
+#include <QPainter>
 #include <pylon/PylonIncludes.h>
 #include <pylon/BaslerUniversalInstantCamera.h>
 #include <pylon/ImageFormatConverter.h>
@@ -25,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     CTlFactory& tlFactory = CTlFactory::GetInstance();
     DeviceInfoList_t devices;
     tlFactory.EnumerateDevices(devices);
-    fallbackImage = cv::imread(":icons/camera.png");
 
     // if the camera was not found
     if (devices.empty()) {
@@ -202,6 +202,7 @@ MainWindow::MainWindow(QWidget *parent)
         widthValue = value;
         ui->width_label->setText(QString::number(widthValue));
         ui->spinBox_width->setValue(widthValue);
+        ui->camera_label->resize(widthValue, heightValue);
     });
 
     // change value of width with spinBox
@@ -209,6 +210,7 @@ MainWindow::MainWindow(QWidget *parent)
         widthValue = value;
         ui->width_label->setText(QString::number(widthValue));
         ui->horizontalSlider_width->setValue(widthValue);
+        ui->camera_label->resize(widthValue, heightValue);
     });
 
     // change value of height with slider
@@ -216,6 +218,7 @@ MainWindow::MainWindow(QWidget *parent)
         heightValue = value;
         ui->height_label->setText(QString::number(heightValue));
         ui->spinBox_height->setValue(heightValue);
+        ui->camera_label->resize(widthValue, heightValue);
     });
 
     // change value of height with spinBox
@@ -223,6 +226,7 @@ MainWindow::MainWindow(QWidget *parent)
         heightValue = value;
         ui->height_label->setText(QString::number(heightValue));
         ui->horizontalSlider_height->setValue(heightValue);
+        ui->camera_label->resize(widthValue, heightValue);
     });
 
     // change value of offsetX with slider
@@ -252,7 +256,46 @@ MainWindow::MainWindow(QWidget *parent)
         ui->offsetY_label->setText(QString::number(offsetYValuse));
         ui->horizontalSlider_offsetY->setValue(offsetYValuse);
     });
+
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateCameraDisplay);
+    timer->start(30);
 }
+
+void MainWindow::updateCameraDisplay()
+{
+    if (isCameraOpen && camera.IsGrabbing())
+    {
+        CGrabResultPtr ptrGrabResult;
+        camera.RetrieveResult(5000, ptrGrabResult, TimeoutHandling_ThrowException);
+
+        if (ptrGrabResult->GrabSucceeded())
+        {
+            cv::Mat img(ptrGrabResult->GetHeight(),
+                        ptrGrabResult->GetWidth(),
+                        CV_8UC1,
+                        (void*)ptrGrabResult->GetBuffer());
+
+            QImage qimg = cvMatToQImage(img);
+            ui->camera_label->setPixmap(QPixmap::fromImage(qimg).scaled(
+                ui->camera_label->size(),
+                Qt::KeepAspectRatio,
+                Qt::SmoothTransformation));
+        }
+    }
+    else
+    {
+        QPixmap pixmap(widthValue, heightValue);
+        pixmap.fill(Qt::black);
+
+        QPainter painter(&pixmap);
+        painter.setPen(Qt::white);
+        painter.drawRect(0, 0, widthValue - 1, heightValue - 1);
+
+        ui->camera_label->setPixmap(pixmap);
+    }
+}
+
 
 
 MainWindow::~MainWindow()
@@ -265,4 +308,21 @@ MainWindow::~MainWindow()
 
     PylonTerminate();
     delete ui;
+}
+
+QImage MainWindow::cvMatToQImage(const cv::Mat &mat)
+{
+    if (mat.type() == CV_8UC1)
+    {
+        return QImage(mat.data, mat.cols, mat.rows,
+                      static_cast<int>(mat.step),
+                      QImage::Format_Grayscale8).copy();
+    }
+    else if (mat.type() == CV_8UC3)
+    {
+        return QImage(mat.data, mat.cols, mat.rows,
+                      static_cast<int>(mat.step),
+                      QImage::Format_BGR888).copy();
+    }
+    return QImage();
 }

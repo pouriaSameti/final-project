@@ -438,6 +438,6 @@ D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwind
  mdp:C:/opencv/build/include/opencv2/video/tracking.hpp
  mdp:C:/opencv/build/include/opencv2/videoio.hpp
  mdp:D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.h
+D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp
 D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.cpp
  uic:ui_mainwindow.h
-D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp

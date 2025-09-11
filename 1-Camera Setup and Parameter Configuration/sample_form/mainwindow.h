@@ -27,6 +27,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void updateCameraDisplay();
+
 private:
     Ui::MainWindow *ui;
 
@@ -49,7 +52,6 @@ private:
     QTimer *timer;
     Pylon::CInstantCamera camera;
     bool isCameraOpen = false;
-    cv::Mat fallbackImage;
     QImage cvMatToQImage(const cv::Mat &mat);
 };
 
