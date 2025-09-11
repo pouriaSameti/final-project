@@ -38,7 +38,7 @@
      <rect>
       <x>10</x>
       <y>350</y>
-      <width>621</width>
+      <width>661</width>
       <height>241</height>
      </rect>
     </property>
@@ -98,7 +98,7 @@
           <string>Gain (Raw)</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width">
+        <widget class="QSlider" name="horizontalSlider_gain_raw">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -117,7 +117,7 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QLabel" name="width_label">
+        <widget class="QLabel" name="gain_raw_label">
          <property name="geometry">
           <rect>
            <x>540</x>
@@ -127,10 +127,10 @@
           </rect>
          </property>
          <property name="text">
-          <string>Raw</string>
+          <string>0</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width">
+        <widget class="QSpinBox" name="spinBox_gain_raw">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -138,6 +138,14 @@
            <width>91</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="font">
+          <font>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
          </property>
          <property name="minimum">
           <number>192</number>
@@ -175,7 +183,7 @@
           <string>Gain (Db)</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_4">
+        <widget class="QSlider" name="horizontalSlider_gain_db">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -188,13 +196,13 @@
           <number>0</number>
          </property>
          <property name="maximum">
-          <number>48</number>
+          <number>48000</number>
          </property>
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QLabel" name="width_label_4">
+        <widget class="QLabel" name="gain_db_label">
          <property name="geometry">
           <rect>
            <x>540</x>
@@ -204,10 +212,10 @@
           </rect>
          </property>
          <property name="text">
-          <string>Db</string>
+          <string>0</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_4">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_gain_db">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -216,11 +224,20 @@
            <height>31</height>
           </rect>
          </property>
-         <property name="minimum">
-          <number>0</number>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
+         <property name="decimals">
+          <number>3</number>
          </property>
          <property name="maximum">
-          <number>48</number>
+          <double>48.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.001000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
          </property>
         </widget>
        </widget>
@@ -252,7 +269,7 @@
           <string>Black Level (DN)</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_6">
+        <widget class="QSlider" name="horizontalSlider_black_level">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -271,7 +288,7 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QLabel" name="width_label_6">
+        <widget class="QLabel" name="black_level_label">
          <property name="geometry">
           <rect>
            <x>540</x>
@@ -281,10 +298,10 @@
           </rect>
          </property>
          <property name="text">
-          <string>DN</string>
+          <string>0</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_6">
+        <widget class="QSpinBox" name="spinBox_black_level">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -292,6 +309,9 @@
            <width>91</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
          </property>
          <property name="minimum">
           <number>0</number>
@@ -329,7 +349,7 @@
           <string>Gamma</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_7">
+        <widget class="QSlider" name="horizontalSlider_gamma">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -342,7 +362,7 @@
           <number>0</number>
          </property>
          <property name="maximum">
-          <number>4</number>
+          <number>800</number>
          </property>
          <property name="value">
           <number>1</number>
@@ -351,23 +371,39 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_7">
+        <widget class="QLabel" name="gamma_label">
          <property name="geometry">
           <rect>
-           <x>430</x>
+           <x>540</x>
+           <y>0</y>
+           <width>51</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_gamma">
+         <property name="geometry">
+          <rect>
+           <x>431</x>
            <y>0</y>
            <width>91</width>
            <height>31</height>
           </rect>
          </property>
-         <property name="minimum">
-          <number>0</number>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
+         <property name="decimals">
+          <number>3</number>
          </property>
          <property name="maximum">
-          <number>4</number>
+          <double>4.000000000000000</double>
          </property>
-         <property name="value">
-          <number>1</number>
+         <property name="singleStep">
+          <double>0.001000000000000</double>
          </property>
         </widget>
        </widget>
@@ -399,7 +435,7 @@
           <string>Digital Shift</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_9">
+        <widget class="QSlider" name="horizontalSlider_digital_shift">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -421,7 +457,7 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_9">
+        <widget class="QSpinBox" name="spinBox_digital_shift">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -429,6 +465,9 @@
            <width>91</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
          </property>
          <property name="minimum">
           <number>0</number>
@@ -438,6 +477,19 @@
          </property>
          <property name="value">
           <number>0</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="digital_shift_label">
+         <property name="geometry">
+          <rect>
+           <x>540</x>
+           <y>0</y>
+           <width>51</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
          </property>
         </widget>
        </widget>
@@ -541,6 +593,9 @@
            <height>31</height>
           </rect>
          </property>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
          <property name="minimum">
           <number>1</number>
          </property>
@@ -610,6 +665,9 @@
            <width>91</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
          </property>
          <property name="minimum">
           <number>1</number>
@@ -681,6 +739,9 @@
            <height>31</height>
           </rect>
          </property>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
          <property name="minimum">
           <number>0</number>
          </property>
@@ -751,6 +812,9 @@
            <height>31</height>
           </rect>
          </property>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
          <property name="minimum">
           <number>0</number>
          </property>
@@ -771,7 +835,7 @@
      <rect>
       <x>640</x>
       <y>350</y>
-      <width>591</width>
+      <width>661</width>
       <height>241</height>
      </rect>
     </property>
@@ -875,6 +939,9 @@
            <height>31</height>
           </rect>
          </property>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
          <property name="minimum">
           <number>0</number>
          </property>
@@ -957,6 +1024,9 @@
            <width>91</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
          </property>
          <property name="minimum">
           <number>0</number>
@@ -1045,6 +1115,9 @@
            <width>91</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
          </property>
          <property name="minimum">
           <number>0</number>

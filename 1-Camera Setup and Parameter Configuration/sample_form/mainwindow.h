@@ -29,11 +29,11 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    int width_value = 1024;
-    int length_value = 128;
-    int ExpTime_value = 32;
     int gain_raw_value = 192;
-    int gain_db_value = 0;
+    double gain_db_value = 0;
+    int blackLevelValue = 0;
+    double  gammaValue = 1.000;
+    int digitalShiftValue = 0;
 };
 
 #endif // MAINWINDOW_H
