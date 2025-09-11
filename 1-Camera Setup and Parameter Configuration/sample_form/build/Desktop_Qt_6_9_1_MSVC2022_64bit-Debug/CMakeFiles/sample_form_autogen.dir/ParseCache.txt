@@ -329,6 +329,6 @@ D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwind
  mdp:C:/Qt/6.9.1/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:C:/Qt/6.9.1/msvc2022_64/include/QtWidgets/qwidget.h
  mdp:D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.h
-D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp
 D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.cpp
  uic:ui_mainwindow.h
+D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp

@@ -872,7 +872,7 @@
          <rect>
           <x>0</x>
           <y>40</y>
-          <width>581</width>
+          <width>591</width>
           <height>31</height>
          </rect>
         </property>
@@ -895,7 +895,7 @@
           <string>Exposure Time (Raw)</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_22">
+        <widget class="QSlider" name="horizontalSlider_exposure_time_raw">
          <property name="geometry">
           <rect>
            <x>160</x>
@@ -911,13 +911,13 @@
           <number>3000000</number>
          </property>
          <property name="value">
-          <number>1000</number>
+          <number>10000</number>
          </property>
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QLabel" name="width_label_3">
+        <widget class="QLabel" name="exposure_time_raw_label">
          <property name="geometry">
           <rect>
            <x>540</x>
@@ -927,10 +927,10 @@
           </rect>
          </property>
          <property name="text">
-          <string>Raw</string>
+          <string>0</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_22">
+        <widget class="QSpinBox" name="spinBox_exposure_time_raw">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -949,7 +949,7 @@
           <number>3000000</number>
          </property>
          <property name="value">
-          <number>100</number>
+          <number>10000</number>
          </property>
         </widget>
        </widget>
@@ -958,7 +958,7 @@
          <rect>
           <x>0</x>
           <y>80</y>
-          <width>581</width>
+          <width>591</width>
           <height>31</height>
          </rect>
         </property>
@@ -981,7 +981,7 @@
           <string>Exposure Time (us) </string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_23">
+        <widget class="QSlider" name="horizontalSlider_exposure_time_us">
          <property name="geometry">
           <rect>
            <x>160</x>
@@ -991,10 +991,10 @@
           </rect>
          </property>
          <property name="minimum">
-          <number>1000</number>
+          <number>1</number>
          </property>
          <property name="maximum">
-          <number>1000000</number>
+          <number>10000000</number>
          </property>
          <property name="value">
           <number>1000</number>
@@ -1003,7 +1003,7 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QLabel" name="width_label_7">
+        <widget class="QLabel" name="exposure_time_us_label">
          <property name="geometry">
           <rect>
            <x>540</x>
@@ -1013,10 +1013,10 @@
           </rect>
          </property>
          <property name="text">
-          <string>us</string>
+          <string>0</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_23">
+        <widget class="QSpinBox" name="spinBox_exposure_time_us">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -1029,13 +1029,13 @@
           <bool>false</bool>
          </property>
          <property name="minimum">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="maximum">
-          <number>3000000</number>
+          <number>10000000</number>
          </property>
          <property name="value">
-          <number>100</number>
+          <number>10000</number>
          </property>
         </widget>
        </widget>
@@ -1044,7 +1044,7 @@
          <rect>
           <x>0</x>
           <y>120</y>
-          <width>581</width>
+          <width>591</width>
           <height>31</height>
          </rect>
         </property>
@@ -1072,7 +1072,7 @@
           <string>Acquisition Frame Rate (Hz)</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider_width_24">
+        <widget class="QSlider" name="horizontalSlider_acq_frame_rate">
          <property name="geometry">
           <rect>
            <x>160</x>
@@ -1082,32 +1082,32 @@
           </rect>
          </property>
          <property name="minimum">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="maximum">
-          <number>5000</number>
+          <number>500000</number>
          </property>
          <property name="value">
-          <number>100</number>
+          <number>10000</number>
          </property>
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QLabel" name="width_label_8">
+        <widget class="QLabel" name="acq_frame_rate_label">
          <property name="geometry">
           <rect>
            <x>540</x>
            <y>-1</y>
-           <width>41</width>
+           <width>51</width>
            <height>31</height>
           </rect>
          </property>
          <property name="text">
-          <string>Hz</string>
+          <string>0</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_width_24">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_acq_frame_rate">
          <property name="geometry">
           <rect>
            <x>430</x>
@@ -1120,13 +1120,16 @@
           <bool>false</bool>
          </property>
          <property name="minimum">
-          <number>0</number>
+          <double>0.010000000000000</double>
          </property>
          <property name="maximum">
-          <number>5000</number>
+          <double>5000.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.010000000000000</double>
          </property>
          <property name="value">
-          <number>100</number>
+          <double>100.000000000000000</double>
          </property>
         </widget>
        </widget>

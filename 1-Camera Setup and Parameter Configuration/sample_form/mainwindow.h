@@ -34,6 +34,9 @@ private:
     int blackLevelValue = 0;
     double  gammaValue = 1.000;
     int digitalShiftValue = 0;
+    int exposureTimeRawValue = 10000;
+    int exposureTimeMicroSecondValue = 10000;
+    double acquisitionFrameRateValue = 100.0;
 };
 
 #endif // MAINWINDOW_H

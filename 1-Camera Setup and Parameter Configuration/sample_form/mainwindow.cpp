@@ -22,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->gain_db_label->setText(QString::number(gain_db_value));
     ui->black_level_label->setText(QString::number(blackLevelValue));
     ui->digital_shift_label->setText(QString::number(digitalShiftValue));
+    ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
+    ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
+    ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
 
 
     // change value of gain_raw with slider
@@ -102,6 +105,52 @@ MainWindow::MainWindow(QWidget *parent)
         ui->horizontalSlider_digital_shift->setValue(digitalShiftValue);
     });
 
+
+    // change value of exposure time (Raw) with slider
+    connect(ui->horizontalSlider_exposure_time_raw, &QSlider::valueChanged, this, [=](int value){
+        exposureTimeRawValue = value;
+        ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
+        ui->spinBox_exposure_time_raw->setValue(exposureTimeRawValue);
+    });
+
+    // change value of exposure time (Raw) with spinBox
+    connect(ui->spinBox_exposure_time_raw, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        exposureTimeRawValue = value;
+        ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
+        ui->horizontalSlider_exposure_time_raw->setValue(exposureTimeRawValue);
+    });
+
+
+    // change value of exposure time (us) with slider
+    connect(ui->horizontalSlider_exposure_time_us, &QSlider::valueChanged, this, [=](int value){
+        exposureTimeMicroSecondValue = value;
+        ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
+        ui->spinBox_exposure_time_us->setValue(exposureTimeMicroSecondValue);
+    });
+
+    // change value of exposure time (us) with spinBox
+    connect(ui->spinBox_exposure_time_us, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        exposureTimeMicroSecondValue = value;
+        ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
+        ui->horizontalSlider_exposure_time_us->setValue(exposureTimeMicroSecondValue);
+    });
+
+
+    // change value of Acquisition Frame Rate with slider
+    connect(ui->horizontalSlider_acq_frame_rate, &QSlider::valueChanged, this, [=](int value){
+        acquisitionFrameRateValue = value * 0.01;
+        ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue, 'f', 2));
+        ui->doubleSpinBox_acq_frame_rate->setValue(acquisitionFrameRateValue);
+    });
+
+    // change value of Acquisition Frame Rate with spinBox
+    connect(ui->doubleSpinBox_acq_frame_rate, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, [=](double value){
+        acquisitionFrameRateValue = value;
+        ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue, 'f', 2));
+
+        int sliderVal = qRound(acquisitionFrameRateValue / 0.01);
+        ui->horizontalSlider_acq_frame_rate->setValue(sliderVal);
+    });
 
 
     PylonInitialize();
