@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1866</width>
-    <height>641</height>
+    <height>710</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>10</y>
+      <x>10</x>
+      <y>60</y>
       <width>1841</width>
       <height>331</height>
      </rect>
@@ -29,7 +29,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>350</y>
+      <y>400</y>
       <width>621</width>
       <height>241</height>
      </rect>
@@ -493,7 +493,7 @@
     <property name="geometry">
      <rect>
       <x>1240</x>
-      <y>350</y>
+      <y>400</y>
       <width>611</width>
       <height>241</height>
      </rect>
@@ -861,7 +861,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>350</y>
+      <y>400</y>
       <width>591</width>
       <height>241</height>
      </rect>
@@ -1172,6 +1172,63 @@
          <string/>
         </property>
        </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>951</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="CameraInfo">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Camera Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="camera_name_label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Status:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="connection_status_label">
+       <property name="text">
+        <string/>
+       </property>
       </widget>
      </item>
     </layout>

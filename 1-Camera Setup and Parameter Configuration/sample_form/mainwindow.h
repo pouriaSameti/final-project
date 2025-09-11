@@ -7,6 +7,7 @@
 #include <pylon/PylonIncludes.h>
 #include <pylon/BaslerUniversalInstantCamera.h>
 #include <pylon/ImageFormatConverter.h>
+#include <opencv2/opencv.hpp>
 
 using namespace Pylon;
 using namespace GenApi;
@@ -29,6 +30,7 @@ public:
 private:
     Ui::MainWindow *ui;
 
+    // camera parameters
     int gain_raw_value = 192;
     double gain_db_value = 0;
     int blackLevelValue = 0;
@@ -41,6 +43,13 @@ private:
     int heightValue = 1024;
     int offsetXValue = 0;
     int offsetYValuse = 0;
+
+
+    // Grabbing Image parameters
+    QTimer *timer;
+    Pylon::CInstantCamera camera;
+    bool isCameraOpen = false;
+    QImage cvMatToQImage(const cv::Mat &mat);
 };
 
 #endif // MAINWINDOW_H

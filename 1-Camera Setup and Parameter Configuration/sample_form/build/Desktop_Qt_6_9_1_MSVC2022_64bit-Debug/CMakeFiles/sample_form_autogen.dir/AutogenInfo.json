@@ -363,6 +363,13 @@
 		"C:/Qt/6.9.1/msvc2022_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.9.1/msvc2022_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"C:/opencv/build/x64/vc16/lib/OpenCVConfig-version.cmake",
+		"C:/opencv/build/x64/vc16/lib/OpenCVConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"C:/opencv/build/x64/vc16/lib/OpenCVModules.cmake",
+		"C:/opencv/build/x64/vc16/lib/OpenCVModules-debug.cmake",
+		"C:/opencv/build/x64/vc16/lib/OpenCVModules-release.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form",
@@ -407,7 +414,8 @@
 		"C:/Qt/6.9.1/msvc2022_64/include",
 		"C:/Qt/6.9.1/msvc2022_64/mkspecs/win32-msvc",
 		"C:/Qt/6.9.1/msvc2022_64/include/QtWidgets",
-		"C:/Qt/6.9.1/msvc2022_64/include/QtGui"
+		"C:/Qt/6.9.1/msvc2022_64/include/QtGui",
+		"C:/opencv/build/include"
 	],
 	"MOC_MACRO_NAMES" : 
 	[

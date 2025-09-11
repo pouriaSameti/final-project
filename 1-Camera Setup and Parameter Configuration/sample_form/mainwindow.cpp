@@ -222,5 +222,3 @@ MainWindow::~MainWindow()
     PylonTerminate();
     delete ui;
 }
-
-

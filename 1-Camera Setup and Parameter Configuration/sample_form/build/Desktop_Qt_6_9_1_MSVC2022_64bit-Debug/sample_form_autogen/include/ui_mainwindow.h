@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -105,6 +106,12 @@ public:
     QLabel *label_13;
     QFrame *optionalBox2;
     QLabel *label_16;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *CameraInfo;
+    QLabel *label_3;
+    QLabel *camera_name_label;
+    QLabel *label;
+    QLabel *connection_status_label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -112,18 +119,18 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1866, 641);
+        MainWindow->resize(1866, 710);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(9, 10, 1841, 331));
+        verticalLayoutWidget->setGeometry(QRect(10, 60, 1841, 331));
         Camera = new QVBoxLayout(verticalLayoutWidget);
         Camera->setObjectName("Camera");
         Camera->setContentsMargins(0, 0, 0, 0);
         verticalWidget_2 = new QWidget(centralwidget);
         verticalWidget_2->setObjectName("verticalWidget_2");
-        verticalWidget_2->setGeometry(QRect(10, 350, 621, 241));
+        verticalWidget_2->setGeometry(QRect(10, 400, 621, 241));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -279,7 +286,7 @@ public:
 
         verticalWidget_3 = new QWidget(centralwidget);
         verticalWidget_3->setObjectName("verticalWidget_3");
-        verticalWidget_3->setGeometry(QRect(1240, 350, 611, 241));
+        verticalWidget_3->setGeometry(QRect(1240, 400, 611, 241));
         ImageFormatControl = new QVBoxLayout(verticalWidget_3);
         ImageFormatControl->setObjectName("ImageFormatControl");
         Text_img_format_control = new QLabel(verticalWidget_3);
@@ -408,7 +415,7 @@ public:
 
         verticalWidget_4 = new QWidget(centralwidget);
         verticalWidget_4->setObjectName("verticalWidget_4");
-        verticalWidget_4->setGeometry(QRect(640, 350, 591, 241));
+        verticalWidget_4->setGeometry(QRect(640, 400, 591, 241));
         AcquisitionControl = new QVBoxLayout(verticalWidget_4);
         AcquisitionControl->setObjectName("AcquisitionControl");
         Text_AcquisitionControl = new QLabel(verticalWidget_4);
@@ -522,6 +529,40 @@ public:
 
         AcquisitionControl->addWidget(optionalBox2);
 
+        horizontalLayoutWidget = new QWidget(centralwidget);
+        horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
+        horizontalLayoutWidget->setGeometry(QRect(10, 0, 951, 51));
+        CameraInfo = new QHBoxLayout(horizontalLayoutWidget);
+        CameraInfo->setObjectName("CameraInfo");
+        CameraInfo->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(horizontalLayoutWidget);
+        label_3->setObjectName("label_3");
+        QFont font3;
+        font3.setPointSize(12);
+        font3.setBold(true);
+        label_3->setFont(font3);
+
+        CameraInfo->addWidget(label_3);
+
+        camera_name_label = new QLabel(horizontalLayoutWidget);
+        camera_name_label->setObjectName("camera_name_label");
+        QFont font4;
+        font4.setPointSize(12);
+        camera_name_label->setFont(font4);
+
+        CameraInfo->addWidget(camera_name_label);
+
+        label = new QLabel(horizontalLayoutWidget);
+        label->setObjectName("label");
+        label->setFont(font3);
+
+        CameraInfo->addWidget(label);
+
+        connection_status_label = new QLabel(horizontalLayoutWidget);
+        connection_status_label->setObjectName("connection_status_label");
+
+        CameraInfo->addWidget(connection_status_label);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -569,6 +610,10 @@ public:
         acq_frame_rate_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_13->setText(QString());
         label_16->setText(QString());
+        label_3->setText(QCoreApplication::translate("MainWindow", "Camera Name:", nullptr));
+        camera_name_label->setText(QString());
+        label->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
+        connection_status_label->setText(QString());
     } // retranslateUi
 
 };

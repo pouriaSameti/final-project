@@ -17,6 +17,9 @@ link_directories("${PYLON_ROOT}/lib/x64")
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
+set(OpenCV_DIR "C:/opencv/build/x64/vc16/lib")
+find_package(OpenCV REQUIRED)
+
 set(TS_FILES sample_form_en_US.ts)
 
 set(PROJECT_SOURCES
@@ -59,6 +62,9 @@ target_link_libraries(sample_form PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
                         PylonUtility_v10
                         GCBase_MD_VC141_v3_1_Basler_pylon_v3
                         GenApi_MD_VC141_v3_1_Basler_pylon_v3)
+
+target_link_libraries(sample_form PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+                                                                ${OpenCV_LIBS})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

@@ -6,8 +6,9 @@
 
 int main(int argc, char *argv[])
 {
-    PylonInitialize();
     QApplication a(argc, argv);
+
+    PylonInitialize();
 
     // Setup translation (keep your existing code)
     QTranslator translator;
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
     w.show();
 
     int result = a.exec();
+
     PylonTerminate();
 
     return result;
