@@ -2,20 +2,60 @@
 #include "ui_mainwindow.h"
 #include <QLabel>
 #include <QTimer>
+#include <QMessageBox>
 #include <pylon/PylonIncludes.h>
 #include <pylon/BaslerUniversalInstantCamera.h>
 #include <pylon/ImageFormatConverter.h>
 #include <pylon/PylonGUI.h>
 
+using namespace std;
 using namespace Pylon;
 using namespace GenApi;
 using namespace Basler_UniversalCameraParams;
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    PylonInitialize();
+
+    CTlFactory& tlFactory = CTlFactory::GetInstance();
+    DeviceInfoList_t devices;
+    tlFactory.EnumerateDevices(devices);
+    fallbackImage = cv::imread(":icons/camera.png");
+
+    // if the camera was not found
+    if (devices.empty()) {
+        isCameraOpen = false;
+        ui->connection_status_label->setText("Disconnected");
+        ui->connection_status_label->setStyleSheet("QLabel { color: red; }");
+
+        ui->camera_name_label->setText("Unknown");
+    }
+
+    // if the camera was found
+    else {
+        isCameraOpen = true;
+        camera.Attach(tlFactory.CreateDevice(devices[0]));
+        camera.Open();
+
+        INodeMap& nodemap = camera.GetNodeMap();
+        CEnumerationPtr(nodemap.GetNode("AcquisitionMode"))->FromString("Continuous");
+        CBooleanPtr(nodemap.GetNode("AcquisitionFrameRateEnable"))->SetValue(true);
+        CFloatPtr(nodemap.GetNode("AcquisitionFrameRate"))->SetValue(acquisitionFrameRateValue);
+        camera.StartGrabbing(GrabStrategy_LatestImageOnly);
+        isCameraOpen = true;
+
+        ui->connection_status_label->setText("Connected");
+        ui->connection_status_label->setStyleSheet("QLabel { color: green; }");
+
+        ui->camera_name_label->setText(devices[0].GetModelName().c_str());
+    }
+
+
 
     // set the default values
     ui->gain_raw_label->setText(QString::number(gain_raw_value));
@@ -212,13 +252,17 @@ MainWindow::MainWindow(QWidget *parent)
         ui->offsetY_label->setText(QString::number(offsetYValuse));
         ui->horizontalSlider_offsetY->setValue(offsetYValuse);
     });
-
-    PylonInitialize();
 }
 
 
 MainWindow::~MainWindow()
 {
+    if (camera.IsGrabbing())
+        camera.StopGrabbing();
+
+    if (camera.IsOpen())
+        camera.Close();
+
     PylonTerminate();
     delete ui;
 }

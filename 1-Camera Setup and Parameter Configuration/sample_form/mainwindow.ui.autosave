@@ -23,7 +23,15 @@
       <height>331</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="Camera"/>
+    <layout class="QVBoxLayout" name="Camera">
+     <item>
+      <widget class="QLabel" name="camera_label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="verticalWidget_2" native="true">
     <property name="geometry">
