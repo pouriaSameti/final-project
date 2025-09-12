@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -84,8 +85,6 @@ public:
     QSlider *horizontalSlider_offsetY;
     QSpinBox *spinBox_offsetY;
     QLabel *offsetY_label;
-    QFrame *optionalBox2_2;
-    QLabel *label_17;
     QWidget *verticalWidget_4;
     QVBoxLayout *AcquisitionControl;
     QLabel *Text_AcquisitionControl;
@@ -104,10 +103,6 @@ public:
     QSlider *horizontalSlider_acq_frame_rate;
     QLabel *acq_frame_rate_label;
     QDoubleSpinBox *doubleSpinBox_acq_frame_rate;
-    QFrame *optionalBox1;
-    QLabel *label_13;
-    QFrame *optionalBox2;
-    QLabel *label_16;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *CameraInfo;
     QLabel *label_3;
@@ -115,6 +110,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QLabel *label;
     QLabel *connection_status_label;
+    QPushButton *pushButton_apply;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -122,12 +118,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1387, 907);
+        MainWindow->resize(1387, 859);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(640, 70, 731, 681));
+        verticalLayoutWidget->setGeometry(QRect(640, 70, 731, 721));
         Camera = new QVBoxLayout(verticalLayoutWidget);
         Camera->setObjectName("Camera");
         Camera->setContentsMargins(0, 0, 0, 0);
@@ -411,16 +407,6 @@ public:
 
         ImageFormatControl->addWidget(OffsetY);
 
-        optionalBox2_2 = new QFrame(verticalWidget_3);
-        optionalBox2_2->setObjectName("optionalBox2_2");
-        optionalBox2_2->setFrameShape(QFrame::Shape::StyledPanel);
-        optionalBox2_2->setFrameShadow(QFrame::Shadow::Raised);
-        label_17 = new QLabel(optionalBox2_2);
-        label_17->setObjectName("label_17");
-        label_17->setGeometry(QRect(10, 0, 91, 31));
-
-        ImageFormatControl->addWidget(optionalBox2_2);
-
         verticalWidget_4 = new QWidget(centralwidget);
         verticalWidget_4->setObjectName("verticalWidget_4");
         verticalWidget_4->setGeometry(QRect(10, 260, 621, 241));
@@ -517,26 +503,6 @@ public:
 
         AcquisitionControl->addWidget(ExposureTimeMicroSecond_2);
 
-        optionalBox1 = new QFrame(verticalWidget_4);
-        optionalBox1->setObjectName("optionalBox1");
-        optionalBox1->setFrameShape(QFrame::Shape::StyledPanel);
-        optionalBox1->setFrameShadow(QFrame::Shadow::Raised);
-        label_13 = new QLabel(optionalBox1);
-        label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(10, 0, 91, 31));
-
-        AcquisitionControl->addWidget(optionalBox1);
-
-        optionalBox2 = new QFrame(verticalWidget_4);
-        optionalBox2->setObjectName("optionalBox2");
-        optionalBox2->setFrameShape(QFrame::Shape::StyledPanel);
-        optionalBox2->setFrameShadow(QFrame::Shadow::Raised);
-        label_16 = new QLabel(optionalBox2);
-        label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(10, 0, 91, 31));
-
-        AcquisitionControl->addWidget(optionalBox2);
-
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
         horizontalLayoutWidget->setGeometry(QRect(640, 10, 731, 51));
@@ -577,6 +543,9 @@ public:
 
         CameraInfo->addWidget(connection_status_label);
 
+        pushButton_apply = new QPushButton(centralwidget);
+        pushButton_apply->setObjectName("pushButton_apply");
+        pushButton_apply->setGeometry(QRect(20, 750, 601, 41));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -615,7 +584,6 @@ public:
         offsetX_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "OffsetY", nullptr));
         offsetY_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_17->setText(QString());
         Text_AcquisitionControl->setText(QCoreApplication::translate("MainWindow", " Acquisition Control", nullptr));
         label_27->setText(QCoreApplication::translate("MainWindow", "Exposure Time (Raw)", nullptr));
         exposure_time_raw_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
@@ -623,12 +591,11 @@ public:
         exposure_time_us_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_29->setText(QCoreApplication::translate("MainWindow", "Acquisition Frame Rate (Hz)", nullptr));
         acq_frame_rate_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_13->setText(QString());
-        label_16->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", " Camera Name:", nullptr));
         camera_name_label->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         connection_status_label->setText(QString());
+        pushButton_apply->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
     } // retranslateUi
 
 };

@@ -257,6 +257,61 @@ MainWindow::MainWindow(QWidget *parent)
         ui->horizontalSlider_offsetY->setValue(offsetYValuse);
     });
 
+
+    connect(ui->pushButton_apply, &QPushButton::clicked, this, [=]() {
+
+        try {
+            INodeMap& nodemap = camera.GetNodeMap();
+            // Gain
+            CIntegerPtr gainRaw(nodemap.GetNode("GainRaw"));
+            gainRaw->SetValue(gain_raw_value);
+
+            // Black Level
+            CIntegerPtr blackLevel(nodemap.GetNode("BlackLevelRaw"));
+            blackLevel->SetValue(blackLevelValue);
+
+            // Gamma
+            CIntegerPtr gamma(nodemap.GetNode("Gamma"));
+            gamma->SetValue(gammaValue);
+
+            // Exposure Time raw
+            CIntegerPtr exposureTime(nodemap.GetNode("ExposureTimeRaw"));
+            exposureTime->SetValue(exposureTimeRawValue);
+
+            // Exposure Time Micro-second
+            CIntegerPtr exposureTimeMicro(nodemap.GetNode("ExposureTime"));
+            exposureTimeMicro->SetValue(exposureTimeRawValue);
+
+            // Frame rate
+            CIntegerPtr frameRateEnable(nodemap.GetNode("AcquisitionFrameRateEnable"));
+            frameRateEnable->SetValue(true);
+
+
+            // width, heght, offsetX, offsetY
+            CIntegerPtr width(nodemap.GetNode("Width"));
+            width->SetValue(widthValue);
+
+            CIntegerPtr height(nodemap.GetNode("Height"));
+            height->SetValue(heightValue);
+
+            CIntegerPtr offsetX(nodemap.GetNode("OffsetX"));
+            offsetX->SetValue(offsetXValue);
+
+            CIntegerPtr offsetY(nodemap.GetNode("OffsetY"));
+            offsetY->SetValue(offsetYValuse);
+
+            qDebug() << "Camera parameters applied successfully!";
+
+        }
+
+        catch (const GenericException &e) {
+            QString errorMsg = QString("Error applying camera parameters:\n%1").arg(e.GetDescription());
+            QMessageBox::critical(this, "Camera Error", errorMsg);
+            qDebug() << "Error applying camera parameters:" << e.GetDescription();
+        }
+    });
+
+
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateCameraDisplay);
     timer->start(30);

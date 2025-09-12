@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1387</width>
-    <height>907</height>
+    <height>859</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>640</x>
       <y>70</y>
       <width>731</width>
-      <height>681</height>
+      <height>721</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="Camera">
@@ -840,29 +840,6 @@
        </widget>
       </widget>
      </item>
-     <item>
-      <widget class="QFrame" name="optionalBox2_2">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_17">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="verticalWidget_4" native="true">
@@ -1136,52 +1113,6 @@
        </widget>
       </widget>
      </item>
-     <item>
-      <widget class="QFrame" name="optionalBox1">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_13">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="optionalBox2">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_16">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -1260,6 +1191,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_apply">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>750</y>
+      <width>601</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Apply</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
