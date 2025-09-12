@@ -115,7 +115,6 @@ public:
     QLabel *label_4;
     QLabel *label_labLogo;
     QLabel *label_13;
-    QLabel *label_16;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -123,7 +122,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1387, 970);
+        MainWindow->resize(1387, 940);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
@@ -554,12 +553,12 @@ public:
         pushButton_apply->setGeometry(QRect(20, 850, 601, 41));
         widget_laboratoryInformation = new QWidget(centralwidget);
         widget_laboratoryInformation->setObjectName("widget_laboratoryInformation");
-        widget_laboratoryInformation->setGeometry(QRect(9, 0, 951, 101));
+        widget_laboratoryInformation->setGeometry(QRect(9, 0, 1071, 101));
         label_4 = new QLabel(widget_laboratoryInformation);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(100, 0, 841, 41));
+        label_4->setGeometry(QRect(100, 20, 971, 61));
         QFont font5;
-        font5.setPointSize(16);
+        font5.setPointSize(18);
         font5.setBold(true);
         label_4->setFont(font5);
         label_4->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
@@ -568,15 +567,11 @@ public:
         label_labLogo->setGeometry(QRect(-2, -1, 91, 91));
         label_13 = new QLabel(widget_laboratoryInformation);
         label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(100, 40, 801, 31));
+        label_13->setGeometry(QRect(100, 50, 801, 31));
         QFont font6;
-        font6.setPointSize(13);
+        font6.setPointSize(11);
         font6.setBold(false);
         label_13->setFont(font6);
-        label_16 = new QLabel(widget_laboratoryInformation);
-        label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(100, 60, 801, 31));
-        label_16->setFont(font6);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -629,8 +624,7 @@ public:
         pushButton_apply->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Cyber-physical Laboratory | Faculty of Computer Engineering | University of Isfahan", nullptr));
         label_labLogo->setText(QString());
-        label_13->setText(QCoreApplication::translate("MainWindow", "Website: http://cpslab.ui.ac.ir", nullptr));
-        label_16->setText(QCoreApplication::translate("MainWindow", "Email: cpslab@res.ui.ac.ir", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "Website: http://cpslab.ui.ac.ir | Email: cpslab@res.ui.ac.ir", nullptr));
     } // retranslateUi
 
 };
