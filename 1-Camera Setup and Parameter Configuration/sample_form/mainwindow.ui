@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1387</width>
-    <height>859</height>
+    <height>970</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>70</y>
+      <y>170</y>
       <width>731</width>
       <height>721</height>
      </rect>
@@ -33,11 +33,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalWidget_2" native="true">
+   <widget class="QWidget" name="verticalWidget_analogControl" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>110</y>
       <width>621</width>
       <height>241</height>
      </rect>
@@ -87,6 +87,9 @@
        </colorrole>
       </disabled>
      </palette>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-color: rgb(0, 0, 0);</string>
     </property>
     <layout class="QVBoxLayout" name="AnalogControl">
      <item>
@@ -497,11 +500,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalWidget_3" native="true">
+   <widget class="QWidget" name="verticalWidget_imageFormatControl" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>510</y>
+      <y>610</y>
       <width>621</width>
       <height>241</height>
      </rect>
@@ -842,11 +845,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalWidget_4" native="true">
+   <widget class="QWidget" name="verticalWidget_acquisitionControl" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>260</y>
+      <y>360</y>
       <width>621</width>
       <height>241</height>
      </rect>
@@ -1119,7 +1122,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>10</y>
+      <y>110</y>
       <width>731</width>
       <height>51</height>
      </rect>
@@ -1196,7 +1199,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>750</y>
+      <y>850</y>
       <width>601</width>
       <height>41</height>
      </rect>
@@ -1204,6 +1207,89 @@
     <property name="text">
      <string>Apply</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="widget_laboratoryInformation" native="true">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>0</y>
+      <width>951</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>0</y>
+       <width>841</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Cyber-physical Laboratory | Faculty of Computer Engineering | University of Isfahan</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_labLogo">
+     <property name="geometry">
+      <rect>
+       <x>-2</x>
+       <y>-1</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>40</y>
+       <width>801</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Website: http://cpslab.ui.ac.ir</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>801</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Email: cpslab@res.ui.ac.ir</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

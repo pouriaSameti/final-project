@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <QMessageBox>
 #include <QPainter>
+#include <QPixmap>
 #include <pylon/PylonIncludes.h>
 #include <pylon/BaslerUniversalInstantCamera.h>
 #include <pylon/ImageFormatConverter.h>
@@ -20,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap pix("D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/icons/labIcon.jpg");
+    int w = ui->label_labLogo->width();
+    int h = ui->label_labLogo->height();
+    ui->label_labLogo->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatioByExpanding));
 
     PylonInitialize();
 
@@ -385,3 +390,26 @@ QImage MainWindow::cvMatToQImage(const cv::Mat &mat)
     }
     return QImage();
 }
+
+
+//Checking parametrs name
+// INodeMap& nodemap = camera.GetNodeMap();
+
+// // Iterate over all nodes in the NodeMap
+// NodeList_t nodes;
+// nodemap.GetNodes(nodes);
+
+// for (size_t i = 0; i < nodes.size(); ++i)
+// {
+//     CNodePtr pNode = nodes[i];
+//     if (IsAvailable(pNode))
+//     {
+//         std::string nodeName = pNode->GetName();
+//         std::string nodeDisplayName = pNode->GetDisplayName();
+//         std::string nodeType = pNode->GetType().ToString();
+
+//         qDebug() << "Node:" << QString::fromStdString(nodeName)
+//                  << " | Display:" << QString::fromStdString(nodeDisplayName)
+//                  << " | Type:" << QString::fromStdString(nodeType);
+//     }
+// }

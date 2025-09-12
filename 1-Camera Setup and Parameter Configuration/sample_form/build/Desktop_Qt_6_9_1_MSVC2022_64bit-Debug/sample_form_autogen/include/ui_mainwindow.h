@@ -34,7 +34,7 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *Camera;
     QLabel *camera_label;
-    QWidget *verticalWidget_2;
+    QWidget *verticalWidget_analogControl;
     QVBoxLayout *AnalogControl;
     QLabel *Text_AnalogControl;
     QFrame *DigitalShift;
@@ -62,7 +62,7 @@ public:
     QSlider *horizontalSlider_black_level;
     QLabel *black_level_label;
     QSpinBox *spinBox_black_level;
-    QWidget *verticalWidget_3;
+    QWidget *verticalWidget_imageFormatControl;
     QVBoxLayout *ImageFormatControl;
     QLabel *Text_img_format_control;
     QFrame *Width;
@@ -85,7 +85,7 @@ public:
     QSlider *horizontalSlider_offsetY;
     QSpinBox *spinBox_offsetY;
     QLabel *offsetY_label;
-    QWidget *verticalWidget_4;
+    QWidget *verticalWidget_acquisitionControl;
     QVBoxLayout *AcquisitionControl;
     QLabel *Text_AcquisitionControl;
     QFrame *ExposureTimeAbs;
@@ -111,6 +111,11 @@ public:
     QLabel *label;
     QLabel *connection_status_label;
     QPushButton *pushButton_apply;
+    QWidget *widget_laboratoryInformation;
+    QLabel *label_4;
+    QLabel *label_labLogo;
+    QLabel *label_13;
+    QLabel *label_16;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -118,12 +123,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1387, 859);
+        MainWindow->resize(1387, 970);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(640, 70, 731, 721));
+        verticalLayoutWidget->setGeometry(QRect(640, 170, 731, 721));
         Camera = new QVBoxLayout(verticalLayoutWidget);
         Camera->setObjectName("Camera");
         Camera->setContentsMargins(0, 0, 0, 0);
@@ -132,9 +137,9 @@ public:
 
         Camera->addWidget(camera_label);
 
-        verticalWidget_2 = new QWidget(centralwidget);
-        verticalWidget_2->setObjectName("verticalWidget_2");
-        verticalWidget_2->setGeometry(QRect(10, 10, 621, 241));
+        verticalWidget_analogControl = new QWidget(centralwidget);
+        verticalWidget_analogControl->setObjectName("verticalWidget_analogControl");
+        verticalWidget_analogControl->setGeometry(QRect(10, 110, 621, 241));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -142,10 +147,11 @@ public:
         palette.setBrush(QPalette::ColorGroup::Inactive, QPalette::ColorRole::Window, brush);
         palette.setBrush(QPalette::ColorGroup::Disabled, QPalette::ColorRole::Base, brush);
         palette.setBrush(QPalette::ColorGroup::Disabled, QPalette::ColorRole::Window, brush);
-        verticalWidget_2->setPalette(palette);
-        AnalogControl = new QVBoxLayout(verticalWidget_2);
+        verticalWidget_analogControl->setPalette(palette);
+        verticalWidget_analogControl->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);"));
+        AnalogControl = new QVBoxLayout(verticalWidget_analogControl);
         AnalogControl->setObjectName("AnalogControl");
-        Text_AnalogControl = new QLabel(verticalWidget_2);
+        Text_AnalogControl = new QLabel(verticalWidget_analogControl);
         Text_AnalogControl->setObjectName("Text_AnalogControl");
         QFont font;
         font.setPointSize(11);
@@ -154,7 +160,7 @@ public:
 
         AnalogControl->addWidget(Text_AnalogControl);
 
-        DigitalShift = new QFrame(verticalWidget_2);
+        DigitalShift = new QFrame(verticalWidget_analogControl);
         DigitalShift->setObjectName("DigitalShift");
         DigitalShift->setFrameShape(QFrame::Shape::StyledPanel);
         DigitalShift->setFrameShadow(QFrame::Shadow::Raised);
@@ -181,7 +187,7 @@ public:
 
         AnalogControl->addWidget(DigitalShift);
 
-        GainRaw = new QFrame(verticalWidget_2);
+        GainRaw = new QFrame(verticalWidget_analogControl);
         GainRaw->setObjectName("GainRaw");
         GainRaw->setFrameShape(QFrame::Shape::StyledPanel);
         GainRaw->setFrameShadow(QFrame::Shadow::Raised);
@@ -209,7 +215,7 @@ public:
 
         AnalogControl->addWidget(GainRaw);
 
-        GainDb = new QFrame(verticalWidget_2);
+        GainDb = new QFrame(verticalWidget_analogControl);
         GainDb->setObjectName("GainDb");
         GainDb->setFrameShape(QFrame::Shape::StyledPanel);
         GainDb->setFrameShadow(QFrame::Shadow::Raised);
@@ -236,7 +242,7 @@ public:
 
         AnalogControl->addWidget(GainDb);
 
-        Gamma = new QFrame(verticalWidget_2);
+        Gamma = new QFrame(verticalWidget_analogControl);
         Gamma->setObjectName("Gamma");
         Gamma->setFrameShape(QFrame::Shape::StyledPanel);
         Gamma->setFrameShadow(QFrame::Shadow::Raised);
@@ -263,7 +269,7 @@ public:
 
         AnalogControl->addWidget(Gamma);
 
-        BlackLevel = new QFrame(verticalWidget_2);
+        BlackLevel = new QFrame(verticalWidget_analogControl);
         BlackLevel->setObjectName("BlackLevel");
         BlackLevel->setFrameShape(QFrame::Shape::StyledPanel);
         BlackLevel->setFrameShadow(QFrame::Shadow::Raised);
@@ -288,18 +294,18 @@ public:
 
         AnalogControl->addWidget(BlackLevel);
 
-        verticalWidget_3 = new QWidget(centralwidget);
-        verticalWidget_3->setObjectName("verticalWidget_3");
-        verticalWidget_3->setGeometry(QRect(10, 510, 621, 241));
-        ImageFormatControl = new QVBoxLayout(verticalWidget_3);
+        verticalWidget_imageFormatControl = new QWidget(centralwidget);
+        verticalWidget_imageFormatControl->setObjectName("verticalWidget_imageFormatControl");
+        verticalWidget_imageFormatControl->setGeometry(QRect(10, 610, 621, 241));
+        ImageFormatControl = new QVBoxLayout(verticalWidget_imageFormatControl);
         ImageFormatControl->setObjectName("ImageFormatControl");
-        Text_img_format_control = new QLabel(verticalWidget_3);
+        Text_img_format_control = new QLabel(verticalWidget_imageFormatControl);
         Text_img_format_control->setObjectName("Text_img_format_control");
         Text_img_format_control->setFont(font);
 
         ImageFormatControl->addWidget(Text_img_format_control);
 
-        Width = new QFrame(verticalWidget_3);
+        Width = new QFrame(verticalWidget_imageFormatControl);
         Width->setObjectName("Width");
         Width->setFrameShape(QFrame::Shape::StyledPanel);
         Width->setFrameShadow(QFrame::Shadow::Raised);
@@ -326,7 +332,7 @@ public:
 
         ImageFormatControl->addWidget(Width);
 
-        Height = new QFrame(verticalWidget_3);
+        Height = new QFrame(verticalWidget_imageFormatControl);
         Height->setObjectName("Height");
         Height->setFrameShape(QFrame::Shape::StyledPanel);
         Height->setFrameShadow(QFrame::Shadow::Raised);
@@ -353,7 +359,7 @@ public:
 
         ImageFormatControl->addWidget(Height);
 
-        OffsetX = new QFrame(verticalWidget_3);
+        OffsetX = new QFrame(verticalWidget_imageFormatControl);
         OffsetX->setObjectName("OffsetX");
         OffsetX->setFrameShape(QFrame::Shape::StyledPanel);
         OffsetX->setFrameShadow(QFrame::Shadow::Raised);
@@ -380,7 +386,7 @@ public:
 
         ImageFormatControl->addWidget(OffsetX);
 
-        OffsetY = new QFrame(verticalWidget_3);
+        OffsetY = new QFrame(verticalWidget_imageFormatControl);
         OffsetY->setObjectName("OffsetY");
         OffsetY->setFrameShape(QFrame::Shape::StyledPanel);
         OffsetY->setFrameShadow(QFrame::Shadow::Raised);
@@ -407,18 +413,18 @@ public:
 
         ImageFormatControl->addWidget(OffsetY);
 
-        verticalWidget_4 = new QWidget(centralwidget);
-        verticalWidget_4->setObjectName("verticalWidget_4");
-        verticalWidget_4->setGeometry(QRect(10, 260, 621, 241));
-        AcquisitionControl = new QVBoxLayout(verticalWidget_4);
+        verticalWidget_acquisitionControl = new QWidget(centralwidget);
+        verticalWidget_acquisitionControl->setObjectName("verticalWidget_acquisitionControl");
+        verticalWidget_acquisitionControl->setGeometry(QRect(10, 360, 621, 241));
+        AcquisitionControl = new QVBoxLayout(verticalWidget_acquisitionControl);
         AcquisitionControl->setObjectName("AcquisitionControl");
-        Text_AcquisitionControl = new QLabel(verticalWidget_4);
+        Text_AcquisitionControl = new QLabel(verticalWidget_acquisitionControl);
         Text_AcquisitionControl->setObjectName("Text_AcquisitionControl");
         Text_AcquisitionControl->setFont(font);
 
         AcquisitionControl->addWidget(Text_AcquisitionControl);
 
-        ExposureTimeAbs = new QFrame(verticalWidget_4);
+        ExposureTimeAbs = new QFrame(verticalWidget_acquisitionControl);
         ExposureTimeAbs->setObjectName("ExposureTimeAbs");
         ExposureTimeAbs->setFrameShape(QFrame::Shape::StyledPanel);
         ExposureTimeAbs->setFrameShadow(QFrame::Shadow::Raised);
@@ -445,7 +451,7 @@ public:
 
         AcquisitionControl->addWidget(ExposureTimeAbs);
 
-        ExposureTimeMicroSecond = new QFrame(verticalWidget_4);
+        ExposureTimeMicroSecond = new QFrame(verticalWidget_acquisitionControl);
         ExposureTimeMicroSecond->setObjectName("ExposureTimeMicroSecond");
         ExposureTimeMicroSecond->setFrameShape(QFrame::Shape::StyledPanel);
         ExposureTimeMicroSecond->setFrameShadow(QFrame::Shadow::Raised);
@@ -472,7 +478,7 @@ public:
 
         AcquisitionControl->addWidget(ExposureTimeMicroSecond);
 
-        ExposureTimeMicroSecond_2 = new QFrame(verticalWidget_4);
+        ExposureTimeMicroSecond_2 = new QFrame(verticalWidget_acquisitionControl);
         ExposureTimeMicroSecond_2->setObjectName("ExposureTimeMicroSecond_2");
         ExposureTimeMicroSecond_2->setFrameShape(QFrame::Shape::StyledPanel);
         ExposureTimeMicroSecond_2->setFrameShadow(QFrame::Shadow::Raised);
@@ -505,7 +511,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(640, 10, 731, 51));
+        horizontalLayoutWidget->setGeometry(QRect(640, 110, 731, 51));
         CameraInfo = new QHBoxLayout(horizontalLayoutWidget);
         CameraInfo->setObjectName("CameraInfo");
         CameraInfo->setContentsMargins(0, 0, 0, 0);
@@ -545,7 +551,32 @@ public:
 
         pushButton_apply = new QPushButton(centralwidget);
         pushButton_apply->setObjectName("pushButton_apply");
-        pushButton_apply->setGeometry(QRect(20, 750, 601, 41));
+        pushButton_apply->setGeometry(QRect(20, 850, 601, 41));
+        widget_laboratoryInformation = new QWidget(centralwidget);
+        widget_laboratoryInformation->setObjectName("widget_laboratoryInformation");
+        widget_laboratoryInformation->setGeometry(QRect(9, 0, 951, 101));
+        label_4 = new QLabel(widget_laboratoryInformation);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(100, 0, 841, 41));
+        QFont font5;
+        font5.setPointSize(16);
+        font5.setBold(true);
+        label_4->setFont(font5);
+        label_4->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
+        label_labLogo = new QLabel(widget_laboratoryInformation);
+        label_labLogo->setObjectName("label_labLogo");
+        label_labLogo->setGeometry(QRect(-2, -1, 91, 91));
+        label_13 = new QLabel(widget_laboratoryInformation);
+        label_13->setObjectName("label_13");
+        label_13->setGeometry(QRect(100, 40, 801, 31));
+        QFont font6;
+        font6.setPointSize(13);
+        font6.setBold(false);
+        label_13->setFont(font6);
+        label_16 = new QLabel(widget_laboratoryInformation);
+        label_16->setObjectName("label_16");
+        label_16->setGeometry(QRect(100, 60, 801, 31));
+        label_16->setFont(font6);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -596,6 +627,10 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         connection_status_label->setText(QString());
         pushButton_apply->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Cyber-physical Laboratory | Faculty of Computer Engineering | University of Isfahan", nullptr));
+        label_labLogo->setText(QString());
+        label_13->setText(QCoreApplication::translate("MainWindow", "Website: http://cpslab.ui.ac.ir", nullptr));
+        label_16->setText(QCoreApplication::translate("MainWindow", "Email: cpslab@res.ui.ac.ir", nullptr));
     } // retranslateUi
 
 };
