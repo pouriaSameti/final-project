@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
         cameraObject->Open();
         isCameraOpen = true;
 
+
         //Initialization parameters with Default values
         gain_raw_value = cameraObject->GainRaw.GetValue();
         blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
@@ -357,6 +358,9 @@ MainWindow::MainWindow(QWidget *parent)
     } catch (const GenericException &e) {
         cerr << "An exception occurred." << endl
              << e.GetDescription() << endl;
+
+        isCameraOpen = false;
+        QMessageBox::critical(this, "Camera Error", "Camera is Not Connected!!!!");
         exitCode = 1;
     }
 
