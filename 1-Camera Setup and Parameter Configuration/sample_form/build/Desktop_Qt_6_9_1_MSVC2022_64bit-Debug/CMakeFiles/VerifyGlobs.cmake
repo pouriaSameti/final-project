@@ -43,6 +43,7 @@ endif()
 # _directory_contents at C:/Qt/6.9.1/msvc2022_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/*.cpp")
 set(OLD_GLOB
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraSample.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp"
@@ -73,6 +74,18 @@ endif()
 # _directory_contents at C:/Qt/6.9.1/msvc2022_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/*.h")
 set(OLD_GLOB
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCamera.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraArray.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraCameraEventHandler.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraCameraParams.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraChunkDataParams.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraConfigurationEventHandler.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraEventParams.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraGrabResultData.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraGrabResultPtr.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraImageEventHandler.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraStreamParams.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraTLParams.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/ShowIncludes/foo.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/include/ui_mainwindow.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/include/ui_mainwindow.h"

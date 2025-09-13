@@ -152,6 +152,7 @@ D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/buil
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificGrabResultPtr.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificImageEventHandlerTie.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificInstantCamera.h \
+  C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificInstantCameraArray.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/stdinclude.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/QTimer \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/q17memory.h \
@@ -434,4 +435,16 @@ D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/buil
   C:/opencv/build/include/opencv2/video.hpp \
   C:/opencv/build/include/opencv2/video/background_segm.hpp \
   C:/opencv/build/include/opencv2/video/tracking.hpp \
-  C:/opencv/build/include/opencv2/videoio.hpp
+  C:/opencv/build/include/opencv2/videoio.hpp \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCamera.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraArray.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraCameraEventHandler.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraCameraParams.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraChunkDataParams.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraConfigurationEventHandler.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraEventParams.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraGrabResultData.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraGrabResultPtr.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraImageEventHandler.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraStreamParams.h \
+  D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/BaslerCameraTLParams.h

@@ -13,6 +13,16 @@ using namespace Pylon;
 using namespace GenApi;
 using namespace Basler_UniversalCameraParams;
 
+// Namespace for using pylon objects.
+using namespace Pylon;
+
+// Settings to use any camera type.
+#include "BaslerCamera.h"
+#include "BaslerCameraArray.h"
+
+using namespace Pylon;
+using namespace Pylon::BaslerCameraCameraParams_Params;
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -50,7 +60,7 @@ private:
 
     // Image grabbing parameters
     QTimer *timer;
-    Pylon::CInstantCamera camera;
+    BaslerCamera* cameraObject = nullptr;
     bool isCameraOpen = false;
     QImage cvMatToQImage(const cv::Mat &mat);
 };

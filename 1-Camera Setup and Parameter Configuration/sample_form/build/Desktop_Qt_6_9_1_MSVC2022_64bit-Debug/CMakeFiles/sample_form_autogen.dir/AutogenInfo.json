@@ -379,6 +379,78 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCamera.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCamera.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraArray.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraArray.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraCameraEventHandler.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraCameraEventHandler.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraCameraParams.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraCameraParams.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraChunkDataParams.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraChunkDataParams.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraConfigurationEventHandler.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraConfigurationEventHandler.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraEventParams.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraEventParams.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraGrabResultData.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraGrabResultData.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraGrabResultPtr.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraGrabResultPtr.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraImageEventHandler.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraImageEventHandler.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraStreamParams.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraStreamParams.cpp",
+			null
+		],
+		[
+			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraTLParams.h",
+			"MU",
+			"EWIEGA46WW/moc_BaslerCameraTLParams.cpp",
+			null
+		],
+		[
 			"D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",

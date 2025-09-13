@@ -24,9 +24,8 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    int result = a.exec();
-
     PylonTerminate();
 
+    int result = a.exec();
     return result;
 }
