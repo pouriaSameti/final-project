@@ -40,13 +40,16 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "updateCameraDisplay",
-        ""
+        "displayImage",
+        "",
+        "qimg"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'updateCameraDisplay'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'displayImage'
+        QtMocHelpers::SlotData<void(const QImage &)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QImage, 3 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -70,11 +73,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->updateCameraDisplay(); break;
+        case 0: _t->displayImage((*reinterpret_cast< std::add_pointer_t<QImage>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -87,6 +89,8 @@ void *MainWindow::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN10MainWindowE_t>.strings))
         return static_cast<void*>(this);
+    if (!strcmp(_clname, "CImageEventHandler"))
+        return static_cast< CImageEventHandler*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 

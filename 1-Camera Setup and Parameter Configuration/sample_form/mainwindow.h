@@ -4,24 +4,19 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QTimer>
+#include <QThread>
 #include <pylon/PylonIncludes.h>
 #include <pylon/BaslerUniversalInstantCamera.h>
 #include <pylon/ImageFormatConverter.h>
+#include "BaslerCamera.h"
+#include "BaslerCameraArray.h"
 #include <opencv2/opencv.hpp>
 
 using namespace Pylon;
 using namespace GenApi;
 using namespace Basler_UniversalCameraParams;
-
-// Namespace for using pylon objects.
-using namespace Pylon;
-
-// Settings to use any camera type.
-#include "BaslerCamera.h"
-#include "BaslerCameraArray.h"
-
-using namespace Pylon;
 using namespace Pylon::BaslerCameraCameraParams_Params;
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,7 +24,7 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, public CImageEventHandler
 {
     Q_OBJECT  
 
@@ -37,8 +32,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void OnImageGrabbed(CInstantCamera& camera, const CGrabResultPtr& ptrGrabResult) override;
+
 private slots:
-    void updateCameraDisplay();
+    void displayImage(const QImage& qimg);
+
 
 private:
     Ui::MainWindow *ui;
@@ -57,12 +56,9 @@ private:
     int offsetXValue = 0;
     int offsetYValuse = 0;
 
-
     // Image grabbing parameters
-    QTimer *timer;
     BaslerCamera* cameraObject = nullptr;
     bool isCameraOpen = false;
-    QImage cvMatToQImage(const cv::Mat &mat);
 };
 
 #endif // MAINWINDOW_H

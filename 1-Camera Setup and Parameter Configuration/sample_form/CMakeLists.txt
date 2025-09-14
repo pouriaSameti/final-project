@@ -36,6 +36,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         BaslerCamera.h BaslerCameraArray.h BaslerCameraCameraEventHandler.h BaslerCameraCameraParams.h BaslerCameraChunkDataParams.h BaslerCameraConfigurationEventHandler.h BaslerCameraEventParams.h BaslerCameraGrabResultData.h BaslerCameraGrabResultPtr.h BaslerCameraImageEventHandler.h BaslerCameraStreamParams.h BaslerCameraTLParams.h
 
+
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET sample_form APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -154,6 +154,7 @@ D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/buil
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificInstantCamera.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/private/DeviceSpecificInstantCameraArray.h \
   C:/Program\ Files/Basler/pylon\ 8/Development/include/pylon/stdinclude.h \
+  C:/Qt/6.9.1/msvc2022_64/include/QtCore/QThread \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/QTimer \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/q20functional.h \
@@ -270,6 +271,7 @@ D:/final-project/1-Camera\ Setup\ and\ Parameter\ Configuration/sample_form/buil
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/qtextstream.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/qtformat_impl.h \
+  C:/Qt/6.9.1/msvc2022_64/include/QtCore/qthread.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/qtimer.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.9.1/msvc2022_64/include/QtCore/qtnoop.h \

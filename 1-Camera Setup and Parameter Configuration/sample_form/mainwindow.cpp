@@ -8,8 +8,11 @@
 #include <pylon/BaslerUniversalInstantCamera.h>
 #include <pylon/ImageFormatConverter.h>
 #include "BaslerCamera.h"
-#include "BaslerCameraArray.h"
 #include <pylon/PylonIncludes.h>
+#include <QObject>
+#include <pylon/ImageEventHandler.h>
+#include <pylon/PylonImage.h>
+#include <pylon/GrabResultPtr.h>
 
 
 using namespace Pylon;
@@ -34,9 +37,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_labLogo->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatioByExpanding));
 
     try {
+
         //Camera Connection
         cameraObject = new BaslerCamera(CTlFactory::GetInstance().CreateFirstDevice());
-        cameraObject->Attach(CTlFactory::GetInstance().CreateFirstDevice());
         cameraObject->Open();
         isCameraOpen = true;
 
@@ -46,19 +49,14 @@ MainWindow::MainWindow(QWidget *parent)
         blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
         exposureTimeRawValue = cameraObject->ExposureTimeRaw.GetValue();
         exposureTimeMicroSecondValue = cameraObject->ExposureTimeAbs.GetValue();
-        acquisitionFrameRateValue = cameraObject->AcquisitionFrameRateEnable.GetValue();
         widthValue = cameraObject->Width.GetValue();
         heightValue = cameraObject->Height.GetValue();
         offsetXValue = cameraObject->OffsetX.GetValue();
 
-        // Set some important parameters of camera for start image grabbing
+        // // Set some important parameters of camera for start image grabbing
         cameraObject->PixelFormat.SetValue("Mono8");
         cameraObject->AcquisitionMode.SetValue("Continuous");
         cameraObject->TriggerMode.SetValue("Off");
-        cameraObject->AcquisitionFrameRateEnable.SetValue(true);
-        cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
-        cameraObject->StartGrabbing(GrabStrategy_LatestImageOnly);
-
 
         //Get parameter values
         cout << "Using device " << cameraObject->GetDeviceInfo().GetModelName() << endl;
@@ -350,37 +348,73 @@ MainWindow::MainWindow(QWidget *parent)
         cout << "camera.WidthMax = " << cameraObject->WidthMax.ToStringOrDefault("<not readable>") << std::endl;
 
 
-        timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, this, &MainWindow::updateCameraDisplay);
-        timer->start(30);
+        try {
+            PylonInitialize();
+
+            cameraObject->Attach(CTlFactory::GetInstance().CreateFirstDevice());
+            cameraObject->RegisterImageEventHandler(this,
+                                                    RegistrationMode_ReplaceAll,
+                                                    Cleanup_None);
+
+            cameraObject->StartGrabbing(GrabStrategy_LatestImageOnly,
+                                        GrabLoop_ProvidedByInstantCamera);
+
+            isCameraOpen = true;
+        }
+        catch (const GenericException& e) {
+            QMessageBox::critical(this, "Camera Error", QString("Failed to initialize camera: %1").arg(e.GetDescription()));
+            isCameraOpen = false;
+        }
+
+
+        // show the default values
+        ui->connection_status_label->setText("Connected");
+        ui->connection_status_label->setStyleSheet("QLabel { color: green; }");
+        ui->camera_name_label->setText(cameraObject->GetDeviceInfo().GetModelName().c_str());
+
+        ui->gain_raw_label->setText(QString::number(gain_raw_value));
+        ui->gain_db_label->setText(QString::number(gain_db_value));
+        ui->black_level_label->setText(QString::number(blackLevelValue));
+        ui->digital_shift_label->setText(QString::number(digitalShiftValue));
+        ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
+        ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
+        ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
+        ui->width_label->setText(QString::number(widthValue));
+        ui->height_label->setText(QString::number(heightValue));
+        ui->offsetX_label->setText(QString::number(offsetXValue));
+        ui->offsetY_label->setText(QString::number(offsetYValuse));
+
 
 
     } catch (const GenericException &e) {
+        isCameraOpen = false;
+
+        // show parametres if camera Dissconnected
+        ui->connection_status_label->setText("Disconnected");
+        ui->connection_status_label->setStyleSheet("QLabel { color: red; }");
+        ui->camera_name_label->setText(" ");
+
+        ui->gain_raw_label->setText(QString::number(0));
+        ui->gain_db_label->setText(QString::number(0));
+        ui->black_level_label->setText(QString::number(0));
+        ui->digital_shift_label->setText(QString::number(0));
+        ui->exposure_time_raw_label->setText(QString::number(0));
+        ui->exposure_time_us_label->setText(QString::number(0));
+        ui->acq_frame_rate_label->setText(QString::number(0));
+        ui->width_label->setText(QString::number(0));
+        ui->height_label->setText(QString::number(0));
+        ui->offsetX_label->setText(QString::number(0));
+
         cerr << "An exception occurred." << endl
              << e.GetDescription() << endl;
 
-        isCameraOpen = false;
-        QMessageBox::critical(this, "Camera Error", "Camera is Not Connected!!!!");
+        QMessageBox::critical(this, "Camera Error", "Camera initialization failed!!!!");
+
         exitCode = 1;
     }
 
 
-    // show the default values
-    ui->connection_status_label->setText("Connected");
-    ui->connection_status_label->setStyleSheet("QLabel { color: green; }");
-    ui->camera_name_label->setText(cameraObject->GetDeviceInfo().GetModelName().c_str());
 
-    ui->gain_raw_label->setText(QString::number(gain_raw_value));
-    ui->gain_db_label->setText(QString::number(gain_db_value));
-    ui->black_level_label->setText(QString::number(blackLevelValue));
-    ui->digital_shift_label->setText(QString::number(digitalShiftValue));
-    ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
-    ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
-    ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
-    ui->width_label->setText(QString::number(widthValue));
-    ui->height_label->setText(QString::number(heightValue));
-    ui->offsetX_label->setText(QString::number(offsetXValue));
-    ui->offsetY_label->setText(QString::number(offsetYValuse));
 
 
     // change value of gain_raw with slider
@@ -595,7 +629,7 @@ MainWindow::MainWindow(QWidget *parent)
             // width, heght, offsetX, offsetY
             cameraObject->Width.SetValue(widthValue);
             cameraObject->Height.SetValue(heightValue);
-            cameraObject->OffsetX.SetValue(offsetYValuse);
+            cameraObject->OffsetX.SetValue(offsetXValue);
             // cameraObject->OffsetY.SetValue(offsetYValuse);
 
             qDebug() << "Camera parameters applied successfully!";
@@ -610,78 +644,46 @@ MainWindow::MainWindow(QWidget *parent)
     });
 }
 
-void MainWindow::updateCameraDisplay()
+void MainWindow::OnImageGrabbed(CInstantCamera& /*camera*/, const CGrabResultPtr& ptrGrabResult)
 {
-    cout << cameraObject->IsGrabbing()<<'\n';
-    if (isCameraOpen && cameraObject->IsGrabbing())
+    if (ptrGrabResult->GrabSucceeded())
     {
-        CGrabResultPtr ptrGrabResult;
-        try
-        {
-            cameraObject->RetrieveResult(5000, ptrGrabResult, TimeoutHandling_ThrowException);
+        cv::Mat img(ptrGrabResult->GetHeight(),
+                    ptrGrabResult->GetWidth(),
+                    CV_8UC1,
+                    (uint8_t*)ptrGrabResult->GetBuffer());
 
-            if (ptrGrabResult->GrabSucceeded())
-            {
-                cv::Mat img(ptrGrabResult->GetHeight(),
-                            ptrGrabResult->GetWidth(),
-                            CV_8UC1,
-                            (uint8_t*)ptrGrabResult->GetBuffer());
+        QImage qimg(img.data, img.cols, img.rows, img.step, QImage::Format_Grayscale8);
 
-                QImage qimg = cvMatToQImage(img);
-                ui->camera_label->setPixmap(
-                    QPixmap::fromImage(qimg).scaled(
-                        ui->camera_label->size(),
-                        Qt::KeepAspectRatio,
-                        Qt::SmoothTransformation));
-            }
-        }
-        catch (const GenericException& e){
-            QMessageBox::warning(this, "Grab Error", QString("Failed to grab image: %1").arg(e.GetDescription()));
-        }
+        QMetaObject::invokeMethod(this, [this, qimg]() {
+            displayImage(qimg.copy());
+        }, Qt::QueuedConnection);
     }
     else
     {
-        int scale = 6;
-        int scaledWidth = widthValue / scale;
-        int scaledHeight = heightValue / scale;
-
-        QPixmap pixmap(scaledWidth, scaledHeight);
-        pixmap.fill(Qt::black);
-
-        QPainter painter(&pixmap);
-        painter.setPen(Qt::white);
-        painter.drawRect(0, 0, scaledWidth - 1, scaledHeight - 1);
-
-        ui->camera_label->setPixmap(pixmap);
+        qWarning("Grab failed: %s", ptrGrabResult->GetErrorDescription().c_str());
     }
 }
 
-
-QImage MainWindow::cvMatToQImage(const cv::Mat &mat)
+void MainWindow::displayImage(const QImage &qimg)
 {
-    if (mat.type() == CV_8UC1)
-    {
-        return QImage(mat.data, mat.cols, mat.rows,
-                      static_cast<int>(mat.step),
-                      QImage::Format_Grayscale8).copy();
-    }
-    else if (mat.type() == CV_8UC3)
-    {
-        return QImage(mat.data, mat.cols, mat.rows,
-                      static_cast<int>(mat.step),
-                      QImage::Format_BGR888).copy();
-    }
-    return QImage();
+    ui->camera_label->setPixmap(QPixmap::fromImage(qimg).scaled(
+        ui->camera_label->size(),
+        Qt::KeepAspectRatio,
+        Qt::SmoothTransformation));
 }
-
 
 MainWindow::~MainWindow()
 {
-    if (cameraObject->IsGrabbing())
-        cameraObject->StopGrabbing();
-
-    if (cameraObject->IsOpen())
-        cameraObject->Close();
+    if (cameraObject) {
+        if (cameraObject->IsGrabbing()) {
+            cameraObject->StopGrabbing();
+        }
+        if (cameraObject->IsOpen()) {
+            cameraObject->Close();
+        }
+        delete cameraObject;
+    }
 
     delete ui;
 }

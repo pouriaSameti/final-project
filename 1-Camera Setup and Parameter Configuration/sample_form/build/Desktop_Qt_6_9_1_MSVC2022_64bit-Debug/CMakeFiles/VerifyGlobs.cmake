@@ -51,9 +51,11 @@ set(OLD_GLOB
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/mocs_compilation.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/EWIEGA46WW/moc_cameraworker.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/EWIEGA46WW/qrc_resources.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/cameraworker.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/main.cpp"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.cpp"
   )
@@ -86,12 +88,14 @@ set(OLD_GLOB
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraImageEventHandler.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraStreamParams.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/BaslerCameraTLParams.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/baslerimagehandler.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/CMakeFiles/ShowIncludes/foo.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_10_0_MSVC2022_64bit-Debug/sample_form_autogen/include/ui_mainwindow.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/include/ui_mainwindow.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sample_form_autogen/moc_predefs.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/ShowIncludes/foo.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/include/ui_mainwindow.h"
+  "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/cameraworker.h"
   "D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/mainwindow.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
