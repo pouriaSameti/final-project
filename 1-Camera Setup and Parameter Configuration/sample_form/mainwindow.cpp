@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
         cameraObject->BinningHorizontal.SetValue(binningHorizantalValue);
 
         cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
-        // cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
+        cameraObject->AcquisitionLineRateAbs.SetValue(acquisitionLineRateValue);
 
         // gain_raw_value = cameraObject->GainRaw.GetValue();
         // blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
@@ -388,7 +388,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->gain_raw_label->setText(QString::number(gain_raw_value));
         ui->black_level_label->setText(QString::number(blackLevelValue));
         ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
-        ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
+        ui->acq_frame_rate_label->setText(QString::number(acquisitionLineRateValue));
         ui->width_label->setText(QString::number(widthValue));
         ui->height_label->setText(QString::number(heightValue));
         ui->binningHorizantal_label->setText(QString::number(binningHorizantalValue));
@@ -486,17 +486,17 @@ MainWindow::MainWindow(QWidget *parent)
 
     // change value of Acquisition Frame Rate with slider
     connect(ui->horizontalSlider_acq_frame_rate, &QSlider::valueChanged, this, [=](int value){
-        acquisitionFrameRateValue = value * 0.01;
-        ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue, 'f', 2));
-        ui->doubleSpinBox_acq_frame_rate->setValue(acquisitionFrameRateValue);
+        acquisitionLineRateValue = value * 0.01;
+        ui->acq_frame_rate_label->setText(QString::number(acquisitionLineRateValue, 'f', 2));
+        ui->doubleSpinBox_acq_frame_rate->setValue(acquisitionLineRateValue);
     });
 
     // change value of Acquisition Frame Rate with spinBox
     connect(ui->doubleSpinBox_acq_frame_rate, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, [=](double value){
-        acquisitionFrameRateValue = value;
-        ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue, 'f', 2));
+        acquisitionLineRateValue = value;
+        ui->acq_frame_rate_label->setText(QString::number(acquisitionLineRateValue, 'f', 2));
 
-        int sliderVal = qRound(acquisitionFrameRateValue / 0.01);
+        int sliderVal = qRound(acquisitionLineRateValue / 0.01);
         ui->horizontalSlider_acq_frame_rate->setValue(sliderVal);
     });
 
@@ -565,10 +565,59 @@ MainWindow::MainWindow(QWidget *parent)
             // Exposure Time Micro-second
             cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
 
-            // Frame rate
-            cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
+            // Line rate
+            cameraObject->AcquisitionLineRateAbs.SetValue(acquisitionLineRateValue);
 
             qDebug() << "Camera parameters applied successfully!";
+
+        }
+
+        catch (const GenericException &e) {
+            QString errorMsg = QString("Error applying camera parameters:\n%1").arg(e.GetDescription());
+            QMessageBox::critical(this, "Camera Error", errorMsg);
+            qDebug() << "Error applying camera parameters:" << e.GetDescription();
+        }
+    });
+
+
+    connect(ui->pushButton_reset, &QPushButton::clicked, this, [=]() {
+
+        try {
+            int gain_raw_value = gain_raw_valueDefault;
+            int blackLevelValue = blackLevelValueDefault;
+            bool gammaEnableValue = gammaEnableValueDefault;
+            double gammaValue = gammaValueDefault;
+            int exposureTimeMicroSecondValue = exposureTimeMicroSecondValueDefault;
+            double acquisitionLineRateValue = acquisitionLineRateValueDefault;
+            int widthValue = widthValueDefault;
+            int heightValue = heightValueDefault;
+            int binningHorizantalValue = binningHorizantalValueDefault;
+
+
+            cameraObject->GainRaw.SetValue(gain_raw_value);
+            cameraObject->BlackLevelRaw.SetValue(blackLevelValue);
+            cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
+            cameraObject->AcquisitionLineRateAbs.SetValue(acquisitionLineRateValue);
+
+
+            ui->gain_raw_label->setText(QString::number(gain_raw_value));
+            ui->horizontalSlider_gain_raw->setValue(gain_raw_value);
+            ui->spinBox_gain_raw->setValue(gain_raw_value);
+
+            ui->black_level_label->setText(QString::number(blackLevelValue));
+            ui->horizontalSlider_black_level->setValue(blackLevelValue);
+            ui->spinBox_black_level->setValue(blackLevelValue);
+
+            ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
+            ui->horizontalSlider_exposure_time_us->setValue(exposureTimeMicroSecondValue);
+            ui->spinBox_exposure_time_us->setValue(exposureTimeMicroSecondValue);
+
+            ui->acq_frame_rate_label->setText(QString::number(acquisitionLineRateValue));
+            ui->horizontalSlider_acq_frame_rate->setValue(acquisitionLineRateValue);
+            ui->doubleSpinBox_acq_frame_rate->setValue(acquisitionLineRateValue);
+
+
+            qDebug() << "Camera parameters RESET successfully!";
 
         }
 

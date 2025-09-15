@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1387</width>
-    <height>940</height>
+    <height>951</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -769,12 +769,12 @@
          </font>
         </property>
         <property name="text">
-         <string>Acquisition Frame Rate (Hz)</string>
+         <string>Acquisition Line Rate (Hz)</string>
         </property>
        </widget>
        <widget class="QSlider" name="horizontalSlider_acq_frame_rate">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -812,7 +812,7 @@
        </widget>
        <widget class="QDoubleSpinBox" name="doubleSpinBox_acq_frame_rate">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -927,7 +927,7 @@
      <rect>
       <x>20</x>
       <y>850</y>
-      <width>601</width>
+      <width>281</width>
       <height>41</height>
      </rect>
     </property>
@@ -998,6 +998,19 @@
       <string>Website: http://cpslab.ui.ac.ir | Email: cpslab@res.ui.ac.ir</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_reset">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>850</y>
+      <width>321</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

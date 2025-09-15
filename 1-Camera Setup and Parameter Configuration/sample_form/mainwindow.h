@@ -43,14 +43,24 @@ private:
     Ui::MainWindow *ui;
 
     // camera parameters
+    int gain_raw_valueDefault = 800;
+    int blackLevelValueDefault = 50;
+    bool gammaEnableValueDefault = false;
+    double gammaValueDefault = 0.000;
+    int exposureTimeMicroSecondValueDefault = 20;
+    double acquisitionLineRateValueDefault = 80645.16129;
+    int widthValueDefault = 4096;
+    int heightValueDefault = 1024;
+    int binningHorizantalValueDefault = 1;
+
     int gain_raw_value = 800;
     int blackLevelValue = 50;
     bool gammaEnableValue = false;
     double gammaValue = 0.000;
     int exposureTimeMicroSecondValue = 20;
-    double acquisitionFrameRateValue = 80645.16129;
+    double acquisitionLineRateValue = 80645.16129;
     int widthValue = 4096;
-    int heightValue = 256;
+    int heightValue = 1024;
     int binningHorizantalValue = 1;
 
     // Image grabbing parameters
