@@ -65,6 +65,11 @@ public:
     QSlider *horizontalSlider_height;
     QSpinBox *spinBox_height;
     QLabel *height_label;
+    QFrame *BinningHorizantal;
+    QLabel *label_14;
+    QSlider *horizontalSlider_binningHorizantal;
+    QSpinBox *spinBox_binningHorizantal;
+    QLabel *binningHorizantal_label;
     QWidget *verticalWidget_acquisitionControl;
     QVBoxLayout *AcquisitionControl;
     QLabel *Text_AcquisitionControl;
@@ -240,11 +245,11 @@ public:
         Width->setFrameShadow(QFrame::Shadow::Raised);
         label_11 = new QLabel(Width);
         label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(10, 0, 91, 31));
+        label_11->setGeometry(QRect(10, 10, 91, 31));
         horizontalSlider_width = new QSlider(Width);
         horizontalSlider_width->setObjectName("horizontalSlider_width");
         horizontalSlider_width->setEnabled(false);
-        horizontalSlider_width->setGeometry(QRect(110, 10, 311, 16));
+        horizontalSlider_width->setGeometry(QRect(110, 20, 311, 16));
         horizontalSlider_width->setMinimum(1);
         horizontalSlider_width->setMaximum(4096);
         horizontalSlider_width->setValue(4096);
@@ -252,14 +257,14 @@ public:
         spinBox_width = new QSpinBox(Width);
         spinBox_width->setObjectName("spinBox_width");
         spinBox_width->setEnabled(false);
-        spinBox_width->setGeometry(QRect(430, 0, 91, 31));
+        spinBox_width->setGeometry(QRect(430, 10, 91, 31));
         spinBox_width->setFrame(false);
         spinBox_width->setMinimum(1);
         spinBox_width->setMaximum(4096);
         spinBox_width->setValue(4096);
         width_label = new QLabel(Width);
         width_label->setObjectName("width_label");
-        width_label->setGeometry(QRect(540, 0, 51, 31));
+        width_label->setGeometry(QRect(540, 10, 51, 31));
 
         ImageFormatControl->addWidget(Width);
 
@@ -269,11 +274,11 @@ public:
         Height->setFrameShadow(QFrame::Shadow::Raised);
         label_12 = new QLabel(Height);
         label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(10, 0, 91, 31));
+        label_12->setGeometry(QRect(10, 10, 91, 31));
         horizontalSlider_height = new QSlider(Height);
         horizontalSlider_height->setObjectName("horizontalSlider_height");
         horizontalSlider_height->setEnabled(false);
-        horizontalSlider_height->setGeometry(QRect(110, 10, 311, 16));
+        horizontalSlider_height->setGeometry(QRect(110, 20, 311, 16));
         horizontalSlider_height->setMinimum(1);
         horizontalSlider_height->setMaximum(4096);
         horizontalSlider_height->setValue(256);
@@ -281,16 +286,48 @@ public:
         spinBox_height = new QSpinBox(Height);
         spinBox_height->setObjectName("spinBox_height");
         spinBox_height->setEnabled(false);
-        spinBox_height->setGeometry(QRect(430, 0, 91, 31));
+        spinBox_height->setGeometry(QRect(430, 10, 91, 31));
         spinBox_height->setFrame(false);
         spinBox_height->setMinimum(1);
         spinBox_height->setMaximum(4096);
         spinBox_height->setValue(256);
         height_label = new QLabel(Height);
         height_label->setObjectName("height_label");
-        height_label->setGeometry(QRect(540, 0, 51, 31));
+        height_label->setGeometry(QRect(540, 10, 51, 31));
 
         ImageFormatControl->addWidget(Height);
+
+        BinningHorizantal = new QFrame(verticalWidget_imageFormatControl);
+        BinningHorizantal->setObjectName("BinningHorizantal");
+        BinningHorizantal->setFrameShape(QFrame::Shape::StyledPanel);
+        BinningHorizantal->setFrameShadow(QFrame::Shadow::Raised);
+        label_14 = new QLabel(BinningHorizantal);
+        label_14->setObjectName("label_14");
+        label_14->setGeometry(QRect(10, 10, 101, 31));
+        QFont font2;
+        font2.setPointSize(8);
+        label_14->setFont(font2);
+        horizontalSlider_binningHorizantal = new QSlider(BinningHorizantal);
+        horizontalSlider_binningHorizantal->setObjectName("horizontalSlider_binningHorizantal");
+        horizontalSlider_binningHorizantal->setEnabled(false);
+        horizontalSlider_binningHorizantal->setGeometry(QRect(110, 20, 311, 16));
+        horizontalSlider_binningHorizantal->setMinimum(1);
+        horizontalSlider_binningHorizantal->setMaximum(4);
+        horizontalSlider_binningHorizantal->setValue(1);
+        horizontalSlider_binningHorizantal->setOrientation(Qt::Orientation::Horizontal);
+        spinBox_binningHorizantal = new QSpinBox(BinningHorizantal);
+        spinBox_binningHorizantal->setObjectName("spinBox_binningHorizantal");
+        spinBox_binningHorizantal->setEnabled(false);
+        spinBox_binningHorizantal->setGeometry(QRect(430, 10, 91, 31));
+        spinBox_binningHorizantal->setFrame(false);
+        spinBox_binningHorizantal->setMinimum(1);
+        spinBox_binningHorizantal->setMaximum(4);
+        spinBox_binningHorizantal->setValue(1);
+        binningHorizantal_label = new QLabel(BinningHorizantal);
+        binningHorizantal_label->setObjectName("binningHorizantal_label");
+        binningHorizantal_label->setGeometry(QRect(540, 10, 51, 31));
+
+        ImageFormatControl->addWidget(BinningHorizantal);
 
         verticalWidget_acquisitionControl = new QWidget(centralwidget);
         verticalWidget_acquisitionControl->setObjectName("verticalWidget_acquisitionControl");
@@ -364,8 +401,6 @@ public:
         label_29 = new QLabel(ExposureTimeMicroSecond_2);
         label_29->setObjectName("label_29");
         label_29->setGeometry(QRect(10, 0, 141, 31));
-        QFont font2;
-        font2.setPointSize(8);
         label_29->setFont(font2);
         horizontalSlider_acq_frame_rate = new QSlider(ExposureTimeMicroSecond_2);
         horizontalSlider_acq_frame_rate->setObjectName("horizontalSlider_acq_frame_rate");
@@ -482,6 +517,8 @@ public:
         width_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "Height", nullptr));
         height_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        label_14->setText(QCoreApplication::translate("MainWindow", "Binning Horizantal", nullptr));
+        binningHorizantal_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         Text_AcquisitionControl->setText(QCoreApplication::translate("MainWindow", " Acquisition Control", nullptr));
         label_27->setText(QCoreApplication::translate("MainWindow", "Exposure Time (Raw)", nullptr));
         exposure_time_raw_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));

@@ -52,6 +52,7 @@ private:
     double acquisitionFrameRateValue = 100.0;
     int widthValue = 4096;
     int heightValue = 256;
+    int binningHorizantalValue = 1;
 
     // Image grabbing parameters
     BaslerCamera* cameraObject = nullptr;

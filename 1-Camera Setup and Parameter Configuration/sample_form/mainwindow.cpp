@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         cameraObject->Width.SetValue(widthValue);
         cameraObject->Height.SetValue(heightValue);
+        cameraObject->BinningHorizontal.SetValue(binningHorizantalValue);
 
         // gain_raw_value = cameraObject->GainRaw.GetValue();
         // blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
@@ -390,6 +391,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
         ui->width_label->setText(QString::number(widthValue));
         ui->height_label->setText(QString::number(heightValue));
+        ui->binningHorizantal_label->setText(QString::number(binningHorizantalValue));
 
 
 
@@ -550,10 +552,23 @@ MainWindow::MainWindow(QWidget *parent)
         ui->camera_label->resize(widthValue, heightValue);
     });
 
+    // change value of binning horizantal with slider
+    connect(ui->horizontalSlider_binningHorizantal, &QSlider::valueChanged, this, [=](int value){
+        binningHorizantalValue = value;
+        ui->binningHorizantal_label->setText(QString::number(heightValue));
+        ui->spinBox_binningHorizantal->setValue(heightValue);
+    });
+
+    // change value of binning horizantal with spinBox
+    connect(ui->spinBox_binningHorizantal, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
+        binningHorizantalValue = value;
+        ui->binningHorizantal_label->setText(QString::number(heightValue));
+        ui->horizontalSlider_binningHorizantal->setValue(heightValue);
+    });
+
     connect(ui->pushButton_apply, &QPushButton::clicked, this, [=]() {
 
         try {
-
             //Gain
             cameraObject->GainRaw.SetValue(gain_raw_value);
 
