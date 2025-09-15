@@ -65,16 +65,6 @@ public:
     QSlider *horizontalSlider_height;
     QSpinBox *spinBox_height;
     QLabel *height_label;
-    QFrame *OffsetX;
-    QLabel *label_14;
-    QSlider *horizontalSlider_offsetX;
-    QSpinBox *spinBox_offsetX;
-    QLabel *offsetX_label;
-    QFrame *OffsetY;
-    QLabel *label_15;
-    QSlider *horizontalSlider_offsetY;
-    QSpinBox *spinBox_offsetY;
-    QLabel *offsetY_label;
     QWidget *verticalWidget_acquisitionControl;
     QVBoxLayout *AcquisitionControl;
     QLabel *Text_AcquisitionControl;
@@ -128,7 +118,7 @@ public:
 
         verticalWidget_analogControl = new QWidget(centralwidget);
         verticalWidget_analogControl->setObjectName("verticalWidget_analogControl");
-        verticalWidget_analogControl->setGeometry(QRect(10, 110, 621, 241));
+        verticalWidget_analogControl->setGeometry(QRect(10, 110, 621, 231));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -216,8 +206,9 @@ public:
         horizontalSlider_black_level = new QSlider(BlackLevel);
         horizontalSlider_black_level->setObjectName("horizontalSlider_black_level");
         horizontalSlider_black_level->setGeometry(QRect(110, 10, 311, 16));
-        horizontalSlider_black_level->setMinimum(0);
-        horizontalSlider_black_level->setMaximum(1023);
+        horizontalSlider_black_level->setMinimum(-2048);
+        horizontalSlider_black_level->setMaximum(2047);
+        horizontalSlider_black_level->setValue(50);
         horizontalSlider_black_level->setOrientation(Qt::Orientation::Horizontal);
         black_level_label = new QLabel(BlackLevel);
         black_level_label->setObjectName("black_level_label");
@@ -226,8 +217,9 @@ public:
         spinBox_black_level->setObjectName("spinBox_black_level");
         spinBox_black_level->setGeometry(QRect(430, 0, 91, 31));
         spinBox_black_level->setFrame(false);
-        spinBox_black_level->setMinimum(0);
-        spinBox_black_level->setMaximum(1023);
+        spinBox_black_level->setMinimum(-2048);
+        spinBox_black_level->setMaximum(2047);
+        spinBox_black_level->setValue(50);
 
         AnalogControl->addWidget(BlackLevel);
 
@@ -251,18 +243,20 @@ public:
         label_11->setGeometry(QRect(10, 0, 91, 31));
         horizontalSlider_width = new QSlider(Width);
         horizontalSlider_width->setObjectName("horizontalSlider_width");
+        horizontalSlider_width->setEnabled(false);
         horizontalSlider_width->setGeometry(QRect(110, 10, 311, 16));
         horizontalSlider_width->setMinimum(1);
         horizontalSlider_width->setMaximum(4096);
-        horizontalSlider_width->setValue(1024);
+        horizontalSlider_width->setValue(4096);
         horizontalSlider_width->setOrientation(Qt::Orientation::Horizontal);
         spinBox_width = new QSpinBox(Width);
         spinBox_width->setObjectName("spinBox_width");
+        spinBox_width->setEnabled(false);
         spinBox_width->setGeometry(QRect(430, 0, 91, 31));
         spinBox_width->setFrame(false);
         spinBox_width->setMinimum(1);
         spinBox_width->setMaximum(4096);
-        spinBox_width->setValue(1024);
+        spinBox_width->setValue(4096);
         width_label = new QLabel(Width);
         width_label->setObjectName("width_label");
         width_label->setGeometry(QRect(540, 0, 51, 31));
@@ -278,77 +272,25 @@ public:
         label_12->setGeometry(QRect(10, 0, 91, 31));
         horizontalSlider_height = new QSlider(Height);
         horizontalSlider_height->setObjectName("horizontalSlider_height");
+        horizontalSlider_height->setEnabled(false);
         horizontalSlider_height->setGeometry(QRect(110, 10, 311, 16));
         horizontalSlider_height->setMinimum(1);
         horizontalSlider_height->setMaximum(4096);
-        horizontalSlider_height->setValue(1024);
+        horizontalSlider_height->setValue(256);
         horizontalSlider_height->setOrientation(Qt::Orientation::Horizontal);
         spinBox_height = new QSpinBox(Height);
         spinBox_height->setObjectName("spinBox_height");
+        spinBox_height->setEnabled(false);
         spinBox_height->setGeometry(QRect(430, 0, 91, 31));
         spinBox_height->setFrame(false);
         spinBox_height->setMinimum(1);
         spinBox_height->setMaximum(4096);
-        spinBox_height->setValue(1024);
+        spinBox_height->setValue(256);
         height_label = new QLabel(Height);
         height_label->setObjectName("height_label");
         height_label->setGeometry(QRect(540, 0, 51, 31));
 
         ImageFormatControl->addWidget(Height);
-
-        OffsetX = new QFrame(verticalWidget_imageFormatControl);
-        OffsetX->setObjectName("OffsetX");
-        OffsetX->setFrameShape(QFrame::Shape::StyledPanel);
-        OffsetX->setFrameShadow(QFrame::Shadow::Raised);
-        label_14 = new QLabel(OffsetX);
-        label_14->setObjectName("label_14");
-        label_14->setGeometry(QRect(10, 0, 91, 31));
-        horizontalSlider_offsetX = new QSlider(OffsetX);
-        horizontalSlider_offsetX->setObjectName("horizontalSlider_offsetX");
-        horizontalSlider_offsetX->setGeometry(QRect(110, 10, 311, 16));
-        horizontalSlider_offsetX->setMinimum(0);
-        horizontalSlider_offsetX->setMaximum(3072);
-        horizontalSlider_offsetX->setValue(0);
-        horizontalSlider_offsetX->setOrientation(Qt::Orientation::Horizontal);
-        spinBox_offsetX = new QSpinBox(OffsetX);
-        spinBox_offsetX->setObjectName("spinBox_offsetX");
-        spinBox_offsetX->setGeometry(QRect(430, 0, 91, 31));
-        spinBox_offsetX->setFrame(false);
-        spinBox_offsetX->setMinimum(0);
-        spinBox_offsetX->setMaximum(3072);
-        spinBox_offsetX->setValue(0);
-        offsetX_label = new QLabel(OffsetX);
-        offsetX_label->setObjectName("offsetX_label");
-        offsetX_label->setGeometry(QRect(540, 0, 51, 31));
-
-        ImageFormatControl->addWidget(OffsetX);
-
-        OffsetY = new QFrame(verticalWidget_imageFormatControl);
-        OffsetY->setObjectName("OffsetY");
-        OffsetY->setFrameShape(QFrame::Shape::StyledPanel);
-        OffsetY->setFrameShadow(QFrame::Shadow::Raised);
-        label_15 = new QLabel(OffsetY);
-        label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(10, 0, 91, 31));
-        horizontalSlider_offsetY = new QSlider(OffsetY);
-        horizontalSlider_offsetY->setObjectName("horizontalSlider_offsetY");
-        horizontalSlider_offsetY->setGeometry(QRect(110, 10, 311, 16));
-        horizontalSlider_offsetY->setMinimum(0);
-        horizontalSlider_offsetY->setMaximum(3072);
-        horizontalSlider_offsetY->setValue(0);
-        horizontalSlider_offsetY->setOrientation(Qt::Orientation::Horizontal);
-        spinBox_offsetY = new QSpinBox(OffsetY);
-        spinBox_offsetY->setObjectName("spinBox_offsetY");
-        spinBox_offsetY->setGeometry(QRect(430, 0, 91, 31));
-        spinBox_offsetY->setFrame(false);
-        spinBox_offsetY->setMinimum(0);
-        spinBox_offsetY->setMaximum(3072);
-        spinBox_offsetY->setValue(0);
-        offsetY_label = new QLabel(OffsetY);
-        offsetY_label->setObjectName("offsetY_label");
-        offsetY_label->setGeometry(QRect(540, 0, 51, 31));
-
-        ImageFormatControl->addWidget(OffsetY);
 
         verticalWidget_acquisitionControl = new QWidget(centralwidget);
         verticalWidget_acquisitionControl->setObjectName("verticalWidget_acquisitionControl");
@@ -540,10 +482,6 @@ public:
         width_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "Height", nullptr));
         height_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_14->setText(QCoreApplication::translate("MainWindow", "OffsetX", nullptr));
-        offsetX_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_15->setText(QCoreApplication::translate("MainWindow", "OffsetY", nullptr));
-        offsetY_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         Text_AcquisitionControl->setText(QCoreApplication::translate("MainWindow", " Acquisition Control", nullptr));
         label_27->setText(QCoreApplication::translate("MainWindow", "Exposure Time (Raw)", nullptr));
         exposure_time_raw_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));

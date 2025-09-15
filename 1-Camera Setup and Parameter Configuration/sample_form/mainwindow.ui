@@ -39,7 +39,7 @@
       <x>10</x>
       <y>110</y>
       <width>621</width>
-      <height>241</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="palette">
@@ -301,10 +301,13 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>0</number>
+         <number>-2048</number>
         </property>
         <property name="maximum">
-         <number>1023</number>
+         <number>2047</number>
+        </property>
+        <property name="value">
+         <number>50</number>
         </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
@@ -336,10 +339,13 @@
          <bool>false</bool>
         </property>
         <property name="minimum">
-         <number>0</number>
+         <number>-2048</number>
         </property>
         <property name="maximum">
-         <number>1023</number>
+         <number>2047</number>
+        </property>
+        <property name="value">
+         <number>50</number>
         </property>
        </widget>
       </widget>
@@ -391,6 +397,9 @@
         </property>
        </widget>
        <widget class="QSlider" name="horizontalSlider_width">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -406,13 +415,16 @@
          <number>4096</number>
         </property>
         <property name="value">
-         <number>1024</number>
+         <number>4096</number>
         </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_width">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>430</x>
@@ -431,7 +443,7 @@
          <number>4096</number>
         </property>
         <property name="value">
-         <number>1024</number>
+         <number>4096</number>
         </property>
        </widget>
        <widget class="QLabel" name="width_label">
@@ -471,6 +483,9 @@
         </property>
        </widget>
        <widget class="QSlider" name="horizontalSlider_height">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -486,13 +501,16 @@
          <number>4096</number>
         </property>
         <property name="value">
-         <number>1024</number>
+         <number>256</number>
         </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_height">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>430</x>
@@ -511,170 +529,10 @@
          <number>4096</number>
         </property>
         <property name="value">
-         <number>1024</number>
+         <number>256</number>
         </property>
        </widget>
        <widget class="QLabel" name="height_label">
-        <property name="geometry">
-         <rect>
-          <x>540</x>
-          <y>0</y>
-          <width>51</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="OffsetX">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_14">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>OffsetX</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider_offsetX">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>10</y>
-          <width>311</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>3072</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="spinBox_offsetX">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="frame">
-         <bool>false</bool>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>3072</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="offsetX_label">
-        <property name="geometry">
-         <rect>
-          <x>540</x>
-          <y>0</y>
-          <width>51</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="OffsetY">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_15">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>OffsetY</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider_offsetY">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>10</y>
-          <width>311</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>3072</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="spinBox_offsetY">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="frame">
-         <bool>false</bool>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>3072</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="offsetY_label">
         <property name="geometry">
          <rect>
           <x>540</x>

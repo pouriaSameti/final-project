@@ -45,13 +45,24 @@ MainWindow::MainWindow(QWidget *parent)
 
 
         //Initialization parameters with Default values
-        gain_raw_value = cameraObject->GainRaw.GetValue();
-        blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
-        exposureTimeRawValue = cameraObject->ExposureTimeRaw.GetValue();
-        exposureTimeMicroSecondValue = cameraObject->ExposureTimeAbs.GetValue();
-        widthValue = cameraObject->Width.GetValue();
-        heightValue = cameraObject->Height.GetValue();
-        offsetXValue = cameraObject->OffsetX.GetValue();
+
+        cameraObject->GainRaw.SetValue(gain_raw_value);
+        cameraObject->BlackLevelRaw.SetValue(blackLevelValue);
+        if (gammaEnableValue){
+            cameraObject->GammaEnable.SetValue(gammaEnableValue);
+            cameraObject->Gamma.SetValue(gammaValue);
+        }
+
+        cameraObject->Width.SetValue(widthValue);
+        cameraObject->Height.SetValue(heightValue);
+
+        // gain_raw_value = cameraObject->GainRaw.GetValue();
+        // blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
+        // exposureTimeRawValue = cameraObject->ExposureTimeRaw.GetValue();
+        // exposureTimeMicroSecondValue = cameraObject->ExposureTimeAbs.GetValue();
+        // widthValue = cameraObject->Width.GetValue();
+        // heightValue = cameraObject->Height.GetValue();
+        // offsetXValue = cameraObject->OffsetX.GetValue();
 
         // // Set some important parameters of camera for start image grabbing
         cameraObject->PixelFormat.SetValue("Mono8");
@@ -379,8 +390,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
         ui->width_label->setText(QString::number(widthValue));
         ui->height_label->setText(QString::number(heightValue));
-        ui->offsetX_label->setText(QString::number(offsetXValue));
-        ui->offsetY_label->setText(QString::number(offsetYValuse));
 
 
 
@@ -399,7 +408,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->acq_frame_rate_label->setText(QString::number(0));
         ui->width_label->setText(QString::number(0));
         ui->height_label->setText(QString::number(0));
-        ui->offsetX_label->setText(QString::number(0));
 
         cerr << "An exception occurred." << endl
              << e.GetDescription() << endl;
@@ -446,6 +454,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // change value of Gamma with slider
     connect(ui->horizontalSlider_gamma, &QSlider::valueChanged, this, [=](int value){
+        gammaEnableValue = true;
         gammaValue = value * 0.005;
         ui->gamma_label->setText(QString::number(gammaValue, 'f', 3));
         ui->doubleSpinBox_gamma->setValue(gammaValue);
@@ -453,12 +462,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     // change value of Gamma with spinBox
     connect(ui->doubleSpinBox_gamma, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, [=](double value){
-                gammaValue = value;
-                ui->gamma_label->setText(QString::number(gammaValue, 'f', 3));
+        gammaEnableValue = true;
+        gammaValue = value;
+        ui->gamma_label->setText(QString::number(gammaValue, 'f', 3));
+        int sliderVal = qRound(gammaValue / 0.005);
 
-                int sliderVal = qRound(gammaValue / 0.005);
-                ui->horizontalSlider_gamma->setValue(sliderVal);
-            });
+        ui->horizontalSlider_gamma->setValue(sliderVal);
+    });
 
 
     // change value of exposure time (Raw) with slider
@@ -540,35 +550,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->camera_label->resize(widthValue, heightValue);
     });
 
-    // change value of offsetX with slider
-    connect(ui->horizontalSlider_offsetX, &QSlider::valueChanged, this, [=](int value){
-        offsetXValue = value;
-        ui->offsetX_label->setText(QString::number(offsetXValue));
-        ui->spinBox_offsetX->setValue(offsetXValue);
-    });
-
-    // change value of offsetX with spinBox
-    connect(ui->spinBox_offsetX, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
-        offsetXValue = value;
-        ui->offsetX_label->setText(QString::number(offsetXValue));
-        ui->horizontalSlider_offsetX->setValue(offsetXValue);
-    });
-
-    // change value of offsetY with slider
-    connect(ui->horizontalSlider_offsetY, &QSlider::valueChanged, this, [=](int value){
-        offsetYValuse = value;
-        ui->offsetY_label->setText(QString::number(offsetYValuse));
-        ui->spinBox_offsetY->setValue(offsetYValuse);
-    });
-
-    // change value of offsetY with spinBox
-    connect(ui->spinBox_offsetY, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
-        offsetYValuse = value;
-        ui->offsetY_label->setText(QString::number(offsetYValuse));
-        ui->horizontalSlider_offsetY->setValue(offsetYValuse);
-    });
-
-
     connect(ui->pushButton_apply, &QPushButton::clicked, this, [=]() {
 
         try {
@@ -579,23 +560,20 @@ MainWindow::MainWindow(QWidget *parent)
             // Black Level
             cameraObject->BlackLevelRaw.SetValue(blackLevelValue);
 
-            // Gamma
-            cameraObject->Gamma.SetValue(gammaValue);
+            // // Gamma
+            // if (gammaEnableValue){
+            //     cameraObject->GammaEnable.SetValue(gammaEnableValue);
+            //     cameraObject->Gamma.SetValue(gammaValue);
+            // }
 
-            // Exposure Time raw
-            cameraObject->ExposureTimeRaw.SetValue(exposureTimeRawValue);
+            // // Exposure Time raw
+            // cameraObject->ExposureTimeRaw.SetValue(exposureTimeRawValue);
 
-            // Exposure Time Micro-second
-            cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
+            // // Exposure Time Micro-second
+            // cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
 
-            // Frame rate
-            cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
-
-            // width, heght, offsetX, offsetY
-            cameraObject->Width.SetValue(widthValue);
-            cameraObject->Height.SetValue(heightValue);
-            cameraObject->OffsetX.SetValue(offsetXValue);
-            // cameraObject->OffsetY.SetValue(offsetYValuse);
+            // // // Frame rate
+            // // cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
 
             qDebug() << "Camera parameters applied successfully!";
 

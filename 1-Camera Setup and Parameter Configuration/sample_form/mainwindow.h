@@ -43,16 +43,15 @@ private:
     Ui::MainWindow *ui;
 
     // camera parameters
-    int gain_raw_value = 192;
-    int blackLevelValue = 0;
-    double gammaValue = 1.000;
+    int gain_raw_value = 800;
+    int blackLevelValue = 50;
+    bool gammaEnableValue = false;
+    double gammaValue = 0.000;
     int exposureTimeRawValue = 10000;
     int exposureTimeMicroSecondValue = 10000;
     double acquisitionFrameRateValue = 100.0;
-    int widthValue = 1024;
-    int heightValue = 1024;
-    int offsetXValue = 0;
-    int offsetYValuse = 0;
+    int widthValue = 4096;
+    int heightValue = 256;
 
     // Image grabbing parameters
     BaslerCamera* cameraObject = nullptr;
