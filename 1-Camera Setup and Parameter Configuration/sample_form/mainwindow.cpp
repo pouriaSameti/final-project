@@ -57,10 +57,11 @@ MainWindow::MainWindow(QWidget *parent)
         cameraObject->Height.SetValue(heightValue);
         cameraObject->BinningHorizontal.SetValue(binningHorizantalValue);
 
+        cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
+        // cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
+
         // gain_raw_value = cameraObject->GainRaw.GetValue();
         // blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
-        // exposureTimeRawValue = cameraObject->ExposureTimeRaw.GetValue();
-        // exposureTimeMicroSecondValue = cameraObject->ExposureTimeAbs.GetValue();
         // widthValue = cameraObject->Width.GetValue();
         // heightValue = cameraObject->Height.GetValue();
         // offsetXValue = cameraObject->OffsetX.GetValue();
@@ -386,7 +387,6 @@ MainWindow::MainWindow(QWidget *parent)
 
         ui->gain_raw_label->setText(QString::number(gain_raw_value));
         ui->black_level_label->setText(QString::number(blackLevelValue));
-        ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
         ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
         ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
         ui->width_label->setText(QString::number(widthValue));
@@ -405,7 +405,6 @@ MainWindow::MainWindow(QWidget *parent)
 
         ui->gain_raw_label->setText(QString::number(0));
         ui->black_level_label->setText(QString::number(0));
-        ui->exposure_time_raw_label->setText(QString::number(0));
         ui->exposure_time_us_label->setText(QString::number(0));
         ui->acq_frame_rate_label->setText(QString::number(0));
         ui->width_label->setText(QString::number(0));
@@ -418,9 +417,6 @@ MainWindow::MainWindow(QWidget *parent)
 
         exitCode = 1;
     }
-
-
-
 
 
     // change value of gain_raw with slider
@@ -470,21 +466,6 @@ MainWindow::MainWindow(QWidget *parent)
         int sliderVal = qRound(gammaValue / 0.005);
 
         ui->horizontalSlider_gamma->setValue(sliderVal);
-    });
-
-
-    // change value of exposure time (Raw) with slider
-    connect(ui->horizontalSlider_exposure_time_raw, &QSlider::valueChanged, this, [=](int value){
-        exposureTimeRawValue = value;
-        ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
-        ui->spinBox_exposure_time_raw->setValue(exposureTimeRawValue);
-    });
-
-    // change value of exposure time (Raw) with spinBox
-    connect(ui->spinBox_exposure_time_raw, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
-        exposureTimeRawValue = value;
-        ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
-        ui->horizontalSlider_exposure_time_raw->setValue(exposureTimeRawValue);
     });
 
 
@@ -581,14 +562,11 @@ MainWindow::MainWindow(QWidget *parent)
             //     cameraObject->Gamma.SetValue(gammaValue);
             // }
 
-            // // Exposure Time raw
-            // cameraObject->ExposureTimeRaw.SetValue(exposureTimeRawValue);
+            // Exposure Time Micro-second
+            cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
 
-            // // Exposure Time Micro-second
-            // cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
-
-            // // // Frame rate
-            // // cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
+            // Frame rate
+            cameraObject->AcquisitionFrameRateAbs.SetValue(acquisitionFrameRateValue);
 
             qDebug() << "Camera parameters applied successfully!";
 

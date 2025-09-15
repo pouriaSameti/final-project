@@ -73,11 +73,6 @@ public:
     QWidget *verticalWidget_acquisitionControl;
     QVBoxLayout *AcquisitionControl;
     QLabel *Text_AcquisitionControl;
-    QFrame *ExposureTimeAbs;
-    QLabel *label_27;
-    QSlider *horizontalSlider_exposure_time_raw;
-    QLabel *exposure_time_raw_label;
-    QSpinBox *spinBox_exposure_time_raw;
     QFrame *ExposureTimeMicroSecond;
     QLabel *label_28;
     QSlider *horizontalSlider_exposure_time_us;
@@ -340,33 +335,6 @@ public:
 
         AcquisitionControl->addWidget(Text_AcquisitionControl);
 
-        ExposureTimeAbs = new QFrame(verticalWidget_acquisitionControl);
-        ExposureTimeAbs->setObjectName("ExposureTimeAbs");
-        ExposureTimeAbs->setFrameShape(QFrame::Shape::StyledPanel);
-        ExposureTimeAbs->setFrameShadow(QFrame::Shadow::Raised);
-        label_27 = new QLabel(ExposureTimeAbs);
-        label_27->setObjectName("label_27");
-        label_27->setGeometry(QRect(10, 11, 111, 31));
-        horizontalSlider_exposure_time_raw = new QSlider(ExposureTimeAbs);
-        horizontalSlider_exposure_time_raw->setObjectName("horizontalSlider_exposure_time_raw");
-        horizontalSlider_exposure_time_raw->setGeometry(QRect(160, 20, 261, 20));
-        horizontalSlider_exposure_time_raw->setMinimum(100);
-        horizontalSlider_exposure_time_raw->setMaximum(3000000);
-        horizontalSlider_exposure_time_raw->setValue(10000);
-        horizontalSlider_exposure_time_raw->setOrientation(Qt::Orientation::Horizontal);
-        exposure_time_raw_label = new QLabel(ExposureTimeAbs);
-        exposure_time_raw_label->setObjectName("exposure_time_raw_label");
-        exposure_time_raw_label->setGeometry(QRect(540, 10, 51, 31));
-        spinBox_exposure_time_raw = new QSpinBox(ExposureTimeAbs);
-        spinBox_exposure_time_raw->setObjectName("spinBox_exposure_time_raw");
-        spinBox_exposure_time_raw->setGeometry(QRect(430, 11, 91, 31));
-        spinBox_exposure_time_raw->setFrame(false);
-        spinBox_exposure_time_raw->setMinimum(100);
-        spinBox_exposure_time_raw->setMaximum(3000000);
-        spinBox_exposure_time_raw->setValue(10000);
-
-        AcquisitionControl->addWidget(ExposureTimeAbs);
-
         ExposureTimeMicroSecond = new QFrame(verticalWidget_acquisitionControl);
         ExposureTimeMicroSecond->setObjectName("ExposureTimeMicroSecond");
         ExposureTimeMicroSecond->setFrameShape(QFrame::Shape::StyledPanel);
@@ -377,25 +345,26 @@ public:
         horizontalSlider_exposure_time_us = new QSlider(ExposureTimeMicroSecond);
         horizontalSlider_exposure_time_us->setObjectName("horizontalSlider_exposure_time_us");
         horizontalSlider_exposure_time_us->setGeometry(QRect(160, 20, 261, 20));
-        horizontalSlider_exposure_time_us->setMinimum(1);
-        horizontalSlider_exposure_time_us->setMaximum(10000000);
-        horizontalSlider_exposure_time_us->setValue(1000);
+        horizontalSlider_exposure_time_us->setMinimum(2);
+        horizontalSlider_exposure_time_us->setMaximum(10000);
+        horizontalSlider_exposure_time_us->setValue(20);
         horizontalSlider_exposure_time_us->setOrientation(Qt::Orientation::Horizontal);
         exposure_time_us_label = new QLabel(ExposureTimeMicroSecond);
         exposure_time_us_label->setObjectName("exposure_time_us_label");
-        exposure_time_us_label->setGeometry(QRect(540, 10, 51, 31));
+        exposure_time_us_label->setGeometry(QRect(530, 10, 61, 31));
         spinBox_exposure_time_us = new QSpinBox(ExposureTimeMicroSecond);
         spinBox_exposure_time_us->setObjectName("spinBox_exposure_time_us");
         spinBox_exposure_time_us->setGeometry(QRect(430, 10, 91, 31));
         spinBox_exposure_time_us->setFrame(false);
-        spinBox_exposure_time_us->setMinimum(1);
-        spinBox_exposure_time_us->setMaximum(10000000);
-        spinBox_exposure_time_us->setValue(10000);
+        spinBox_exposure_time_us->setMinimum(2);
+        spinBox_exposure_time_us->setMaximum(10000);
+        spinBox_exposure_time_us->setValue(20);
 
         AcquisitionControl->addWidget(ExposureTimeMicroSecond);
 
         ExposureTimeMicroSecond_2 = new QFrame(verticalWidget_acquisitionControl);
         ExposureTimeMicroSecond_2->setObjectName("ExposureTimeMicroSecond_2");
+        ExposureTimeMicroSecond_2->setEnabled(true);
         ExposureTimeMicroSecond_2->setFrameShape(QFrame::Shape::StyledPanel);
         ExposureTimeMicroSecond_2->setFrameShadow(QFrame::Shadow::Raised);
         label_29 = new QLabel(ExposureTimeMicroSecond_2);
@@ -404,22 +373,25 @@ public:
         label_29->setFont(font2);
         horizontalSlider_acq_frame_rate = new QSlider(ExposureTimeMicroSecond_2);
         horizontalSlider_acq_frame_rate->setObjectName("horizontalSlider_acq_frame_rate");
-        horizontalSlider_acq_frame_rate->setGeometry(QRect(160, 20, 241, 20));
-        horizontalSlider_acq_frame_rate->setMinimum(1);
+        horizontalSlider_acq_frame_rate->setEnabled(false);
+        horizontalSlider_acq_frame_rate->setGeometry(QRect(160, 20, 261, 20));
+        horizontalSlider_acq_frame_rate->setMinimum(100);
         horizontalSlider_acq_frame_rate->setMaximum(500000);
         horizontalSlider_acq_frame_rate->setValue(10000);
         horizontalSlider_acq_frame_rate->setOrientation(Qt::Orientation::Horizontal);
         acq_frame_rate_label = new QLabel(ExposureTimeMicroSecond_2);
         acq_frame_rate_label->setObjectName("acq_frame_rate_label");
-        acq_frame_rate_label->setGeometry(QRect(540, 10, 51, 31));
+        acq_frame_rate_label->setGeometry(QRect(530, 10, 71, 31));
         doubleSpinBox_acq_frame_rate = new QDoubleSpinBox(ExposureTimeMicroSecond_2);
         doubleSpinBox_acq_frame_rate->setObjectName("doubleSpinBox_acq_frame_rate");
+        doubleSpinBox_acq_frame_rate->setEnabled(false);
         doubleSpinBox_acq_frame_rate->setGeometry(QRect(430, 11, 91, 31));
         doubleSpinBox_acq_frame_rate->setFrame(false);
-        doubleSpinBox_acq_frame_rate->setMinimum(0.010000000000000);
-        doubleSpinBox_acq_frame_rate->setMaximum(5000.000000000000000);
-        doubleSpinBox_acq_frame_rate->setSingleStep(0.010000000000000);
-        doubleSpinBox_acq_frame_rate->setValue(100.000000000000000);
+        doubleSpinBox_acq_frame_rate->setDecimals(6);
+        doubleSpinBox_acq_frame_rate->setMinimum(100.000000000000000);
+        doubleSpinBox_acq_frame_rate->setMaximum(80645.161290000003646);
+        doubleSpinBox_acq_frame_rate->setSingleStep(1.000000000000000);
+        doubleSpinBox_acq_frame_rate->setValue(80645.161290000003646);
 
         AcquisitionControl->addWidget(ExposureTimeMicroSecond_2);
 
@@ -520,8 +492,6 @@ public:
         label_14->setText(QCoreApplication::translate("MainWindow", "Binning Horizantal", nullptr));
         binningHorizantal_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         Text_AcquisitionControl->setText(QCoreApplication::translate("MainWindow", " Acquisition Control", nullptr));
-        label_27->setText(QCoreApplication::translate("MainWindow", "Exposure Time (Raw)", nullptr));
-        exposure_time_raw_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_28->setText(QCoreApplication::translate("MainWindow", "Exposure Time (us) ", nullptr));
         exposure_time_us_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_29->setText(QCoreApplication::translate("MainWindow", "Acquisition Frame Rate (Hz)", nullptr));

@@ -47,9 +47,8 @@ private:
     int blackLevelValue = 50;
     bool gammaEnableValue = false;
     double gammaValue = 0.000;
-    int exposureTimeRawValue = 10000;
-    int exposureTimeMicroSecondValue = 10000;
-    double acquisitionFrameRateValue = 100.0;
+    int exposureTimeMicroSecondValue = 20;
+    double acquisitionFrameRateValue = 80645.16129;
     int widthValue = 4096;
     int heightValue = 256;
     int binningHorizantalValue = 1;
