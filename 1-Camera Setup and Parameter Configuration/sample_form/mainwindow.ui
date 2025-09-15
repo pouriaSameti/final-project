@@ -106,86 +106,6 @@
       </widget>
      </item>
      <item>
-      <widget class="QFrame" name="DigitalShift">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Digital Shift</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider_digital_shift">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>10</y>
-          <width>311</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>4</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="spinBox_digital_shift">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="frame">
-         <bool>false</bool>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>4</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="digital_shift_label">
-        <property name="geometry">
-         <rect>
-          <x>540</x>
-          <y>0</y>
-          <width>51</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
       <widget class="QFrame" name="GainRaw">
        <property name="frameShape">
         <enum>QFrame::Shape::StyledPanel</enum>
@@ -216,10 +136,13 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>192</number>
+         <number>256</number>
         </property>
         <property name="maximum">
-         <number>1023</number>
+         <number>2047</number>
+        </property>
+        <property name="value">
+         <number>800</number>
         </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
@@ -256,90 +179,13 @@
          <bool>false</bool>
         </property>
         <property name="minimum">
-         <number>192</number>
+         <number>256</number>
         </property>
         <property name="maximum">
-         <number>1023</number>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="GainDb">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Gain (Db)</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider_gain_db">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>10</y>
-          <width>311</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>48000</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QLabel" name="gain_db_label">
-        <property name="geometry">
-         <rect>
-          <x>540</x>
-          <y>-1</y>
-          <width>51</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_gain_db">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>0</y>
-          <width>91</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="frame">
-         <bool>false</bool>
-        </property>
-        <property name="decimals">
-         <number>3</number>
-        </property>
-        <property name="maximum">
-         <double>48.000000000000000</double>
-        </property>
-        <property name="singleStep">
-         <double>0.001000000000000</double>
+         <number>2047</number>
         </property>
         <property name="value">
-         <double>0.000000000000000</double>
+         <number>800</number>
         </property>
        </widget>
       </widget>

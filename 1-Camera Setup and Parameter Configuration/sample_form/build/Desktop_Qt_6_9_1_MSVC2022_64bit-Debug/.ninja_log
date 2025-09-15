@@ -1,105 +1,56 @@
 # ninja log v5
-26	150	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-198	841	7795551610873262	sample_form_autogen/timestamp	780c4fd4bdaf3471
-629	750	7793184061564482	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/EWIEGA46WW/qrc_resources.cpp	e8aefaa5fddc6aba
-198	841	7795551610873262	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-755	1120	7793184065389760	CMakeFiles/sample_form.dir/sample_form_autogen/EWIEGA46WW/qrc_resources.cpp.obj	1a4f2c12ee737cd2
-198	841	7795551610873262	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-198	841	7795551610873262	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-846	5079	7795551653676725	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
-850	5869	7795551661545001	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-843	5231	7795551655181746	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
-5870	6186	7795551664354943	sample_form.exe	793b7a07861ec5c9
-152	828	7795561087246388	build.ninja	eb8fae0004297cf8
-629	750	7793184061564482	sample_form_autogen/EWIEGA46WW/qrc_resources.cpp	e8aefaa5fddc6aba
-854	3581	7795551638727387	CMakeFiles/sample_form.dir/cameraworker.cpp.obj	8bbe2be39b911326
-35	151	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-191	785	7795568846476899	sample_form_autogen/timestamp	780c4fd4bdaf3471
-191	785	7795568846476899	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-191	785	7795568846476899	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-191	785	7795568846476899	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-790	4864	7795568887673734	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
-786	4881	7795568887733696	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
-793	5510	7795568894067741	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-34	159	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-201	363	7795569122256430	sample_form_autogen/timestamp	780c4fd4bdaf3471
-201	363	7795569122256430	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-201	363	7795569122256430	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-201	363	7795569122256430	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-379	5169	7795569193663620	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-42	182	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-234	910	7795569482196766	sample_form_autogen/timestamp	780c4fd4bdaf3471
-234	910	7795569482196766	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-234	910	7795569482196766	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-234	910	7795569482196766	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-911	5056	7795569524220656	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
-915	5074	7795569524260653	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
-919	5755	7795569531226811	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5755	5974	7795569533264222	sample_form.exe	10b892740c119a8b
-40	158	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-26	142	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-182	777	7795578549499097	sample_form_autogen/timestamp	780c4fd4bdaf3471
-182	777	7795578549499097	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-182	777	7795578549499097	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-182	777	7795578549499097	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-782	4916	7795578591323325	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
-778	4933	7795578591373319	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
-785	5577	7795578597865220	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5577	5841	7795578600375779	sample_form.exe	10b892740c119a8b
-41	162	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-203	347	7795579725598537	sample_form_autogen/timestamp	780c4fd4bdaf3471
-203	347	7795579725598537	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-203	347	7795579725598537	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-203	347	7795579725598537	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-363	5222	7795579799865468	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5222	5502	7795579802523361	sample_form.exe	10b892740c119a8b
-33	162	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-202	345	7795580378140359	sample_form_autogen/timestamp	780c4fd4bdaf3471
-202	345	7795580378140359	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-202	345	7795580378140359	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-202	345	7795580378140359	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-361	5267	7795580444007033	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5267	5530	7795580446507034	sample_form.exe	10b892740c119a8b
-36	165	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-210	356	7795580813467808	sample_form_autogen/timestamp	780c4fd4bdaf3471
-210	356	7795580813467808	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-210	356	7795580813467808	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-210	356	7795580813467808	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-371	5259	7795580888741632	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5259	5531	7795580891317043	sample_form.exe	10b892740c119a8b
-36	148	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-187	324	7795581867686016	sample_form_autogen/timestamp	780c4fd4bdaf3471
-187	324	7795581867686016	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-187	324	7795581867686016	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-187	324	7795581867686016	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-340	4980	7795581986444440	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-4980	5243	7795581988934501	sample_form.exe	10b892740c119a8b
-34	150	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-190	335	7795582179960237	sample_form_autogen/timestamp	780c4fd4bdaf3471
-190	335	7795582179960237	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-190	335	7795582179960237	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-190	335	7795582179960237	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-351	5178	7795582246787783	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5179	5455	7795582249412657	sample_form.exe	10b892740c119a8b
-35	160	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-200	345	7795582358612635	sample_form_autogen/timestamp	780c4fd4bdaf3471
-200	345	7795582358612635	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-200	345	7795582358612635	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-200	345	7795582358612635	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-360	5115	7795582484729629	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5115	5409	7795582487433215	sample_form.exe	10b892740c119a8b
-34	158	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
-201	352	7795587572112947	sample_form_autogen/timestamp	780c4fd4bdaf3471
-201	352	7795587572112947	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-201	352	7795587572112947	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
-201	352	7795587572112947	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
-369	5648	7795587653478408	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
-5648	5957	7795587656364415	sample_form.exe	10b892740c119a8b
-31	141	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
 27	145	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
 186	330	7795588154899777	sample_form_autogen/timestamp	780c4fd4bdaf3471
-186	330	7795588154899777	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+755	1120	7793184065389760	CMakeFiles/sample_form.dir/sample_form_autogen/EWIEGA46WW/qrc_resources.cpp.obj	1a4f2c12ee737cd2
 186	330	7795588154899777	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
+629	750	7793184061564482	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/EWIEGA46WW/qrc_resources.cpp	e8aefaa5fddc6aba
+186	330	7795588154899777	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
 186	330	7795588154899777	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+782	4916	7795578591323325	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
 349	5222	7795588226977363	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
+778	4933	7795578591373319	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
 5222	5504	7795588229636549	sample_form.exe	10b892740c119a8b
+629	750	7793184061564482	sample_form_autogen/EWIEGA46WW/qrc_resources.cpp	e8aefaa5fddc6aba
+152	828	7795561087246388	build.ninja	eb8fae0004297cf8
+854	3581	7795551638727387	CMakeFiles/sample_form.dir/cameraworker.cpp.obj	8bbe2be39b911326
+34	146	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+27	136	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+27	146	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+187	339	7795590628103983	sample_form_autogen/timestamp	780c4fd4bdaf3471
+187	339	7795590628103983	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+187	339	7795590628103983	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
+187	339	7795590628103983	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+354	5404	7795590699182093	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
+5405	5696	7795590701954462	sample_form.exe	10b892740c119a8b
+86	334	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+434	747	7795590947295199	sample_form_autogen/timestamp	780c4fd4bdaf3471
+434	747	7795590947295199	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+434	747	7795590947295199	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
+434	747	7795590947295199	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+779	9196	7796259753928556	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
+9197	9748	7796259759143476	sample_form.exe	10b892740c119a8b
+84	332	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+424	736	7796261740414198	sample_form_autogen/timestamp	780c4fd4bdaf3471
+424	736	7796261740414198	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+424	736	7796261740414198	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
+424	736	7796261740414198	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+764	9002	7796261852723678	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
+9003	9501	7796261857498718	sample_form.exe	10b892740c119a8b
+123	409	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+503	3679	7796263650304506	sample_form_autogen/timestamp	780c4fd4bdaf3471
+503	3679	7796263650304506	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+503	3679	7796263650304506	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
+503	3679	7796263650304506	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+3691	13129	7796263746039462	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
+3682	13318	7796263747954062	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
+3700	14704	7796263761770447	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
+14705	15336	7796263767181884	sample_form.exe	10b892740c119a8b
+87	283	0	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/CMakeFiles/cmake.verify_globs	f46eca724aa43472
+352	1354	7796265529745731	sample_form_autogen/timestamp	780c4fd4bdaf3471
+352	1354	7796265529745731	sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+352	1354	7796265529745731	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/timestamp	780c4fd4bdaf3471
+352	1354	7796265529745731	D:/final-project/1-Camera Setup and Parameter Configuration/sample_form/build/Desktop_Qt_6_9_1_MSVC2022_64bit-Debug/sample_form_autogen/mocs_compilation.cpp	780c4fd4bdaf3471
+1364	8206	7796265599109486	CMakeFiles/sample_form.dir/main.cpp.obj	61efd68094bbe350
+1357	8520	7796265602218851	CMakeFiles/sample_form.dir/sample_form_autogen/mocs_compilation.cpp.obj	28832fdb0447d008
+1371	9621	7796265613069932	CMakeFiles/sample_form.dir/mainwindow.cpp.obj	d0df862c4ac46b9b
+9622	10107	7796265617678364	sample_form.exe	10b892740c119a8b

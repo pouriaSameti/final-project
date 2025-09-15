@@ -1,27 +1,27 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QObject>
 #include <QLabel>
 #include <QTimer>
-#include <QMessageBox>
 #include <QPainter>
 #include <QPixmap>
-#include <pylon/BaslerUniversalInstantCamera.h>
-#include <pylon/ImageFormatConverter.h>
+#include <QMessageBox>
 #include "BaslerCamera.h"
-#include <pylon/PylonIncludes.h>
-#include <QObject>
-#include <pylon/ImageEventHandler.h>
 #include <pylon/PylonImage.h>
 #include <pylon/GrabResultPtr.h>
+#include <pylon/PylonIncludes.h>
+#include <pylon/ImageEventHandler.h>
+#include <pylon/ImageFormatConverter.h>
+#include <pylon/BaslerUniversalInstantCamera.h>
 
 
-using namespace Pylon;
-using namespace Pylon::BaslerCameraCameraParams_Params;
 using namespace std;
+using namespace Pylon;
 using namespace GenApi;
 using namespace Basler_UniversalCameraParams;
+using namespace Pylon::BaslerCameraCameraParams_Params;
 
-static const uint32_t c_countOfImagesToGrab = 10;
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -373,9 +373,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->camera_name_label->setText(cameraObject->GetDeviceInfo().GetModelName().c_str());
 
         ui->gain_raw_label->setText(QString::number(gain_raw_value));
-        ui->gain_db_label->setText(QString::number(gain_db_value));
         ui->black_level_label->setText(QString::number(blackLevelValue));
-        ui->digital_shift_label->setText(QString::number(digitalShiftValue));
         ui->exposure_time_raw_label->setText(QString::number(exposureTimeRawValue));
         ui->exposure_time_us_label->setText(QString::number(exposureTimeMicroSecondValue));
         ui->acq_frame_rate_label->setText(QString::number(acquisitionFrameRateValue));
@@ -395,9 +393,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->camera_name_label->setText(" ");
 
         ui->gain_raw_label->setText(QString::number(0));
-        ui->gain_db_label->setText(QString::number(0));
         ui->black_level_label->setText(QString::number(0));
-        ui->digital_shift_label->setText(QString::number(0));
         ui->exposure_time_raw_label->setText(QString::number(0));
         ui->exposure_time_us_label->setText(QString::number(0));
         ui->acq_frame_rate_label->setText(QString::number(0));
@@ -432,22 +428,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->horizontalSlider_gain_raw->setValue(gain_raw_value);
     });
 
-    // change value of gain_db with slider
-    connect(ui->horizontalSlider_gain_db, &QSlider::valueChanged, this, [=](int value){
-        gain_db_value = value * 0.001;
-        ui->gain_db_label->setText(QString::number(gain_db_value, 'f', 3));
-        ui->doubleSpinBox_gain_db->setValue(gain_db_value);
-    });
-
-    // change value of gain_db with spinBox
-    connect(ui->doubleSpinBox_gain_db, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, [=](double value){
-        gain_db_value = value;
-        ui->gain_db_label->setText(QString::number(gain_db_value, 'f', 3));
-
-        int sliderVal = qRound(gain_db_value / 0.001);
-        ui->horizontalSlider_gain_db->setValue(sliderVal);
-    });
-
 
     // change value of Black Level with slider
     connect(ui->horizontalSlider_black_level, &QSlider::valueChanged, this, [=](int value){
@@ -479,21 +459,6 @@ MainWindow::MainWindow(QWidget *parent)
                 int sliderVal = qRound(gammaValue / 0.005);
                 ui->horizontalSlider_gamma->setValue(sliderVal);
             });
-
-
-    // change value of digital shift with slider
-    connect(ui->horizontalSlider_digital_shift, &QSlider::valueChanged, this, [=](int value){
-        digitalShiftValue = value;
-        ui->digital_shift_label->setText(QString::number(digitalShiftValue));
-        ui->spinBox_digital_shift->setValue(digitalShiftValue);
-    });
-
-    // change value of digital shift with spinBox
-    connect(ui->spinBox_digital_shift, QOverload<int>::of(&QSpinBox::valueChanged), this, [=](int value){
-        digitalShiftValue = value;
-        ui->digital_shift_label->setText(QString::number(digitalShiftValue));
-        ui->horizontalSlider_digital_shift->setValue(digitalShiftValue);
-    });
 
 
     // change value of exposure time (Raw) with slider

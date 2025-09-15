@@ -44,10 +44,8 @@ private:
 
     // camera parameters
     int gain_raw_value = 192;
-    double gain_db_value = 0;
     int blackLevelValue = 0;
     double gammaValue = 1.000;
-    int digitalShiftValue = 0;
     int exposureTimeRawValue = 10000;
     int exposureTimeMicroSecondValue = 10000;
     double acquisitionFrameRateValue = 100.0;

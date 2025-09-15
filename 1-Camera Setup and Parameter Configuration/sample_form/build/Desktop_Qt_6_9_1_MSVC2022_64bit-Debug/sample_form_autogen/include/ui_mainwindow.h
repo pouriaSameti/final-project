@@ -37,21 +37,11 @@ public:
     QWidget *verticalWidget_analogControl;
     QVBoxLayout *AnalogControl;
     QLabel *Text_AnalogControl;
-    QFrame *DigitalShift;
-    QLabel *label_10;
-    QSlider *horizontalSlider_digital_shift;
-    QSpinBox *spinBox_digital_shift;
-    QLabel *digital_shift_label;
     QFrame *GainRaw;
     QLabel *label_2;
     QSlider *horizontalSlider_gain_raw;
     QLabel *gain_raw_label;
     QSpinBox *spinBox_gain_raw;
-    QFrame *GainDb;
-    QLabel *label_5;
-    QSlider *horizontalSlider_gain_db;
-    QLabel *gain_db_label;
-    QDoubleSpinBox *doubleSpinBox_gain_db;
     QFrame *Gamma;
     QLabel *label_8;
     QSlider *horizontalSlider_gamma;
@@ -159,33 +149,6 @@ public:
 
         AnalogControl->addWidget(Text_AnalogControl);
 
-        DigitalShift = new QFrame(verticalWidget_analogControl);
-        DigitalShift->setObjectName("DigitalShift");
-        DigitalShift->setFrameShape(QFrame::Shape::StyledPanel);
-        DigitalShift->setFrameShadow(QFrame::Shadow::Raised);
-        label_10 = new QLabel(DigitalShift);
-        label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(10, 0, 91, 31));
-        horizontalSlider_digital_shift = new QSlider(DigitalShift);
-        horizontalSlider_digital_shift->setObjectName("horizontalSlider_digital_shift");
-        horizontalSlider_digital_shift->setGeometry(QRect(110, 10, 311, 16));
-        horizontalSlider_digital_shift->setMinimum(0);
-        horizontalSlider_digital_shift->setMaximum(4);
-        horizontalSlider_digital_shift->setValue(0);
-        horizontalSlider_digital_shift->setOrientation(Qt::Orientation::Horizontal);
-        spinBox_digital_shift = new QSpinBox(DigitalShift);
-        spinBox_digital_shift->setObjectName("spinBox_digital_shift");
-        spinBox_digital_shift->setGeometry(QRect(430, 0, 91, 31));
-        spinBox_digital_shift->setFrame(false);
-        spinBox_digital_shift->setMinimum(0);
-        spinBox_digital_shift->setMaximum(4);
-        spinBox_digital_shift->setValue(0);
-        digital_shift_label = new QLabel(DigitalShift);
-        digital_shift_label->setObjectName("digital_shift_label");
-        digital_shift_label->setGeometry(QRect(540, 0, 51, 31));
-
-        AnalogControl->addWidget(DigitalShift);
-
         GainRaw = new QFrame(verticalWidget_analogControl);
         GainRaw->setObjectName("GainRaw");
         GainRaw->setFrameShape(QFrame::Shape::StyledPanel);
@@ -196,8 +159,9 @@ public:
         horizontalSlider_gain_raw = new QSlider(GainRaw);
         horizontalSlider_gain_raw->setObjectName("horizontalSlider_gain_raw");
         horizontalSlider_gain_raw->setGeometry(QRect(110, 10, 311, 16));
-        horizontalSlider_gain_raw->setMinimum(192);
-        horizontalSlider_gain_raw->setMaximum(1023);
+        horizontalSlider_gain_raw->setMinimum(256);
+        horizontalSlider_gain_raw->setMaximum(2047);
+        horizontalSlider_gain_raw->setValue(800);
         horizontalSlider_gain_raw->setOrientation(Qt::Orientation::Horizontal);
         gain_raw_label = new QLabel(GainRaw);
         gain_raw_label->setObjectName("gain_raw_label");
@@ -209,37 +173,11 @@ public:
         font1.setKerning(true);
         spinBox_gain_raw->setFont(font1);
         spinBox_gain_raw->setFrame(false);
-        spinBox_gain_raw->setMinimum(192);
-        spinBox_gain_raw->setMaximum(1023);
+        spinBox_gain_raw->setMinimum(256);
+        spinBox_gain_raw->setMaximum(2047);
+        spinBox_gain_raw->setValue(800);
 
         AnalogControl->addWidget(GainRaw);
-
-        GainDb = new QFrame(verticalWidget_analogControl);
-        GainDb->setObjectName("GainDb");
-        GainDb->setFrameShape(QFrame::Shape::StyledPanel);
-        GainDb->setFrameShadow(QFrame::Shadow::Raised);
-        label_5 = new QLabel(GainDb);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(10, 0, 91, 31));
-        horizontalSlider_gain_db = new QSlider(GainDb);
-        horizontalSlider_gain_db->setObjectName("horizontalSlider_gain_db");
-        horizontalSlider_gain_db->setGeometry(QRect(110, 10, 311, 16));
-        horizontalSlider_gain_db->setMinimum(0);
-        horizontalSlider_gain_db->setMaximum(48000);
-        horizontalSlider_gain_db->setOrientation(Qt::Orientation::Horizontal);
-        gain_db_label = new QLabel(GainDb);
-        gain_db_label->setObjectName("gain_db_label");
-        gain_db_label->setGeometry(QRect(540, -1, 51, 31));
-        doubleSpinBox_gain_db = new QDoubleSpinBox(GainDb);
-        doubleSpinBox_gain_db->setObjectName("doubleSpinBox_gain_db");
-        doubleSpinBox_gain_db->setGeometry(QRect(430, 0, 91, 31));
-        doubleSpinBox_gain_db->setFrame(false);
-        doubleSpinBox_gain_db->setDecimals(3);
-        doubleSpinBox_gain_db->setMaximum(48.000000000000000);
-        doubleSpinBox_gain_db->setSingleStep(0.001000000000000);
-        doubleSpinBox_gain_db->setValue(0.000000000000000);
-
-        AnalogControl->addWidget(GainDb);
 
         Gamma = new QFrame(verticalWidget_analogControl);
         Gamma->setObjectName("Gamma");
@@ -591,12 +529,8 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         camera_label->setText(QString());
         Text_AnalogControl->setText(QCoreApplication::translate("MainWindow", " Analog Control", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "Digital Shift", nullptr));
-        digital_shift_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Gain (Raw)", nullptr));
         gain_raw_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Gain (Db)", nullptr));
-        gain_db_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Gamma", nullptr));
         gamma_label->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Black Level (DN)", nullptr));
