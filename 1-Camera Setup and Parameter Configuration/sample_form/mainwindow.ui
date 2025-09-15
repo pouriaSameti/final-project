@@ -398,7 +398,7 @@
        </widget>
        <widget class="QSlider" name="horizontalSlider_width">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -423,7 +423,7 @@
        </widget>
        <widget class="QSpinBox" name="spinBox_width">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -788,10 +788,10 @@
          <number>100</number>
         </property>
         <property name="maximum">
-         <number>500000</number>
+         <number>80645</number>
         </property>
         <property name="value">
-         <number>10000</number>
+         <number>80645</number>
         </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>

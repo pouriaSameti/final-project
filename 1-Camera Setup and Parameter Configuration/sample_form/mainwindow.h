@@ -38,7 +38,6 @@ protected:
 private slots:
     void displayImage(const QImage& qimg);
 
-
 private:
     Ui::MainWindow *ui;
 

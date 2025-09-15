@@ -486,7 +486,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // change value of Acquisition Frame Rate with slider
     connect(ui->horizontalSlider_acq_frame_rate, &QSlider::valueChanged, this, [=](int value){
-        acquisitionLineRateValue = value * 0.01;
+        acquisitionLineRateValue = int(value);
         ui->acq_frame_rate_label->setText(QString::number(acquisitionLineRateValue, 'f', 2));
         ui->doubleSpinBox_acq_frame_rate->setValue(acquisitionLineRateValue);
     });
@@ -496,7 +496,7 @@ MainWindow::MainWindow(QWidget *parent)
         acquisitionLineRateValue = value;
         ui->acq_frame_rate_label->setText(QString::number(acquisitionLineRateValue, 'f', 2));
 
-        int sliderVal = qRound(acquisitionLineRateValue / 0.01);
+        int sliderVal = qRound(acquisitionLineRateValue);
         ui->horizontalSlider_acq_frame_rate->setValue(sliderVal);
     });
 
@@ -550,11 +550,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_apply, &QPushButton::clicked, this, [=]() {
 
         try {
-            //Gain
             cameraObject->GainRaw.SetValue(gain_raw_value);
-
-            // Black Level
             cameraObject->BlackLevelRaw.SetValue(blackLevelValue);
+            cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
+            cameraObject->AcquisitionLineRateAbs.SetValue(acquisitionLineRateValue);
 
             // // Gamma
             // if (gammaEnableValue){
@@ -562,11 +561,11 @@ MainWindow::MainWindow(QWidget *parent)
             //     cameraObject->Gamma.SetValue(gammaValue);
             // }
 
-            // Exposure Time Micro-second
-            cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
 
-            // Line rate
-            cameraObject->AcquisitionLineRateAbs.SetValue(acquisitionLineRateValue);
+            //Width, Height, Binning
+            cameraObject->Width.SetValue(widthValue);
+            cameraObject->Height.SetValue(heightValue);
+            cameraObject->BinningHorizontal.SetValue(binningHorizantalValue);
 
             qDebug() << "Camera parameters applied successfully!";
 
