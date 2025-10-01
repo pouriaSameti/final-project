@@ -53,7 +53,7 @@ class ObjectProcessor:
 
         for i, box in enumerate(results.boxes):
             conf = float(box.conf[0]) if box.conf is not None else 0.0
-            if conf < 0.5:  # skip detections below 50% probability
+            if conf < 0.5:
                 continue
 
             x1, y1, x2, y2 = map(int, box.xyxy[0])
