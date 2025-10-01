@@ -45,7 +45,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 
         //Initialization parameters with Default values
-
         cameraObject->GainRaw.SetValue(gain_raw_value);
         cameraObject->BlackLevelRaw.SetValue(blackLevelValue);
         if (gammaEnableValue){
@@ -60,13 +59,8 @@ MainWindow::MainWindow(QWidget *parent)
         cameraObject->ExposureTimeAbs.SetValue(exposureTimeMicroSecondValue);
         cameraObject->AcquisitionLineRateAbs.SetValue(acquisitionLineRateValue);
 
-        // gain_raw_value = cameraObject->GainRaw.GetValue();
-        // blackLevelValue = cameraObject->BlackLevelRaw.GetValue();
-        // widthValue = cameraObject->Width.GetValue();
-        // heightValue = cameraObject->Height.GetValue();
-        // offsetXValue = cameraObject->OffsetX.GetValue();
 
-        // // Set some important parameters of camera for start image grabbing
+        // Set some important parameters of camera for start image grabbing
         cameraObject->PixelFormat.SetValue("Mono8");
         cameraObject->AcquisitionMode.SetValue("Continuous");
         cameraObject->TriggerMode.SetValue("Off");

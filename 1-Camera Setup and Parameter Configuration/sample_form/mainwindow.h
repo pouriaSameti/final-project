@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QLabel>
-#include <QTimer>
 #include <QThread>
 #include <pylon/PylonIncludes.h>
 #include <pylon/BaslerUniversalInstantCamera.h>
@@ -41,7 +40,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    // camera parameters
+    // camera default parameters
     int gain_raw_valueDefault = 800;
     int blackLevelValueDefault = 50;
     bool gammaEnableValueDefault = false;
@@ -52,6 +51,7 @@ private:
     int heightValueDefault = 1024;
     int binningHorizantalValueDefault = 1;
 
+    // camera parameters
     int gain_raw_value = 800;
     int blackLevelValue = 50;
     bool gammaEnableValue = false;
@@ -62,7 +62,7 @@ private:
     int heightValue = 1024;
     int binningHorizantalValue = 1;
 
-    // Image grabbing parameters
+    // Camera grabbing parameters
     BaslerCamera* cameraObject = nullptr;
     bool isCameraOpen = false;
 };
