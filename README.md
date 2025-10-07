@@ -87,3 +87,124 @@ pip install pygame numpy
 
 
 <img width="1900" height="833" alt="Screenshot 2025-10-01 220250" src="https://github.com/user-attachments/assets/68098ac3-4e73-470b-815b-452100d50a1b" />
+
+---------------------------------------------------------------------------
+## Image Processing and Object Segmentation 
+
+This module is responsible for the initial analysis and structural preparation of the continuous 2D images reconstructed from the line scan camera data. It applies classical computer vision techniques to isolate the products accurately, creating a clean dataset for subsequent intelligent analysis.
+
+### Features
+  + **Boundary Definition**: Precisely determines the physical boundaries of the product by separating the object from the background.
+  + **Adaptive Segmentation**: Utilizes robust thresholding methods, including Adaptive Thresholding and Otsu Thresholding, to handle varying lighting conditions and material reflectance typical of industrial environments.
+  + **Region-Based Isolation**: Implements Region Growing techniques to achieve highly accurate and contiguous object masks, minimizing noise and false positives.
+
+
+### Applications
+  + **Pre-Processing for AI**: Provides clean, segmented inputs.
+  + **Object Mask Generation**: Generates binary masks essential for precise measurement and quality control features.
+  + **Fundamental Defect Screening**: Can be used to detect large-scale, clear defects (e.g., missing chunks) that are easily identified by simple segmentation failure.
+
+### Requirements
+Install the dependencies before running:
+
+```bash
+pip install numpy
+```
+
+```bash
+pip install opencv-python
+```
+
+### Project Structure
+
+ ```php
+3-Computer Vision & Line scan camera    
+  │── main.py
+  │── onvif_manager.py
+  │── segmentation.py
+```
+
+<img width="735" height="283" alt="Screenshot 2025-10-07 204311" src="https://github.com/user-attachments/assets/59e4ec03-d8c7-438a-a778-90b931b0bfbc" />
+
+-----------------------------------------------------------------
+## Computer Vision
+
+This module implements the core Machine Learning (ML) and Computer Vision (CV) logic, transforming the platform into a sophisticated, automated quality control and testing environment capable of real-time defect identification, tracking, and product management.
+
+### Datasets and Training Methodology
+The platform utilizes two specialized datasets for distinct vision tasks:
+
+1. **Object Detection Dataset (YOLOv8n)**
+  + **Model**: YOLOv8n (Nano) for high-speed object recognition and bounding box generation.
+  + **Data Source**: Images acquired directly from the Basler Line Scan Camera and reconstructed into 2D frames.
+  + **Preparation Tool**: Roboflow was used for dataset labeling, version control, and data augmentation to enhance model robustness.
+  + **Goal**: Train the model to accurately detect and localize specific product classes on the moving line.
+
+2. **Anomaly Detection Dataset (Triplet Network)**
+  + **Model**: Custom Triplet Architecture trained to learn a low-dimensional (128-D) feature embedding space.
+  + **Data Structure**: Structured as Triplets (Anchor, Positive, Negative), where: Anchor/Positive (Defect-free product images) and Negative (Images containing critical anomalies (e.g., micro-scratches, cracks)).
+  + **Training**: Utilizes Triplet Loss to enforce a large separation margin between normal and anomalous samples.
+  + **Goal**: High-fidelity identification of subtle, unstructured surface defects in real-time.
+
+### Features
+  + **Real-Time Object Detection (YOLOv8n)**: Integrates the lightweight YOLOv8n (Nano) model for sub-millisecond inference speed.
+  + **High-Fidelity Anomaly Detection (Triplet Network)**: Identifies subtle defects by calculating feature vector distance from "normal" samples in the learned 128-D embedding space.
+  + **Robust Object Tracking (ByteTrack)**: Combines YOLO detection with ByteTrack to assign a unique, persistent ID to objects for stable tracking and accurate counting.
+  + **Automated Management**: Enables accurate product counting and targeted image saving of only defective samples.
+
+### Requirements
+Install the dependencies before running:
+
+```bash
+pip install numpy
+```
+
+```bash
+pip install opencv-python
+```
+
+```bash
+pip install torch
+```
+
+```bash
+pip install torch-vision
+```
+
+```bash
+pip install ultralytics
+```
+
+ ```php
+3-Computer Vision & Line scan camera    
+  │── main.py
+  │── onvif_manager.py
+  │── vision.py
+  │── Saved Objects/
+  │── object detection models/
+  │   ├── best.pt
+  │   ├── yolov8n.pt
+  │   ├── yolov8n-custom.pt
+```
+
+ ```php
+4-Train Neural Networks  
+  │── Triplet Network/
+  │   ├── embedding_net.pth
+  │   ├── evaluation.ipynb
+  │   ├── Triplet Network.ipynb
+  │   ├── triplet_data/
+  │   ├── triplet_data_test/
+
+  │── YOLO8n/
+  │   ├── runs/
+  │   ├── test/
+  │   ├── test_detect/
+  │   ├── train/
+  │   ├── valid/
+  │   ├── data.yaml
+  │   ├── README.dataset.txt
+  │   ├── README.roboflow.txt
+  │   ├── train logs.txt
+  │   ├── test evaluation.ipynb
+```
