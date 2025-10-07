@@ -14,6 +14,15 @@ This project was developed under the **Cyber-Physical Systems Laboratory** of th
 
 **Supervisors**: Dr. Ali Bohloli and Dr. Hossein Mahvash Mohammadi, University of Isfahan
 
+
+## Table of Contents
+[Camera Setup and Parameter Configuration GUI](https://github.com/pouriaSameti/final-project?tab=readme-ov-file#camera-setup-and-parameter-configuration-gui)<br>
+[Simulation Environment](https://github.com/pouriaSameti/final-project?tab=readme-ov-file#simulation-environment)<br>
+[Image Processing and Object Segmentation](https://github.com/pouriaSameti/final-project?tab=readme-ov-file#image-processing-and-object-segmentation)<br>
+[Computer Vision](https://github.com/pouriaSameti/final-project?tab=readme-ov-file#computer-vision)<br>
+
+<br>
+
 ----------------------------------
 ## Camera Setup and Parameter Configuration GUI
 A robust, cross-platform Graphical User Interface (GUI) developed with Qt/C++ to control and configure Basler Line Scan Cameras in real-time. This project is essential for industrial machine vision and research, offering precise, stable, and dynamic parameter management.
@@ -208,3 +217,9 @@ pip install ultralytics
   │   ├── train logs.txt
   │   ├── test evaluation.ipynb
 ```
+![photo_2025-07-02_17-47-20](https://github.com/user-attachments/assets/8fc2e908-796c-49ac-86ec-89ef379d7ae4)
+
+![photo_2025-10-07_20-54-06](https://github.com/user-attachments/assets/d636d633-3c9b-4a60-b07a-9462ab345a19)
+
+
+<img width="980" height="313" alt="Screenshot 2025-10-07 205429" src="https://github.com/user-attachments/assets/e2480228-b1c9-4452-b6b7-ee83b0b0d02e" />
